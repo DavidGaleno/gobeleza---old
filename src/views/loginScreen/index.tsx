@@ -7,11 +7,11 @@ import appleIcon from '../../assets/apple-icon.png'
 import styles from './styles.module.css'
 
 //Components
-import { Input } from '../../components/Input/Input'
-import { SubText } from '../../components/SubText/SubText'
-import { Button } from '../../components/Button/Button'
-import { LoginIcon } from '../../components/LoginIcon/LoginIcon'
-import { Line } from '../../components/Line/Line'
+import { Input } from '../../components/Input'
+import { SubText } from '../../components/SubText'
+import { Button } from '../../components/Button'
+import { LoginIcon } from '../../components/LoginIcon'
+import { Line } from '../../components/Line'
 
 
 export const LoginScreen = ()=> {
