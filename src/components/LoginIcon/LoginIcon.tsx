@@ -5,6 +5,6 @@ interface Props {
 import styles from './styles.module.css'
 export const LoginIcon = ({image,alt}:Props) => {
     return(
-        <img src={image} alt={alt} />
+        <img className={styles.loginIcon} src={image} alt={alt} />
     )
 }
