@@ -1,7 +1,7 @@
 //Images
-import logo from '../assets/logo.png'
-import googleIcon from '../assets/google-icon.png'
-import appleIcon from '../assets/apple-icon.png'
+import logo from '../../assets/logo.png'
+import googleIcon from '../../assets/google-icon.png'
+import appleIcon from '../../assets/apple-icon.png'
 
 //CSS
 import styles from './styles.module.css'
