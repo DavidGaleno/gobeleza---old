@@ -1,5 +1,13 @@
 :root{
     --gray: #817B7B;
+    --black: #474747;
+}
+a{
+    color: var(--gray);
+}
+a:hover{
+    color: var(--black);
+
 }
 *{
     padding: 0;

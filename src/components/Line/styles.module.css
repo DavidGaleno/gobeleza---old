@@ -1,0 +1,21 @@
+.line{
+    width: 30%;
+    background-color: gray;
+    height: .1rem;
+}
+@media screen and (min-width:768px){
+    .line{
+        width: 35%;
+    }
+}
+@media screen and (min-width:1024px){
+    .line{
+        width: 37%;
+    }
+}
+@media screen and (min-width:1440px){
+    .line{
+        width: 38%;
+    }
+}
+
