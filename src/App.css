@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-overflow: ellipsis;  
+    text-decoration: none;  
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+}
+html,body{
+    font-size: 62.5%;
+}
