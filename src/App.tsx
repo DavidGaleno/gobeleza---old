@@ -1,11 +1,11 @@
 import './App.css'
-import { CadastrarPessoaFisica } from './views/CadastrarPessoaFísicaScreen'
-import { SelectSubscribeOption } from './views/SelectSubscribeOptionScreen'
-import { LoginScreen } from './views/loginScreen'
+
+import { RecoveryKeyScreen } from './views/RecoveryKeyScreen'
+
 
 function App() {
   return (
-    <CadastrarPessoaFisica/>
+    <RecoveryKeyScreen/>
   )
 }
 
