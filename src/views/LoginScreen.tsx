@@ -19,8 +19,10 @@ export const LoginScreen = ()=> {
         <Button value="Confirmar →"/>
         <div className={styles.loginIcons}>
           <div className={styles.line}></div>
+          <Line/>
           <LoginIcon image={googleIcon} alt={"Google"}/>
           <LoginIcon image={appleIcon} alt={"Apple"}/>
+          <Line/>
         </div>
         <SubText value='Ainda não tem uma conta? Cadastre-se'/>
       </form>
