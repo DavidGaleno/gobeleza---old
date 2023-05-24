@@ -13,7 +13,7 @@ export const RecoveryKeyScreen = () => {
         <Input type='text' placeholder="Digite o código recebido" />
         <div className={styles.buttons}>
             <Button value="Confirmar →" />
-            <Button value="Voltar ←" />
+            <Button value="Vasdasdoltar ←" />
         </div>
       </form>
     </div >
