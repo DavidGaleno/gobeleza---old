@@ -1,13 +1,19 @@
+//Images
 import logo from '../assets/logo.png'
 import googleIcon from '../assets/google-icon.png'
 import appleIcon from '../assets/apple-icon.png'
 
+//CSS
 import styles from './styles.module.css'
+
+//Components
 import { Input } from '../../components/Input/Input'
 import { SubText } from '../../components/SubText/SubText'
 import { Button } from '../../components/Button/Button'
 import { LoginIcon } from '../../components/LoginIcon/LoginIcon'
 import { Line } from '../../components/Line/Line'
+
+
 export const LoginScreen = ()=> {
   return(
     <div className={styles.container}>
