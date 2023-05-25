@@ -1,7 +1,7 @@
 //Images
 import { useState } from 'react'
 import logo from '../../assets/logo.png'
-import { Button } from '../../components/Button'
+import { ActionButton } from '../../components/ActionButton'
 import { Input } from '../../components/Input'
 import styles from './styles.module.css'
 export const CadastrarPessoaFisica = () => {
@@ -18,8 +18,8 @@ export const CadastrarPessoaFisica = () => {
           <Input type='text' placeholder="Número ou S/N" />
         </div>
         <div className={styles.buttons}>
-            <Button value="Confirmar →" />
-            <Button value="Voltar ←" />
+            <ActionButton value="Confirmar →" />
+            <ActionButton value="Voltar ←" />
         </div>
       </form>
     </div >

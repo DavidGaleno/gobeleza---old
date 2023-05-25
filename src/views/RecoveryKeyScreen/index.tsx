@@ -1,6 +1,6 @@
 //Images
 import logo from '../../assets/logo.png'
-import { Button } from '../../components/Button'
+import { ActionButton } from '../../components/ActionButton'
 import { Input } from '../../components/Input'
 
 
@@ -12,8 +12,8 @@ export const RecoveryKeyScreen = () => {
       <form className={styles.form}>
         <Input type='text' placeholder="Digite o código recebido" />
         <div className={styles.buttons}>
-            <Button value="Confirmar →" />
-            <Button value="Voltar ←" />
+            <ActionButton value="Confirmar →" />
+            <ActionButton value="Voltar ←" />
         </div>
       </form>
     </div >

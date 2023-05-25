@@ -9,7 +9,7 @@ import styles from './styles.module.css'
 //Components
 import { Input } from '../../components/Input'
 import { SubText } from '../../components/SubText'
-import { Button } from '../../components/Button'
+import { ActionButton } from '../../components/ActionButton'
 import { LoginIcon } from '../../components/LoginIcon'
 import { Line } from '../../components/Line'
 
@@ -22,7 +22,7 @@ export const LoginScreen = ()=> {
         <Input type='text' placeholder="Digite seu Email ou CPF"/>
         <Input type='password' placeholder="Digite sua senha"/>
         <SubText value='Esqueceu a senha?'/>
-        <Button value="Confirmar →"/>
+        <ActionButton value="Confirmar →"/>
         <div className={styles.loginIcons}>
           <div className={styles.line}></div>
           <Line/>
