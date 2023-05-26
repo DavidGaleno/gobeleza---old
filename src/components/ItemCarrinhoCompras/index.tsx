@@ -8,18 +8,16 @@ interface Props {
     alt: string
     nome: string
     preco: number
+    fatherClass?: string
 }
-export const Item = ({ image, alt, nome, preco}: Props) => {
+export const ItemCarrinhoCompras = ({ image, alt, nome, preco, fatherClass }: Props) => {
     return (
-        <div className={`${styles.container}`}>
+        <div className={`${styles.container} ${fatherClass}`}>
+            <span>X</span>
             <img src={image} alt={alt} />
             <div className={styles.text}>
                 <h2>{nome}</h2>
                 <h3>R${preco.toString().replace('.', ',')}</h3>
-            </div>
-            <div className={styles.buttons}>
-                <ActionButton value="Comprar →" />
-                <DesireListButton />
             </div>
 
         </div>

@@ -13,6 +13,7 @@ import styles from './styles.module.css'
 import { useState } from 'react'
 import { Item } from '../../components/Item'
 import { MobileMenu } from '../../components/MobileMenu'
+import { CarrinhoCompras } from '../../components/CarrinhoCompras'
 
 
 export const CatalogoScreen = () => {
@@ -23,7 +24,8 @@ export const CatalogoScreen = () => {
         <div className={styles.container}>
             <header>
                 <img className={styles.logo} src={logo} alt="Logo" />
-                <MobileMenu menuVisible={menuVisible} setMenuVisible={setMenuVisible} />
+                <MobileMenu visible={menuVisible} setVisible={setMenuVisible} />
+                <CarrinhoCompras visible={carrinhoComprasVisible} setVisible={setCarrinhoComprasVisible} />
                 <nav>
                     <div className={styles.desktopMenu}>
                         <a href="#">Produtos</a>
@@ -32,7 +34,7 @@ export const CatalogoScreen = () => {
                         <a href="#">Sair</a>
                     </div>
                     <LoginIcon fatherClass={`${styles.mobileMenu}`} image={menuHamburguer} alt='Menu' onClick={() => setMenuVisible(!menuVisible)} />
-                    <LoginIcon fatherClass={`${styles.desktopIcon}`} image={carrinhoCompras} alt='Carrinho de Compras' />
+                    <LoginIcon fatherClass={`${styles.desktopIcon}`} image={carrinhoCompras} alt='Carrinho de Compras' onClick={() => setCarrinhoComprasVisible(!carrinhoComprasVisible)} />
                     <LoginIcon fatherClass={`${styles.desktopIcon}`} image={listaDesejos} alt='Lista de Desejos' />
                 </nav>
             </header>
