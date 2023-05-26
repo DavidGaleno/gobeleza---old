@@ -1,14 +1,16 @@
 .container{
     background-color: white;
     display: flex;
-    width: 80%;
+    width: 100%;
     flex-direction: column;
     position: fixed;
+    overflow-y:scroll;
+    overflow-x:hidden;
     padding: 4rem 3rem;
     height: 100%;
     gap: 2rem;
+    z-index: 6;
     transition: .5s;
-    z-index: 1;
 }
 .visible{
     top: 0;
@@ -16,7 +18,9 @@
 }
 .invisible{
     top: 0;
-    right: -390px;
+    opacity: 0;
+    pointer-events:none;
+    right: -50%;
 }
 .icon{
     width: 2.3rem;
@@ -28,17 +32,44 @@
 
 .itens{
     display: flex;
+    justify-content: center;
+    align-items:center;
     flex-direction: column;
     font-size: 3rem;
+    gap: 5rem;
+}
+.itens > .container{
+    display: none;
 }
 .valor{
     display: flex;
+    justify-content: center;
     gap: .5rem;
     font-size: 3rem;
 
 }
-@media screen and (min-width:768px) {
-    .container{
-        width: 30%;
+.button{
+    display:flex;
+    justify-content:center;
+}
+.fade{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index:5;
+    transition: .5s;
+}
+.hide{
+    opacity: 0;
+    pointer-events: none;
+}
+
+@media screen and (min-width:767px){
+    .itens{
+        flex-wrap: wrap;
+        flex-direction: row;
     }
 }

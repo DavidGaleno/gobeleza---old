@@ -14,6 +14,7 @@ import { useState } from 'react'
 import { Item } from '../../components/Item'
 import { MobileMenu } from '../../components/MobileMenu'
 import { CarrinhoCompras } from '../../components/CarrinhoCompras'
+import { Title } from '../../components/Title'
 
 
 export const CatalogoScreen = () => {
@@ -39,7 +40,7 @@ export const CatalogoScreen = () => {
                 </nav>
             </header>
             <main>
-                <h1>Catálogo de Produtos</h1>
+                <Title value="Catálogo de Produtos" />
                 <div className={styles.itens}>
                     <Item image={batom} alt="Batom" nome="Batom" preco={9.99} />
                     <Item image={maquiagem} alt="Maquiagem" nome="Maquiagem" preco={29.99} />

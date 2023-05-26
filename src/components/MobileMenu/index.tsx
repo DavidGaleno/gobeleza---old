@@ -7,14 +7,19 @@ interface Props {
 }
 export const MobileMenu = ({ visible, setVisible }: Props) => {
     return (
-        <div className={`${styles.container} ${visible ? styles.visible : styles.invisible}`}>
-            <LoginIcon onClick={() => setVisible(!visible)} fatherClass={styles.icon} image={menuHamburguer} alt='Menu' />
-            <div className={styles.options}>
-                <a href="#">Produtos</a>
-                <a href="#">Serviços</a>
-                <a href="#">Minha Conta</a>
-                <a href="#">Sair</a>
+        <>
+            <div onClick={() => setVisible(!visible)} className={`${styles.fade} ${!visible ? styles.hide : ''}`}>
             </div>
-        </div>
+
+            <div className={`${styles.container} ${visible ? styles.visible : styles.invisible}`}>
+                <LoginIcon onClick={() => setVisible(!visible)} fatherClass={styles.icon} image={menuHamburguer} alt='Menu' />
+                <div className={styles.options}>
+                    <a href="#">Produtos</a>
+                    <a href="#">Serviços</a>
+                    <a href="#">Minha Conta</a>
+                    <a href="#">Sair</a>
+                </div>
+            </div>
+        </>
     )
 }

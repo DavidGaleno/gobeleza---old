@@ -7,6 +7,7 @@
     padding: 2rem;
     border-radius: .5rem;
     gap: 1rem;
+    max-width:25.2rem;
 }
 .text{
     display: flex;
@@ -29,7 +30,3 @@ h3{
     justify-content: space-between;
     align-items: center;
 }
-img{
-    width: 100%;
-}
-
