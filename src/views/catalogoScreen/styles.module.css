@@ -56,9 +56,31 @@ h1 {
     font-size: 2rem;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
     .desktopMenu {
         display: none;
+    }
+}
+
+@media screen and (min-width:1440px) {
+    .logo {
+        width: 9rem;
+    }
+
+    .desktopMenu>a {
+        font-size: 3rem;
+    }
+}
+@media screen and (max-width:1920px) {
+    .logo {
+        width: 9rem;
+    }
+
+}
+
+@media screen and (min-width:1024px) {
+    .desktopIcon {
+        width: 3rem;
     }
 }
 

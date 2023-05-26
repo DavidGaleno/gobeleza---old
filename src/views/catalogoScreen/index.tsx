@@ -27,10 +27,11 @@ export const CatalogoScreen = () => {
                         <a href="#">Produtos</a>
                         <a href="#">Serviços</a>
                         <a href="#">Minha Conta</a>
+                        <a href="#">Sair</a>
                     </div>
-                    <LoginIcon fatherClass={styles.mobileMenu} image={menuHamburguer} alt='Menu' />
-                    <LoginIcon image={carrinhoCompras} alt='Carrinho de Compras' />
-                    <LoginIcon image={listaDesejos} alt='Lista de Desejos' />
+                    <LoginIcon fatherClass={`${styles.mobileMenu}`} image={menuHamburguer} alt='Menu' />
+                    <LoginIcon fatherClass={`${styles.desktopIcon}`} image={carrinhoCompras} alt='Carrinho de Compras' />
+                    <LoginIcon fatherClass={`${styles.desktopIcon}`} image={listaDesejos} alt='Lista de Desejos' />
                 </nav>
             </header>
             <main>
