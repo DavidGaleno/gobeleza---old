@@ -36,7 +36,7 @@ nav {
 
 main {
     width: 100%;
-    gap:2rem;
+    gap:3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
