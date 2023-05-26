@@ -12,6 +12,7 @@ import styles from './styles.module.css'
 //React Libraries
 import { useState } from 'react'
 import { Item } from '../../components/Item'
+import { MobileMenu } from '../../components/MobileMenu'
 
 
 export const CatalogoScreen = () => {
@@ -22,6 +23,7 @@ export const CatalogoScreen = () => {
         <div className={styles.container}>
             <header>
                 <img className={styles.logo} src={logo} alt="Logo" />
+                <MobileMenu menuVisible={menuVisible} setMenuVisible={setMenuVisible} />
                 <nav>
                     <div className={styles.desktopMenu}>
                         <a href="#">Produtos</a>
@@ -29,7 +31,7 @@ export const CatalogoScreen = () => {
                         <a href="#">Minha Conta</a>
                         <a href="#">Sair</a>
                     </div>
-                    <LoginIcon fatherClass={`${styles.mobileMenu}`} image={menuHamburguer} alt='Menu' />
+                    <LoginIcon fatherClass={`${styles.mobileMenu}`} image={menuHamburguer} alt='Menu' onClick={() => setMenuVisible(!menuVisible)} />
                     <LoginIcon fatherClass={`${styles.desktopIcon}`} image={carrinhoCompras} alt='Carrinho de Compras' />
                     <LoginIcon fatherClass={`${styles.desktopIcon}`} image={listaDesejos} alt='Lista de Desejos' />
                 </nav>

@@ -1,0 +1,33 @@
+.container{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    padding: 4rem 3rem;
+    height: 100%;
+    gap: 2rem;
+    transition: .5s;
+    z-index: 1;
+}
+.visible{
+    top: 0;
+    right: 0;
+}
+.invisible{
+    right: -190px;
+}
+.icon{
+    width: 2.2rem;
+    margin-left: 1.2rem;
+   
+}
+.options{
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+}
+@media screen and (min-width:768px) {
+    .container{
+        display: none;
+    }
+}
