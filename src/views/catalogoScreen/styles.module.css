@@ -57,6 +57,11 @@ h1 {
 
 .desktopMenu>a {
     font-size: 2rem;
+    transition: all .1s ease, transform .3s ease-in-out;
+}
+.desktopMenu > a:hover{
+    color: var(--black);
+    transform: scale(1.1);
 }
 
 @media screen and (max-width:767px) {

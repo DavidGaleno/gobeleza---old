@@ -5,10 +5,7 @@
 a{
     color: var(--gray);
 }
-a:hover{
-    color: var(--black);
 
-}
 *{
     padding: 0;
     margin: 0;
