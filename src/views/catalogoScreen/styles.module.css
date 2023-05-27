@@ -71,13 +71,13 @@ h1 {
         display: grid;
         justify-content: flex-start;
         align-content: center;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:  repeat(1fr,2);
     }
 }
 
 @media screen and (min-width:1024px) {
     .itens {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns:  repeat(1fr,3);
     }
 }
 
@@ -87,7 +87,7 @@ h1 {
         width: 9rem;
     }
     .itens {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns:  repeat(1fr,4);
     }
     .desktopMenu>a {
         font-size: 3rem;
@@ -101,7 +101,7 @@ h1 {
         width: 9rem;
     }
     .itens {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(1fr,5);
     }
     .desktopMenu>a {
         font-size: 3rem;
