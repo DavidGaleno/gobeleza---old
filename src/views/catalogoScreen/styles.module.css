@@ -31,12 +31,13 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 4rem;
+
 }
 
 main {
     width: 100%;
-    gap:3rem;
+    gap: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -64,15 +65,50 @@ h1 {
     }
 }
 
+
+@media screen and (min-width:768px) {
+    .itens {
+        display: grid;
+        justify-content: flex-start;
+        align-content: center;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .itens {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
 @media screen and (min-width:1440px) {
     .logo {
         width: 9rem;
     }
-
+    .itens {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
     .desktopMenu>a {
         font-size: 3rem;
     }
 }
+
+
+
+@media screen and (min-width:1920px) {
+    .logo {
+        width: 9rem;
+    }
+    .itens {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    .desktopMenu>a {
+        font-size: 3rem;
+    }
+}
+
+
 @media screen and (max-width:1920px) {
     .logo {
         width: 9rem;

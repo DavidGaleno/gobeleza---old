@@ -20,6 +20,7 @@ import { Item } from '../../components/Item'
 
 
 export const CatalogoScreen = () => {
+    console.log(window.outerWidth)
     const [menuVisible, setMenuVisible] = useState(false)
     const [carrinhoComprasVisible, setCarrinhoComprasVisible] = useState(false)
     const [listaDesejosVisible, setListaDesejosVisible] = useState(false)
