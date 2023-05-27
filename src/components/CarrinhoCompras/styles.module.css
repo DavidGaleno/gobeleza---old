@@ -6,7 +6,7 @@
     position: fixed;
     overflow-y:scroll;
     overflow-x:hidden;
-    padding: 4rem 3rem;
+    padding: 4rem 2rem;
     height: 100%;
     gap: 2rem;
     z-index: 6;
@@ -33,8 +33,9 @@
 .itens{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
     align-items:center;
-    flex-direction: column;
     font-size: 3rem;
     gap: 5rem;
 }
@@ -67,9 +68,4 @@
     pointer-events: none;
 }
 
-@media screen and (min-width:767px){
-    .itens{
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-}
+

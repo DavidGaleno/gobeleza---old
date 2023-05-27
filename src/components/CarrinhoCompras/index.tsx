@@ -2,7 +2,7 @@ import { LoginIcon } from '../LoginIcon'
 import batom from '../../assets/batom.png'
 import carrinhoCompras from './../../assets/carrinhoCompras.svg'
 import styles from './styles.module.css'
-import { Item } from '../Item'
+import { ItemCarrinhoCompras } from '../ItemCarrinhoCompras'
 import { ActionButton } from '../ActionButton'
 import { Title } from '../Title'
 interface Props {
@@ -18,15 +18,15 @@ export const CarrinhoCompras = ({ visible, setVisible }: Props) => {
                 <Title value='Carrinho de Compras'/>
                 <div className={styles.itens}>
 
-                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} />
-                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} />
+                    <ItemCarrinhoCompras image={batom} alt="Batom" nome="Batom" preco={9.99} />
+                    <ItemCarrinhoCompras image={batom} alt="Batom" nome="Batom" preco={9.99} />
 
-                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} />
+                    <ItemCarrinhoCompras image={batom} alt="Batom" nome="Batom" preco={9.99} />
 
-                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} />
+                    <ItemCarrinhoCompras image={batom} alt="Batom" nome="Batom" preco={9.99} />
 
-                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} />
-                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} />
+                    <ItemCarrinhoCompras image={batom} alt="Batom" nome="Batom" preco={9.99} />
+                    <ItemCarrinhoCompras image={batom} alt="Batom" nome="Batom" preco={9.99} />
 
                 </div>
                 <div className={styles.valor}>
