@@ -1,12 +1,10 @@
 import './App.css'
-
-import { RecoveryKeyScreen } from './views/RecoveryKeyScreen'
-import { CatalogoScreen } from './views/catalogoScreen'
+import { MinhaConta } from './components/MinhaConta'
 
 
 function App() {
   return (
-    <CatalogoScreen/>
+    <MinhaConta />
   )
 }
 
