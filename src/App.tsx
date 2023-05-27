@@ -1,10 +1,10 @@
 import './App.css'
-import { MinhaConta } from './components/MinhaConta'
+import { MinhaContaFuncionario } from './components/MinhaContaFuncionario'
 
 
 function App() {
   return (
-    <MinhaConta />
+    <MinhaContaFuncionario />
   )
 }
 
