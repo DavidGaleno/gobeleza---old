@@ -1,4 +1,4 @@
-.container{
+.container {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -8,7 +8,8 @@
     padding: 2rem;
     gap: 3rem;
 }
-.form{
+
+.form {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -16,35 +17,68 @@
     align-items: center;
     gap: 2.5rem;
 }
-.logo{
+
+.logo {
     width: 13rem;
 }
-.input{
+
+.input {
     width: 100%;
 }
 
 
-.buttons{
+.buttons {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
     width: 100%;
 }
 
+select {
+    width: 100%;
+    font-size: 2.3rem;
+    cursor: pointer;
+
+}
+
+.cvv {
+    width: 30%;
+    align-self: start;
+}
+
 @media screen and (min-width:768px) {
-    .input,.buttons{
+
+    .input,
+    .buttons,
+    select {
+        width: 50%;
+    }
+
+    .cvv {
+        align-self: center;
+        width: 15%;
+    }
+
+    select {
         width: 50%;
     }
 }
 
 @media screen and (min-width:1024px) {
-    .input,.buttons{
+
+    .input,
+    .buttons,
+    select {
         width: 30%;
     }
+
 }
 
 @media screen and (min-width:1440px) {
-    .input,.buttons{
+
+    .input,
+    .buttons,
+    select {
         width: 20%;
     }
 }
