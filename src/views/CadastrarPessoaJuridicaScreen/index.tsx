@@ -4,6 +4,7 @@ import logo from '../../assets/logo.png'
 import { ActionButton } from '../../components/ActionButton'
 import { Input } from '../../components/Input'
 import styles from './styles.module.css'
+import { File } from '../../components/File'
 export const CadastrarPessoaJuridica = () => {
   return (
     <div className={styles.container}>
@@ -17,6 +18,7 @@ export const CadastrarPessoaJuridica = () => {
           <Input type='text' placeholder="Complemento" />
           <Input type='text' placeholder="Número ou S/N" />
         </div>
+        <File label='Adicione uma foto do salão' />
         <div className={styles.buttons}>
           <ActionButton value="Confirmar →" />
           <ActionButton value="Voltar ←" />
