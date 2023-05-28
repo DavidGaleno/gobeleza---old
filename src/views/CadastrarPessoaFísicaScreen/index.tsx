@@ -6,22 +6,17 @@ import { Input } from '../../components/Input'
 
 
 import styles from './styles.module.css'
+import { Select } from '../../components/Select'
 export const CadastrarPessoaFisica = () => {
-  const [clickedButHasNoValue, setClickedButHasNoValue] = useState(false)
-  const [selectHasValue, setSelectHasValue] = useState(false)
   return (
     <div className={styles.container}>
       <img className={styles.logo} src={logo} alt="GoBeleza" />
       <form className={styles.form}>
         <Input type='text' placeholder="Digite seu Email" mask="email" />
-        <Input type='text' placeholder="Digite seu CPF" mask='cpf'/>
+        <Input type='text' placeholder="Digite seu CPF" mask='cpf' />
         <Input type='text' placeholder="Digite seu Nome" />
-        <Input type='text' placeholder="Digite seu Telefone" mask="phoneNumber"/>
-        <select style={{ color: selectHasValue || clickedButHasNoValue ? 'black' : 'gray' }} onBlur={() => setClickedButHasNoValue(false)} onClick={() => setClickedButHasNoValue(!clickedButHasNoValue)} onChange={() => setSelectHasValue(true)} name="sexo" id="sexo">
-          <option value="" selected hidden>Selecione seu Sexo</option>
-          <option value="Masculino">Masculino</option>
-          <option value="Feminino">Feminino</option>
-        </select>
+        <Input type='text' placeholder="Digite seu Telefone" mask="phoneNumber" />
+        <Select label='Selecione seu Sexo' options={['Masculino', 'Feminino']} />
         <div className={styles.endereco}>
           <Input type='text' placeholder="Endereço" />
           <Input type='text' placeholder="Complemento" />
@@ -30,8 +25,8 @@ export const CadastrarPessoaFisica = () => {
         <Input type='password' placeholder="Digite sua senha" />
         <Input type='password' placeholder="Confirme sua senha" />
         <div className={styles.buttons}>
-            <ActionButton value="Confirmar →" />
-            <ActionButton value="Voltar ←" />
+          <ActionButton value="Confirmar →" />
+          <ActionButton value="Voltar ←" />
         </div>
       </form>
     </div >
