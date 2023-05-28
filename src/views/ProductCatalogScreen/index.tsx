@@ -19,7 +19,7 @@ import { ListaDesejos } from '../../components/ListaDesejos'
 import { Item } from '../../components/Item'
 
 
-export const CatalogoScreen = () => {
+export const ProductCatalogScreen = () => {
     console.log(window.outerWidth)
     const [menuVisible, setMenuVisible] = useState(false)
     const [carrinhoComprasVisible, setCarrinhoComprasVisible] = useState(false)
