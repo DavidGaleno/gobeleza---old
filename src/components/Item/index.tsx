@@ -8,8 +8,9 @@ interface Props {
     alt: string
     nome: string
     preco: number
+    Buttondisplay?: boolean
 }
-export const Item = ({ image, alt, nome, preco}: Props) => {
+export const Item = ({ image, alt, nome, preco, Buttondisplay }: Props) => {
     return (
         <div className={`${styles.container}`}>
             <img src={image} alt={alt} />
@@ -18,7 +19,7 @@ export const Item = ({ image, alt, nome, preco}: Props) => {
                 <h3>R${preco.toString().replace('.', ',')}</h3>
             </div>
             <div className={styles.buttons}>
-                <ActionButton value="Comprar →" />
+                <ActionButton value="Comprar →" display={Buttondisplay} />
                 <DesireListButton />
             </div>
 

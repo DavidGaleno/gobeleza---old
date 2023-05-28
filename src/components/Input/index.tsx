@@ -3,15 +3,16 @@ interface Props {
     type: string
     placeholder: string
     mask?: string
+    fatherClass?: string
 }
-export const Input = ({ type, placeholder, mask }: Props) => {
+export const Input = ({ type, placeholder, mask, fatherClass }: Props) => {
     const formatPhoneNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
         const onlyNumbersPhone = e.target.value.replace(/\D/g, '');
         if (!onlyNumbersPhone.length) return e.target.value = ''
         else if (onlyNumbersPhone.length < 3) return e.target.value = `(${onlyNumbersPhone.slice(0)}`
         else if (onlyNumbersPhone.length < 4) return e.target.value = `(${onlyNumbersPhone.slice(0, 2)}) ${onlyNumbersPhone.slice(2)}`
-        else if (onlyNumbersPhone.length < 8) return e.target.value = `(${onlyNumbersPhone.slice(0, 2)}) ${onlyNumbersPhone.slice(2,3)} ${onlyNumbersPhone.slice(3)}`
-        else return e.target.value = `(${onlyNumbersPhone.slice(0, 2)}) ${onlyNumbersPhone.slice(2,3)} ${onlyNumbersPhone.slice(3,7)}-${onlyNumbersPhone.slice(7,11)}`
+        else if (onlyNumbersPhone.length < 8) return e.target.value = `(${onlyNumbersPhone.slice(0, 2)}) ${onlyNumbersPhone.slice(2, 3)} ${onlyNumbersPhone.slice(3)}`
+        else return e.target.value = `(${onlyNumbersPhone.slice(0, 2)}) ${onlyNumbersPhone.slice(2, 3)} ${onlyNumbersPhone.slice(3, 7)}-${onlyNumbersPhone.slice(7, 11)}`
 
     }
 
@@ -21,7 +22,7 @@ export const Input = ({ type, placeholder, mask }: Props) => {
         else if (onlyNumbersCPF.length < 4) return e.target.value = onlyNumbersCPF.slice(0, 3)
         else if (onlyNumbersCPF.length < 7) return e.target.value = `${onlyNumbersCPF.slice(0, 3)}.${onlyNumbersCPF.slice(3)}`
         else if (onlyNumbersCPF.length < 10) return e.target.value = `${onlyNumbersCPF.slice(0, 3)}.${onlyNumbersCPF.slice(3, 6)}.${onlyNumbersCPF.slice(6)}`
-        else return e.target.value = `${onlyNumbersCPF.slice(0, 3)}.${onlyNumbersCPF.slice(3, 6)}.${onlyNumbersCPF.slice(6, 9)}-${onlyNumbersCPF.slice(9,11)}`
+        else return e.target.value = `${onlyNumbersCPF.slice(0, 3)}.${onlyNumbersCPF.slice(3, 6)}.${onlyNumbersCPF.slice(6, 9)}-${onlyNumbersCPF.slice(9, 11)}`
 
     }
     const checkMask: (e: React.ChangeEvent<HTMLInputElement>) => void = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,6 +30,6 @@ export const Input = ({ type, placeholder, mask }: Props) => {
         else if (mask === "cpf") formatCPF(e)
     }
     return (
-        <input type={type} className={styles.input} placeholder={placeholder} onChange={(e) => checkMask(e)} />
+        <input type={type} className={`${styles.input} ${fatherClass}`} placeholder={placeholder} onChange={(e) => checkMask(e)} />
     )
 }

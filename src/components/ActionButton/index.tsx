@@ -1,11 +1,13 @@
 import styles from './styles.module.css'
 interface Props {
     value: string
-    fatherClass?:string
+    fatherClass?: string
+    display?: boolean
+    onClick?: () => void
 }
-export const ActionButton = ({ value,fatherClass }: Props) => {
+export const ActionButton = ({ value, fatherClass, display, onClick }: Props) => {
     return (
-        <button className={`${styles.button} ${fatherClass}`}>
+        <button onClick={onClick} style={{ display: display === false ? 'none' : 'block' }} className={`${styles.button} ${fatherClass}`}>
             {value}
         </button>
     )

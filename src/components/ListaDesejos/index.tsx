@@ -19,15 +19,15 @@ export const ListaDesejos = ({ visible, setVisible }: Props) => {
                 <Title value='Lista de Desejos' />
                 <div className={styles.itens}>
 
-                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} />
-                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} />
+                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} Buttondisplay={false} />
+                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} Buttondisplay={false} />
 
-                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} />
+                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} Buttondisplay={false} />
 
-                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} />
+                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} Buttondisplay={false} />
 
-                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} />
-                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} />
+                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} Buttondisplay={false} />
+                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} Buttondisplay={false} />
 
                 </div>
                 <div className={styles.valor}>
