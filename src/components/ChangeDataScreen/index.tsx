@@ -15,7 +15,7 @@ export const ChangeDataScreen = ({ label, value, visible, setVisible }: Props) =
         <>
             <div className={`${styles.fade} ${visible ? '' : styles.hide}`} ></div>
             <div className={`${styles.container} ${visible ? '' : styles.hide}`} >
-                <Campo fatherClass={styles.value} label={label} value={value} changeValue={false} />
+                <Campo shortValue={false} fatherClass={styles.value} label={label} value={value} changeValue={false} />
                 <Input placeholder={`Digite o novo valor do campo ${label}`} type={"text"} fatherClass={styles.value} />
                 <Input placeholder="Insira sua senha" type={"password"} fatherClass={styles.value} />
                 <div className={styles.buttons}>

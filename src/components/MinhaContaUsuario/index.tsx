@@ -15,6 +15,7 @@ export const MinhaContaUsuario = () => {
                     <Campo label='Telefone' value={`(${formattedTelefone.slice(0, 2)}) ${formattedTelefone.substring(2, 3)} ${formattedTelefone.substring(3, 7)}-${formattedTelefone.substring(7, 11)}`} changeValue={true} />
                     <Campo label='Endereço' value='QNJ 35 Lote 2 Casa 1' changeValue={true} />
                     <Campo label='Sexo' value='Masculino' changeValue={true} />
+                    <Campo label='Senha' value='12312312123g' changeValue={true} />
                     <Campo label='Tipo Conta' value='Cliente' changeValue={false} />
                 </div>
                 <ActionButton fatherClass={styles.button} value="Voltar ←" />

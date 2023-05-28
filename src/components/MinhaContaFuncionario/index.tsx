@@ -16,6 +16,7 @@ export const MinhaContaFuncionario = () => {
                     <Campo label='Endereço' value='QNJ 35 Lote 2 Casa 1' changeValue={true} />
                     <Campo label='Sexo' value='Masculino' changeValue={true} />
                     <Campo label='Tipo Conta' value='Lojista' changeValue={true} />
+                    <Campo label='Senha' value='213sadqwqe123' changeValue={true} />
                     <Campo label='Salão de Beleza' value='BeleZart' changeValue={false} />
                 </div>
                 <ActionButton fatherClass={styles.button} value="Voltar ←" />
