@@ -7,9 +7,9 @@ interface Props {
     fatherClass?: string
     register: UseFormRegister<ICadastroUsuario>
     registerName: "email" | "cpf" | "telefone" | "sexo" | "endereco" | "complemento" | "nome" | "numero" | "password" | "passwordMatch"
-    errors?: any
+    errors?: FieldErrors<ICadastroUsuario>
 }
-import { UseFormRegister } from 'react-hook-form'
+import { FieldErrors, UseFormRegister } from 'react-hook-form'
 
 export const Input = ({ type, placeholder, mask, fatherClass, register, registerName, errors }: Props) => {
 

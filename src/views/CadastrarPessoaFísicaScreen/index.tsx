@@ -10,17 +10,17 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 const createUserFormSchema = z.object({
-  email: z.string().nonempty('*Obrigatório').email('Formato de Email inválido'),
-  cpf: z.string().nonempty('*Obrigatório'),
-  nome: z.string().nonempty('*Obrigatório'),
-  telefone: z.string().nonempty('*Obrigatório'),
+  email: z.string().nonempty('*Obrigatório').email('Formato de Email inválido').transform(email => email.toLocaleLowerCase()).refine(email => email.endsWith('@gmail.com')),
+  cpf: z.string().nonempty('*Obrigatório').transform(cpf => cpf.toLocaleLowerCase().trim()),
+  nome: z.string().nonempty('*Obrigatório').transform(nome => nome.toLocaleLowerCase().trim()),
+  telefone: z.string().nonempty('*Obrigatório').transform(telefone => telefone.toLocaleLowerCase().trim()),
   sexo: z.string().nonempty('*Obrigatório'),
-  endereco: z.string().nonempty('*Obrigatório'),
-  complemento: z.string().nonempty('*Obrigatório'),
-  numero: z.string().nonempty('*Obrigatório'),
-  password: z.string().nonempty('*Obrigatório').min(8, 'A senha precisa ter no mínimo 8 caracteres')
-
-})
+  endereco: z.string().nonempty('*Obrigatório').transform(endereco => endereco.toLocaleLowerCase().trim()),
+  complemento: z.string().nonempty('*Obrigatório').transform(complemento => complemento.toLocaleLowerCase().trim()),
+  numero: z.string().nonempty('*Obrigatório').transform(numero => numero.trim()),
+  password: z.string().nonempty('*Obrigatório').min(8, 'A senha precisa ter no mínimo 8 caracteres').transform(password => password.trim()),
+  passwordMatch: z.string().nonempty('*Obrigatório').min(8, 'A senha precisa ter no mínimo 8 caracteres').transform(password => password.trim())
+}).refine((data) => data.password !== data.passwordMatch, 'As senhas não conferem')
 
 export const CadastrarPessoaFisica = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<ICadastroUsuario>({
