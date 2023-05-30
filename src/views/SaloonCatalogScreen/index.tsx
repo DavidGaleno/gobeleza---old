@@ -16,7 +16,6 @@ import { MobileMenu } from '../../components/MobileMenu'
 import { CarrinhoCompras } from '../../components/CarrinhoCompras'
 import { Title } from '../../components/Title'
 import { ListaDesejos } from '../../components/ListaDesejos'
-import { Item } from '../../components/Item'
 import { Saloon } from '../../components/Saloon'
 
 

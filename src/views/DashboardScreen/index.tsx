@@ -1,4 +1,3 @@
-import { Title } from '../../components/Title'
 import logo from '../../assets/logo.png'
 import dashboard from '../../assets/dashboard.png'
 import specialPassword from '../../assets/specialPassword.png'
