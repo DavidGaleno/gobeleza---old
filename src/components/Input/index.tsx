@@ -5,8 +5,8 @@ interface Props {
     placeholder: string
     mask?: string
     fatherClass?: string
-    register: UseFormRegister<ICadastroUsuario>
-    registerName: "email" | "cpf" | "telefone" | "sexo" | "endereco" | "complemento" | "nome" | "numero" | "password" | "passwordMatch"
+    register?: UseFormRegister<ICadastroUsuario>
+    registerName?: "email" | "cpf" | "telefone" | "sexo" | "endereco" | "complemento" | "nome" | "numero" | "password" | "passwordMatch"
     errors?: FieldErrors<ICadastroUsuario>
 }
 import { FieldErrors, UseFormRegister } from 'react-hook-form'
