@@ -1,5 +1,4 @@
 import './App.css'
-import { CadastrarPessoaFisica } from './views/CadastrarPessoaFísicaScreen'
 import { LoginScreen } from './views/loginScreen'
 
 

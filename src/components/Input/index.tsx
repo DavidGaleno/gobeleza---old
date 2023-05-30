@@ -1,5 +1,4 @@
 import { ICadastroUsuario } from '../../interfaces/ICadastroUsuario'
-import { IRegisterName } from '../../interfaces/IRegisterName'
 import styles from './styles.module.css'
 interface Props {
     type: string
