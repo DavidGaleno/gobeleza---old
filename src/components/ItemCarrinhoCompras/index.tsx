@@ -1,5 +1,3 @@
-import { ActionButton } from "../ActionButton"
-import { DesireListButton } from "../DesireListButton"
 
 import styles from './styles.module.css'
 

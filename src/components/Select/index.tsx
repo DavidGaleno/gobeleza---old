@@ -5,15 +5,15 @@ interface Props {
     onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void
     label: string
     options: string[]
-    register: UseFormRegister<ICadastroUsuario>
-    registerName: "email" | "cpf" | "telefone" | "sexo" | "endereco" | "complemento" | "nome" | "numero" | "password" | "passwordMatch"
+    register?: UseFormRegister<ICadastroUsuario> | undefined
+    registerName?: "email" | "cpf" | "telefone" | "sexo" | "endereco" | "complemento" | "nome" | "numero" | "password" | "passwordMatch" | undefined
 }
 
 export const Select = ({ onChange, label, options, register, registerName }: Props) => {
     const [clickedButHasNoValue, setClickedButHasNoValue] = useState(false)
     const [selectHasValue, setSelectHasValue] = useState(false)
     return (
-        <select {...register(registerName, {
+        <select {...(register as UseFormRegister<ICadastroUsuario> | undefined)?.(registerName as "email" | "cpf" | "telefone" | "sexo" | "endereco" | "complemento" | "nome" | "numero" | "password" | "passwordMatch", {
             onChange: (e) => {
                 setSelectHasValue(true)
                 { onChange && onChange(e) }

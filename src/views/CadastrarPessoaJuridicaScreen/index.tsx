@@ -1,5 +1,4 @@
 //Images
-import { useState } from 'react'
 import logo from '../../assets/logo.png'
 import { ActionButton } from '../../components/ActionButton'
 import { Input } from '../../components/Input'

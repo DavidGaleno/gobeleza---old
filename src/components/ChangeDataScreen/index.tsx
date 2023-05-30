@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { ActionButton } from "../ActionButton"
 import { Input } from "../Input"
 import styles from './styles.module.css'
