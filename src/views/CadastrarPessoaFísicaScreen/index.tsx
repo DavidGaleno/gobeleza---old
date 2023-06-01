@@ -2,7 +2,7 @@
 import logo from '../../assets/logo.png'
 import { ActionButton } from '../../components/ActionButton'
 import { Input } from '../../components/Input'
-import { useForm } from 'react-hook-form'
+import { useForm, useFieldArray } from 'react-hook-form'
 import styles from './styles.module.css'
 import { Select } from '../../components/Select'
 import { ICadastroUsuario } from '../../interfaces/ICadastroUsuario'
@@ -27,9 +27,10 @@ export const CadastrarPessoaFisica = () => {
     resolver: zodResolver(createUserFormSchema)
   })
 
-  const createUser = (data: any) => {
+  const createUser = (data: unknown) => {
     console.log(data)
   }
+ 
   return (
     <div className={styles.container}>
       <img className={styles.logo} src={logo} alt="GoBeleza" />
