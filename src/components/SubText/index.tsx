@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styles from './styles.module.css'
 interface Props {
     value : string
@@ -5,7 +6,7 @@ interface Props {
 export const SubText = ({value}:Props) => {
     return (
         <div className={styles.subText}>
-            <a href="#">{value}</a>
+            <Link to="/cadastrar_usuario">{value}</Link>
         </div>
     )
 }

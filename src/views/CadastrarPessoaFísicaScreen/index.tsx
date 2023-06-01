@@ -39,7 +39,7 @@ export const CadastrarPessoaFisica = () => {
         <Input register={register} registerName={'cpf'} type='text' placeholder="Digite seu CPF" mask='cpf' />
         <Input register={register} registerName={'nome'} type='text' placeholder="Digite seu Nome" />
         <Input register={register} registerName={'telefone'} type='text' placeholder="Digite seu Telefone" mask="phoneNumber" />
-        <Select register={register} registerName={'sexo'} label='Selecione seu Sexo' options={['masculino', 'feminino']} />
+        <Select fatherClass={styles.select} register={register} registerName={'sexo'} label='Selecione seu Sexo' options={['masculino', 'feminino']} />
         <div className={styles.endereco}>
           <Input register={register} registerName={'endereco'} type='text' placeholder="Endereço" />
           <Input register={register} registerName={'complemento'} type='text' placeholder="Complemento" />

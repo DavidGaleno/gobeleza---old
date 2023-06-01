@@ -30,7 +30,7 @@ export const LoginScreen = ()=> {
           <LoginIcon image={appleIcon} alt={"Apple"}/>
           <Line/>
         </div>
-        <SubText value='Ainda não tem uma conta? Cadastre-se'/>
+        <SubText value='Ainda não tem uma conta? Cadastre-se' />
       </form>
     </div>
   )
