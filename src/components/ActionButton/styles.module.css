@@ -12,3 +12,6 @@
 .button:hover {
     transform: scale(1.1)
 }
+.link{
+    color:white !important;
+}

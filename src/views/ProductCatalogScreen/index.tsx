@@ -17,6 +17,7 @@ import { CarrinhoCompras } from '../../components/CarrinhoCompras'
 import { Title } from '../../components/Title'
 import { ListaDesejos } from '../../components/ListaDesejos'
 import { Item } from '../../components/Item'
+import { Link } from 'react-router-dom'
 
 
 export const ProductCatalogScreen = () => {
@@ -34,8 +35,9 @@ export const ProductCatalogScreen = () => {
                     <div className={styles.desktopMenu}>
                         <a href="#">Produtos</a>
                         <a href="#">Serviços</a>
-                        <a href="#">Minha Conta</a>
-                        <a href="#">Sair</a>
+                        <Link color='gray' to={'/minha_conta_usuario'}>Minha Conta</Link>
+                        <Link color='gray' to={'/'}>Sair</Link>
+
                     </div>
                     <LoginIcon fatherClass={`${styles.mobileMenu}`} image={menuHamburguer} alt='Menu' onClick={() => setMenuVisible(!menuVisible)} />
                     <LoginIcon fatherClass={`${styles.desktopIcon}`} image={carrinhoCompras} alt='Carrinho de Compras' onClick={() => setCarrinhoComprasVisible(!carrinhoComprasVisible)} />

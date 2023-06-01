@@ -10,10 +10,10 @@ export const PIXPaymentScreen = () => {
     <div className={styles.container}>
       <img className={styles.logo} src={logo} alt="GoBeleza" />
       <form className={styles.form}>
-        <Input fatherClass={styles.input} type='text' placeholder="Digite o número do cartão"/>
+        <Input fatherClass={styles.input} type='text' placeholder="Digite a chave PIX"/>
         <div className={styles.buttons}>
-            <ActionButton value="Confirmar →" />
-            <ActionButton value="Voltar ←" />
+            <ActionButton value="Confirmar →" path='/catalogo_produtos' />
+            <ActionButton value="Voltar ←" path='/pagamento_opcoes'/>
         </div>
       </form>
     </div >

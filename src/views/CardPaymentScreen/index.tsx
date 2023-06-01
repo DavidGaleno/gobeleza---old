@@ -22,8 +22,8 @@ export const CardPaymentScreen = () => {
           <Select label="Selecione o número de parcelas" options={['1X', '2X', '4X', '6X', '8X', '10X', '12X']} />
         }
         <div className={styles.buttons}>
-          <ActionButton value="Confirmar →" />
-          <ActionButton value="Voltar ←" />
+        <ActionButton value="Confirmar →" path='/catalogo_produtos' />
+            <ActionButton value="Voltar ←" path='/pagamento_opcoes'/>
         </div>
       </form>
     </div >

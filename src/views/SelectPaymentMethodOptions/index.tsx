@@ -5,11 +5,10 @@ export const SelectPaymentMethodOption = () => {
         <div className={styles.container}>
             <h1 className={styles.titulo}>Selecione o seu Método de Pagamento:</h1>
             <div className={styles.buttons}>
-                <ActionButton value="PIX →" />
-                <ActionButton value="Cartão de Crédito →" />
-                <ActionButton value="Cartão de Débito →" />
+                <ActionButton value="PIX →" path="/pagamento_pix"/>
+                <ActionButton value="Cartão →" path="/pagamento_cartao" />
             </div>
-                <ActionButton value="Voltar ←" />
+                <ActionButton value="Voltar ←" path="/catalogo_produtos" />
         </div>
     )
 }

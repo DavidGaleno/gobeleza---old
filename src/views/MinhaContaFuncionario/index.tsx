@@ -1,7 +1,7 @@
 import styles from './styles.module.css'
 import logo from '../../assets/logo.png'
-import { Campo } from '../Campo'
-import { ActionButton } from '../ActionButton'
+import { Campo } from '../../components/Campo'
+import { ActionButton } from '../../components/ActionButton'
 export const MinhaContaFuncionario = () => {
     const telefone = 61940028922
     const formattedTelefone = telefone.toString()

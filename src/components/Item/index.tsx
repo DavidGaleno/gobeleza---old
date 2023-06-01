@@ -19,7 +19,7 @@ export const Item = ({ image, alt, nome, preco, Buttondisplay }: Props) => {
                 <h3>R${preco.toString().replace('.', ',')}</h3>
             </div>
             <div className={styles.buttons}>
-                <ActionButton value="Comprar →" display={Buttondisplay} />
+                <ActionButton value="Comprar →" display={Buttondisplay} path="/pagamento_opcoes" />
                 <DesireListButton />
             </div>
 

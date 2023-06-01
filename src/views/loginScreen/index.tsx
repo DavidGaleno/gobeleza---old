@@ -22,7 +22,7 @@ export const LoginScreen = ()=> {
         <Input type='text' placeholder="Digite seu Email ou CPF"/>
         <Input type='password' placeholder="Digite sua senha"/>
         <SubText value='Esqueceu a senha?'/>
-        <ActionButton value="Confirmar →"/>
+        <ActionButton value="Confirmar →" path="/catalogo_saloes"/>
         <div className={styles.loginIcons}>
           <div className={styles.line}></div>
           <Line/>

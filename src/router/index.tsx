@@ -12,6 +12,10 @@ import { PasswordRecoveryByPhoneScreen } from "../views/PasswordRecoveryByPhone"
 import { RecoveryKeyScreen } from "../views/RecoveryKeyScreen";
 import { SelectPasswordRecoveryOptionsScreen } from "../views/SelectPasswordRecoveryOptionsScreen";
 import { SelectSubscribeOption } from "../views/SelectSubscribeOptionScreen";
+import { SelectPaymentMethodOption } from "../views/SelectPaymentMethodOptions";
+import { MinhaContaFuncionario } from "../views/MinhaContaFuncionario";
+import { MinhaContaUsuario } from "../views/MinhaContaUsuario";
+import { SaloonCatalogScreen } from "../views/SaloonCatalogScreen";
 
 export const router = createBrowserRouter([
     {
@@ -23,7 +27,11 @@ export const router = createBrowserRouter([
                 element: <LoginScreen />
             },
             {
-                path: '/catalog',
+                path: '/catalogo_saloes',
+                element: <SaloonCatalogScreen />
+            },
+            {
+                path: '/catalogo_produtos',
                 element: <ProductCatalogScreen />
             },
             {
@@ -51,25 +59,38 @@ export const router = createBrowserRouter([
                 element: <PIXPaymentScreen />
             },
             {
-                path:'/recuperar_senha_email',
-                element:<PasswordRecoveryByEmailScreen/>
+                path: '/recuperar_senha_email',
+                element: <PasswordRecoveryByEmailScreen />
             },
             {
-                path:'/recuperar_senha_telefone',
-                element:<PasswordRecoveryByPhoneScreen/>
+                path: '/recuperar_senha_telefone',
+                element: <PasswordRecoveryByPhoneScreen />
             },
             {
-                path:'/recuperar_senha_chave',
-                element:<RecoveryKeyScreen/>
+                path: '/recuperar_senha_chave',
+                element: <RecoveryKeyScreen />
             },
             {
-                path:'/recuperar_senha_opcoes',
-                element:<SelectPasswordRecoveryOptionsScreen/>
+                path: '/recuperar_senha_opcoes',
+                element: <SelectPasswordRecoveryOptionsScreen />
             },
             {
-                path:'/cadastrar_opcoes',
-                element:<SelectSubscribeOption/>
-            }
+                path: '/cadastrar_opcoes',
+                element: <SelectSubscribeOption />
+            },
+            {
+                path: '/pagamento_opcoes',
+                element: <SelectPaymentMethodOption />
+            },
+            {
+                path: '/minha_conta_funcionario',
+                element: <MinhaContaFuncionario />
+            },
+            {
+                path: '/minha_conta_usuario',
+                element: <MinhaContaUsuario />
+            },
+
 
         ]
     }

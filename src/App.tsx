@@ -1,11 +1,11 @@
+import { Outlet } from 'react-router-dom'
 import './App.css'
-import { LoginScreen } from './views/loginScreen'
 
 
 
 function App() {
   return (
-    <LoginScreen />
+    <Outlet />
   )
 }
 

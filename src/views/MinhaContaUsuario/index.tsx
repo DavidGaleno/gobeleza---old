@@ -1,7 +1,7 @@
 import styles from './styles.module.css'
 import logo from '../../assets/logo.png'
-import { Campo } from '../Campo'
-import { ActionButton } from '../ActionButton'
+import { Campo } from '../../components/Campo'
+import { ActionButton } from '../../components/ActionButton'
 export const MinhaContaUsuario = () => {
     const telefone = 61940028922
     const formattedTelefone = telefone.toString()
@@ -18,7 +18,7 @@ export const MinhaContaUsuario = () => {
                     <Campo label='Senha' value='12312312123g' changeValue={true} />
                     <Campo label='Tipo Conta' value='Cliente' changeValue={false} />
                 </div>
-                <ActionButton fatherClass={styles.button} value="Voltar ←" />
+                <ActionButton fatherClass={styles.button} value="Voltar ←" path='/catalogo_produtos' />
 
             </div>
         </>
