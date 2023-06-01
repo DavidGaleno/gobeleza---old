@@ -34,7 +34,7 @@ export const CarrinhoCompras = ({ visible, setVisible }: Props) => {
                     <span>R$99,99</span>
                 </div>
                 <div className={styles.button}>
-                    <ActionButton value="Finalizar Pedido →" />
+                    <ActionButton value="Finalizar Pedido →" path="/pagamento_opcoes" />
                 </div>
             </div>
         </>
