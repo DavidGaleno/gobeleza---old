@@ -2,7 +2,7 @@
 import logo from '../../assets/logo.png'
 import { ActionButton } from '../../components/ActionButton'
 import { Input } from '../../components/Input'
-import { useForm, useFieldArray } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import styles from './styles.module.css'
 import { Select } from '../../components/Select'
 import { ICadastroUsuario } from '../../interfaces/ICadastroUsuario'
