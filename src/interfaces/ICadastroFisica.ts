@@ -1,4 +1,4 @@
-export interface ICadastroUsuario {
+export interface ICadastroPessoaFisica {
     email: string
     cpf: string
     nome: string
@@ -9,4 +9,9 @@ export interface ICadastroUsuario {
     numero: string
     password: string
     passwordMatch: string
+    techs: Tech[]
+}
+interface Tech {
+    title: string
+    knowledge: number
 }
