@@ -7,11 +7,11 @@ interface Props {
     fatherClass?: string
     register?: UseFormRegister<ICadastroUsuario> | undefined
     registerName?: "email" | "cpf" | "telefone" | "sexo" | "endereco" | "complemento" | "nome" | "numero" | "password" | "passwordMatch" | undefined
-    errors?: FieldErrors<ICadastroUsuario>
+    error?: string
 }
-import { FieldErrors, UseFormRegister } from 'react-hook-form'
+import { UseFormRegister } from 'react-hook-form'
 
-export const Input = ({ type, placeholder, mask, fatherClass, register, registerName, errors }: Props) => {
+export const Input = ({ type, placeholder, mask, fatherClass, register, registerName, error }: Props) => {
 
     const formatPhoneNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
         const onlyNumbersPhone = e.target.value.replace(/\D/g, '');
@@ -42,7 +42,7 @@ export const Input = ({ type, placeholder, mask, fatherClass, register, register
     return (
         <div className={styles.container}>
             <input {...(register as UseFormRegister<ICadastroUsuario> | undefined)?.(registerName as "email" | "cpf" | "telefone" | "sexo" | "endereco" | "complemento" | "nome" | "numero" | "password" | "passwordMatch")} type={type} className={`${styles.input} ${fatherClass}`} placeholder={placeholder} onChange={(e) => checkMask(e)} />
-            {errors && errors.email && <span className={styles.errorMessage}>{errors?.email.message}</span>}
+            {error && <span className={styles.errorMessage}>{error}</span>}
         </div>
     )
 }
