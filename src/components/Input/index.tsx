@@ -1,17 +1,15 @@
-import { ICadastroPessoaFisica } from '../../interfaces/ICadastroFisica'
 import styles from './styles.module.css'
 interface Props {
     type: string
     placeholder: string
     mask?: string
     fatherClass?: string
-    register?: UseFormRegister<ICadastroPessoaFisica> | undefined
     registerName?: "email" | "cpf" | "telefone" | "sexo" | "endereco" | "complemento" | "nome" | "numero" | "password" | "passwordMatch" | undefined
     error?: string
 }
-import { UseFormRegister } from 'react-hook-form'
+import { useFormContext } from 'react-hook-form'
 
-export const Input = ({ type, placeholder, mask, fatherClass, register, registerName, error }: Props) => {
+export const Input = ({ type, placeholder, mask, fatherClass, registerName, error }: Props) => {
 
     const formatPhoneNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
         const onlyNumbersPhone = e.target.value.replace(/\D/g, '');
@@ -37,11 +35,11 @@ export const Input = ({ type, placeholder, mask, fatherClass, register, register
         else if (mask === "cpf") formatCPF(e)
     }
 
-
+    const { register } = useFormContext()
 
     return (
         <div className={styles.container}>
-            <input {...(register as UseFormRegister<ICadastroPessoaFisica> | undefined)?.(registerName as "email" | "cpf" | "telefone" | "sexo" | "endereco" | "complemento" | "nome" | "numero" | "password" | "passwordMatch")} type={type} className={`${styles.input} ${fatherClass}`} placeholder={placeholder} onChange={(e) => checkMask(e)} />
+            <input {...(register)?.(registerName as "email" | "cpf" | "telefone" | "sexo" | "endereco" | "complemento" | "nome" | "numero" | "password" | "passwordMatch")} type={type} className={`${styles.input} ${fatherClass}`} placeholder={placeholder} onChange={(e) => checkMask(e)} />
             {error && <span className={styles.errorMessage}>{error}</span>}
         </div>
     )

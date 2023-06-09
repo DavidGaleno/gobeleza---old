@@ -2,7 +2,7 @@
 import logo from '../../assets/logo.png'
 import { ActionButton } from '../../components/ActionButton'
 import { Input } from '../../components/Input'
-import { useForm } from 'react-hook-form'
+import { useForm, FormProvider } from 'react-hook-form'
 import styles from './styles.module.css'
 import { Select } from '../../components/Select'
 import { z } from 'zod'
@@ -28,9 +28,11 @@ const createUserFormSchema = z.object({
 })
 
 export const CadastrarPessoaFisica = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm<ICadastroPessoaFisica>({
+  const cadastroPessoaFisicaUseForm = useForm<ICadastroPessoaFisica>({
     resolver: zodResolver(createUserFormSchema)
   })
+  const { handleSubmit, formState: { errors } } = cadastroPessoaFisicaUseForm
+
 
   const createUser = (data: unknown) => {
     console.log(data)
@@ -42,24 +44,26 @@ export const CadastrarPessoaFisica = () => {
   return (
     <div className={styles.container}>
       <img className={styles.logo} src={logo} alt="GoBeleza" />
-      <form onSubmit={handleSubmit(createUser)} className={styles.form}>
-        <Input error={errors.email?.message} register={register} registerName={'email'} type='text' placeholder="Digite seu Email" mask="email" />
-        <Input error={errors.cpf?.message} register={register} registerName={'cpf'} type='text' placeholder="Digite seu CPF" mask='cpf' />
-        <Input error={errors.nome?.message} register={register} registerName={'nome'} type='text' placeholder="Digite seu Nome" />
-        <Input error={errors.telefone?.message} register={register} registerName={'telefone'} type='text' placeholder="Digite seu Telefone" mask="phoneNumber" />
-        <Select fatherClass={styles.select} register={register} registerName={'sexo'} label='Selecione seu Sexo' options={['masculino', 'feminino']} />
-        <div className={styles.endereco}>
-          <Input error={errors.endereco?.message} register={register} registerName={'endereco'} type='text' placeholder="Endereço" />
-          <Input error={errors.complemento?.message} register={register} registerName={'complemento'} type='text' placeholder="Complemento" />
-          <Input error={errors.numero?.message} register={register} registerName={'numero'} type='text' placeholder="Número ou S/N" />
-        </div>
-        <Input error={errors.password?.message} register={register} registerName={'password'} type='password' placeholder="Digite sua senha" />
-        <Input error={errors.passwordMatch?.message} register={register} registerName={'passwordMatch'} type='password' placeholder="Digite sua senha novamente" />
-        <div className={styles.buttons}>
-          <ActionButton value="Confirmar →" />
-          <ActionButton value="Voltar ←" />
-        </div>
-      </form>
+      <FormProvider {...cadastroPessoaFisicaUseForm}>
+        <form onSubmit={handleSubmit(createUser)} className={styles.form}>
+          <Input error={errors.email?.message} registerName={'email'} type='text' placeholder="Digite seu Email" mask="email" />
+          <Input error={errors.cpf?.message} registerName={'cpf'} type='text' placeholder="Digite seu CPF" mask='cpf' />
+          <Input error={errors.nome?.message} registerName={'nome'} type='text' placeholder="Digite seu Nome" />
+          <Input error={errors.telefone?.message} registerName={'telefone'} type='text' placeholder="Digite seu Telefone" mask="phoneNumber" />
+          <Select error={errors.sexo?.message} fatherClass={styles.select} registerName={'sexo'} label='Selecione seu Sexo' options={['masculino', 'feminino']} />
+          <div className={styles.endereco}>
+            <Input error={errors.endereco?.message} registerName={'endereco'} type='text' placeholder="Endereço" />
+            <Input error={errors.complemento?.message} registerName={'complemento'} type='text' placeholder="Complemento" />
+            <Input error={errors.numero?.message} registerName={'numero'} type='text' placeholder="Número ou S/N" />
+          </div>
+          <Input error={errors.password?.message} registerName={'password'} type='password' placeholder="Digite sua senha" />
+          <Input error={errors.passwordMatch?.message} registerName={'passwordMatch'} type='password' placeholder="Digite sua senha novamente" />
+          <div className={styles.buttons}>
+            <ActionButton value="Confirmar →" />
+            <ActionButton value="Voltar ←" />
+          </div>
+        </form>
+      </FormProvider>
     </div >
   )
 }
