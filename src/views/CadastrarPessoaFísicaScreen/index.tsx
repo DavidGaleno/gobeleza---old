@@ -10,7 +10,9 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 const createUserFormSchema = z.object({
-  email: z.string().nonempty('*Obrigatório').email('Formato de Email inválido').transform(email => email.toLocaleLowerCase()).refine(email => email.endsWith('@gmail.com')),
+  email: z.string().nonempty('*Obrigatório').email('Formato de Email inválido').transform(email => email.toLocaleLowerCase()).refine(email => email.endsWith('@gmail.com') || email.endsWith('@hotmail.com'), {
+    message: 'O E-mail deve terminar com @gmail.com ou @hotmail.com'
+  }),
   cpf: z.string().nonempty('*Obrigatório').transform(cpf => cpf.toLocaleLowerCase().trim()),
   nome: z.string().nonempty('*Obrigatório').transform(nome => nome.toLocaleLowerCase().trim()),
   telefone: z.string().nonempty('*Obrigatório').transform(telefone => telefone.toLocaleLowerCase().trim()),
@@ -20,7 +22,10 @@ const createUserFormSchema = z.object({
   numero: z.string().nonempty('*Obrigatório').transform(numero => numero.trim()),
   password: z.string().nonempty('*Obrigatório').min(8, 'A senha precisa ter no mínimo 8 caracteres').transform(password => password.trim()),
   passwordMatch: z.string().nonempty('*Obrigatório').min(8, 'A senha precisa ter no mínimo 8 caracteres').transform(password => password.trim())
-}).refine((data) => data.password !== data.passwordMatch, 'As senhas não conferem')
+}).refine(data => data.password === data.passwordMatch, {
+  path: ['passwordMatch'],
+  message:'As duas senhas não correspondem'
+})
 
 export const CadastrarPessoaFisica = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<ICadastroUsuario>({
@@ -30,7 +35,7 @@ export const CadastrarPessoaFisica = () => {
   const createUser = (data: unknown) => {
     console.log(data)
   }
- 
+
   return (
     <div className={styles.container}>
       <img className={styles.logo} src={logo} alt="GoBeleza" />
@@ -47,7 +52,7 @@ export const CadastrarPessoaFisica = () => {
         </div>
         <Input error={errors.password?.message} register={register} registerName={'password'} type='password' placeholder="Digite sua senha" />
         <Input error={errors.passwordMatch?.message} register={register} registerName={'passwordMatch'} type='password' placeholder="Confirme sua senha" />
-          <div className={styles.buttons}>
+        <div className={styles.buttons}>
           <ActionButton value="Confirmar →" />
           <ActionButton value="Voltar ←" />
         </div>
