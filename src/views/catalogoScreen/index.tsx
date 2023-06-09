@@ -19,7 +19,7 @@ import { CarrinhoCompras } from '../../components/CarrinhoCompras'
 export const CatalogoScreen = () => {
     const [menuVisible, setMenuVisible] = useState(false)
     const [carrinhoComprasVisible, setCarrinhoComprasVisible] = useState(false)
-    const [listaDesejosVisible, setlistaDesejosVisible] = useState(false)
+    const [listaDesejosVisible, setListaDesejosVisible] = useState(false)
     return (
         <div className={styles.container}>
             <header>
@@ -35,7 +35,7 @@ export const CatalogoScreen = () => {
                     </div>
                     <LoginIcon fatherClass={`${styles.mobileMenu}`} image={menuHamburguer} alt='Menu' onClick={() => setMenuVisible(!menuVisible)} />
                     <LoginIcon fatherClass={`${styles.desktopIcon}`} image={carrinhoCompras} alt='Carrinho de Compras' onClick={() => setCarrinhoComprasVisible(!carrinhoComprasVisible)} />
-                    <LoginIcon fatherClass={`${styles.desktopIcon}`} image={listaDesejos} alt='Lista de Desejos' />
+                    <LoginIcon fatherClass={`${styles.desktopIcon}`} image={listaDesejos} alt='Lista de Desejos' onClick={() => setListaDesejosVisible(!listaDesejosVisible)} />
                 </nav>
             </header>
             <main>
