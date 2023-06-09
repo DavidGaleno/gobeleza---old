@@ -38,7 +38,6 @@ export const Input = ({ type, placeholder, mask, fatherClass, registerName, erro
     }
 
 
-
     return (
         <div className={styles.container}>
             <input {...register(registerName)} type={type} className={`${styles.input} ${fatherClass}`} placeholder={placeholder} onChange={(e) => checkMask(e)} />

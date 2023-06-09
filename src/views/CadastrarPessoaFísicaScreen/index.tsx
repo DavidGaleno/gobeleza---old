@@ -20,7 +20,7 @@ const cadastroPessoaFisicaSchema = z.object({
   complemento: z.string().nonempty('*Obrigatório').transform(complemento => complemento.toLocaleLowerCase().trim()),
   numero: z.string().nonempty('*Obrigatório').transform(numero => numero.trim()),
   password: z.string().nonempty('*Obrigatório').min(8, 'A senha precisa ter no mínimo 8 caracteres').transform(password => password.trim()),
-  passwordMatch: z.string().nonempty('*Obrigatório').min(8, 'A senha precisa ter no mínimo 8 caracteres').transform(password => password.trim())
+  passwordMatch: z.string().nonempty('*Obrigatório').min(8, 'A senha precisa ter no mínimo 8 caracteres').transform(password => password.trim()),
 }).refine(data => data.password === data.passwordMatch, {
   path: ['passwordMatch'],
   message: 'As duas senhas não correspondem'
@@ -35,10 +35,14 @@ export const CadastrarPessoaFisica = () => {
   })
 
 
+
   const { handleSubmit, formState: { errors } } = cadastroPessoaJuridicaUseForm
   const cadastrar = (data: CadastroPessoaFisicaType) => {
     console.log(data)
   }
+
+
+
 
   return (
     <div className={styles.container}>
