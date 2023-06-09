@@ -9,9 +9,4 @@ export interface ICadastroPessoaFisica {
     numero: string
     password: string
     passwordMatch: string
-    techs: Tech[]
-}
-interface Tech {
-    title: string
-    knowledge: number
 }
