@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import { LoginScreen } from "../views/LoginScreen";
 import App from "../App";
 import { ProductCatalogScreen } from "../views/ProductCatalogScreen";
 import { CadastrarPessoaFisica } from "../views/CadastrarPessoaFísicaScreen";
@@ -16,6 +15,7 @@ import { SelectPaymentMethodOption } from "../views/SelectPaymentMethodOptions";
 import { MinhaContaFuncionario } from "../views/MinhaContaFuncionario";
 import { MinhaContaUsuario } from "../views/MinhaContaUsuario";
 import { SaloonCatalogScreen } from "../views/SaloonCatalogScreen";
+import { LoginScreen } from "../views/LoginScreen";
 
 export const router = createBrowserRouter([
     {
