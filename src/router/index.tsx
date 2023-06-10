@@ -15,7 +15,7 @@ import { SelectPaymentMethodOption } from "../views/SelectPaymentMethodOptions";
 import { MinhaContaFuncionario } from "../views/MinhaContaFuncionario";
 import { MinhaContaUsuario } from "../views/MinhaContaUsuario";
 import { SaloonCatalogScreen } from "../views/SaloonCatalogScreen";
-import { LoginScreen } from "../views/LoginScreen";
+import { LoginScreen } from "../views/LoginScreen/index";
 
 export const router = createBrowserRouter([
     {
