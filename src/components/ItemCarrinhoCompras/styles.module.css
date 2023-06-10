@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid var(--gray);
+    gap: 1rem;
+    padding: 1rem;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+h2{
+    font-weight: 200;
+}
+h3{
+    font-weight: 200;
+}
+.image{
+    width: 50%;
+}
+
+.exclude{
+    cursor: pointer;
+    font-size: 3rem;
+    display: flex;
+    height: 100%;
+    align-self: flex-start;
+    color: var(--gray);
+}
+
