@@ -5,10 +5,10 @@ export const SelectPasswordRecoveryOptionsScreen = () => {
         <div className={styles.container}>
             <h1 className={styles.titulo}>Como Deseja Mudar sua Senha:</h1>
             <div className={styles.buttons}>
-                <ActionButton value="Email →" />
-                <ActionButton value="Telefone →" />
+                <ActionButton path="/recuperar_senha_email" value="Email →" />
+                <ActionButton path="/recuperar_senha_telefone" value="Telefone →" />
             </div>
-                <ActionButton value="Voltar ←" />
+                <ActionButton path="/" value="Voltar ←" />
         </div>
     )
 }

@@ -7,6 +7,7 @@ import { File } from '../../components/File'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FormProvider, useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router'
 
 const cadastroPessoaJuridicaSchema = z.object({
   email: z.string().nonempty('*Obrigatório').email('Formato de Email inválido').transform(email => email.toLocaleLowerCase()).refine(email => email.endsWith('@gmail.com') || email.endsWith('@hotmail.com'), {
@@ -30,10 +31,13 @@ export const CadastrarPessoaJuridica = () => {
     resolver: zodResolver(cadastroPessoaJuridicaSchema)
   })
 
+  const navigate = useNavigate()
+
 
   const { handleSubmit, formState: { errors } } = cadastroPessoaJuridicaUseForm
   const cadastrar = (data: CadastroUsuarioType) => {
     console.log(data)
+    navigate('/')
   }
 
   return (
@@ -53,7 +57,7 @@ export const CadastrarPessoaJuridica = () => {
           <File registerName='image' error={errors.image?.message} label='Adicione uma foto do salão' />
           <div className={styles.buttons}>
             <ActionButton value="Confirmar →" />
-            <ActionButton value="Voltar ←" />
+            <ActionButton value="Voltar ←" path='/cadastrar_opcoes' />
           </div>
         </form>
       </FormProvider>

@@ -5,10 +5,10 @@ export const SelectSubscribeOption = () => {
         <div className={styles.container}>
             <h1 className={styles.titulo}>Cadastrar Como:</h1>
             <div className={styles.buttons}>
-                <ActionButton value="Salão de Beleza →" />
-                <ActionButton value="Pessoa Física →" />
+                <ActionButton value="Salão de Beleza →" path="/cadastrar_salao" />
+                <ActionButton value="Pessoa Física →" path="/cadastrar_usuario" />
             </div>
-                <ActionButton value="Voltar ←" />
+            <ActionButton value="Voltar ←" path="/" />
         </div>
     )
 }

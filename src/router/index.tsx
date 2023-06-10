@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { LoginScreen } from "../views/loginScreen";
+import { LoginScreen } from "../views/LoginScreen";
 import App from "../App";
 import { ProductCatalogScreen } from "../views/ProductCatalogScreen";
 import { CadastrarPessoaFisica } from "../views/CadastrarPessoaFísicaScreen";
@@ -37,10 +37,6 @@ export const router = createBrowserRouter([
             {
                 path: '/cadastrar_usuario',
                 element: <CadastrarPessoaFisica />
-            },
-            {
-                path: '/cadastrar_salao',
-                element: <CadastrarPessoaJuridica />
             },
             {
                 path: '/cadastrar_salao',

@@ -7,6 +7,7 @@ import styles from './styles.module.css'
 import { Select } from '../../components/Select'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useNavigate } from 'react-router'
 
 const cadastroPessoaFisicaSchema = z.object({
   email: z.string().nonempty('*Obrigatório').email('Formato de Email inválido').transform(email => email.toLocaleLowerCase()).refine(email => email.endsWith('@gmail.com') || email.endsWith('@hotmail.com'), {
@@ -26,10 +27,14 @@ const cadastroPessoaFisicaSchema = z.object({
   message: 'As duas senhas não correspondem'
 })
 
-type CadastroPessoaFisicaType = z.infer<typeof cadastroPessoaFisicaSchema>
-
-
 export const CadastrarPessoaFisica = () => {
+
+
+  const navigate = useNavigate()
+
+  type CadastroPessoaFisicaType = z.infer<typeof cadastroPessoaFisicaSchema>
+
+
   const cadastroPessoaJuridicaUseForm = useForm<CadastroPessoaFisicaType>({
     resolver: zodResolver(cadastroPessoaFisicaSchema)
   })
@@ -39,8 +44,8 @@ export const CadastrarPessoaFisica = () => {
   const { handleSubmit, formState: { errors } } = cadastroPessoaJuridicaUseForm
   const cadastrar = (data: CadastroPessoaFisicaType) => {
     console.log(data)
+    navigate('/')
   }
-
 
 
 
@@ -63,7 +68,7 @@ export const CadastrarPessoaFisica = () => {
           <Input error={errors.passwordMatch?.message} registerName={'passwordMatch'} type='password' placeholder="Confirme sua senha" />
           <div className={styles.buttons}>
             <ActionButton value="Confirmar →" />
-            <ActionButton value="Voltar ←" />
+            <ActionButton value="Voltar ←" path='/cadastrar_opcoes' />
           </div>
         </form>
       </FormProvider>

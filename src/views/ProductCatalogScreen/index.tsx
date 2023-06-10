@@ -20,7 +20,9 @@ import { Item } from '../../components/Item'
 import { Link } from 'react-router-dom'
 
 
+
 export const ProductCatalogScreen = () => {
+
     const [menuVisible, setMenuVisible] = useState(false)
     const [carrinhoComprasVisible, setCarrinhoComprasVisible] = useState(false)
     const [listaDesejosVisible, setListaDesejosVisible] = useState(false)
