@@ -45,6 +45,10 @@ main {
     padding: 3rem;
 }
 
+.filter{
+    cursor: pointer;
+}
+
 h1 {
     font-weight: 400;
     font-size: 4rem;

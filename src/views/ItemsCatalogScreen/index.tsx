@@ -4,8 +4,6 @@ import menuHamburguer from '../../assets/menuHamburguer.svg'
 import carrinhoCompras from '../../assets/carrinhoCompras.svg'
 import listaDesejos from '../../assets/listaDesejos.svg'
 import { LoginIcon } from '../../components/LoginIcon'
-import batom from '../../assets/batom.png'
-import maquiagem from '../../assets/maquiagem.png'
 //CSS
 import styles from './styles.module.css'
 
@@ -18,14 +16,20 @@ import { Title } from '../../components/Title'
 import { ListaDesejos } from '../../components/ListaDesejos'
 import { Item } from '../../components/Item'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { CatalogoItensContext } from '../../Context/CatalogoItensContext'
+import { IProduto } from '../../interfaces/IProduto'
+import { IServico } from '../../interfaces/IServico'
 
 
-
-export const ProductCatalogScreen = () => {
+export const ItemsCatalogScreen = () => {
 
     const [menuVisible, setMenuVisible] = useState(false)
     const [carrinhoComprasVisible, setCarrinhoComprasVisible] = useState(false)
     const [listaDesejosVisible, setListaDesejosVisible] = useState(false)
+    const [itensExibidos, setItensExibidos] = useState('Produtos')
+    const { produtos, servicos } = useContext(CatalogoItensContext)
+
     return (
         <div className={styles.container}>
             <header>
@@ -35,8 +39,8 @@ export const ProductCatalogScreen = () => {
                 <ListaDesejos visible={listaDesejosVisible} setVisible={setListaDesejosVisible} />
                 <nav>
                     <div className={styles.desktopMenu}>
-                        <a href="#">Produtos</a>
-                        <a href="#">Serviços</a>
+                        <a className={styles.filter} onClick={() => setItensExibidos('Produtos')}>Produtos</a>
+                        <a className={styles.filter} onClick={() => setItensExibidos('Serviços')}>Serviços</a>
                         <Link color='gray' to={'/minha_conta_usuario'}>Minha Conta</Link>
                         <Link color='gray' to={'/'}>Sair</Link>
 
@@ -47,16 +51,17 @@ export const ProductCatalogScreen = () => {
                 </nav>
             </header>
             <main>
-                <Title value="Catálogo de Produtos" />
+                <Title value={`Catalogo de ${itensExibidos}`} />
                 <div className={styles.itens}>
-                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} />
-                    <Item image={maquiagem} alt="Maquiagem" nome="Maquiagem" preco={29.99} />
-                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} />
-                    <Item image={maquiagem} alt="Maquiagem" nome="Maquiagem" preco={29.99} />
-                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} />
-                    <Item image={maquiagem} alt="Maquiagem" nome="Maquiagem" preco={29.99} />
-                    <Item image={batom} alt="Batom" nome="Batom" preco={9.99} />
-                    <Item image={maquiagem} alt="Maquiagem" nome="Maquiagem" preco={29.99} />
+                    {itensExibidos === 'Produtos' ?
+                        produtos.map((produto: IProduto) => (
+                            <Item key={produto.id} image={produto.imagem} alt={produto.nome} nome={produto.nome} preco={produto.preco} />
+                        ))
+                        :
+                        servicos.map((servico: IServico) => (
+                            <Item key={servico.id} image={servico.imagem} alt={servico.nome} nome={servico.nome} preco={servico.preco} />
+                        ))
+                    }
                 </div>
             </main>
         </div>

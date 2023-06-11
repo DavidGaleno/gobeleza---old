@@ -9,7 +9,7 @@ interface Props {
     nome: string
     preco: number
 }
-export const Item = ({ image, alt, nome, preco}: Props) => {
+export const Item = ({ image, alt, nome, preco }: Props) => {
     return (
         <div className={`${styles.container}`}>
             <img src={image} alt={alt} />

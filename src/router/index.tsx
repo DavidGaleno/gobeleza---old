@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import { ProductCatalogScreen } from "../views/ProductCatalogScreen";
+import { ItemsCatalogScreen } from "../views/ItemsCatalogScreen";
 import { CadastrarPessoaFisica } from "../views/CadastrarPessoaFísicaScreen";
 import { CadastrarPessoaJuridica } from "../views/CadastrarPessoaJuridicaScreen";
 import { DashboardScreen } from "../views/DashboardScreen";
@@ -33,7 +33,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/catalogo_produtos',
-                element: <ProductCatalogScreen />
+                element: <ItemsCatalogScreen />
             },
             {
                 path: '/cadastrar_usuario',
