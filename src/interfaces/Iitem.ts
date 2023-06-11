@@ -1,3 +1,5 @@
+import { tipoItemEnum } from "../Enuns/tipoItemEnum"
+
 export interface Iitem {
     id: number,
     nome: string
