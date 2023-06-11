@@ -19,7 +19,7 @@ export const MinhaContaUsuario = () => {
                 <Campo label='Senha' value='12312312123g' changeValue={true} />
                 <Campo label='Tipo Conta' value='Cliente' changeValue={false} />
             </div>
-            <ActionButton fatherClass={styles.button} value="Voltar ←" path='/catalogo_produtos' />
+            <ActionButton fatherClass={styles.button} value="Voltar ←" path='/catalogo_itens' />
         </div>
 
     )

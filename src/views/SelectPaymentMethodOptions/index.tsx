@@ -8,7 +8,7 @@ export const SelectPaymentMethodOption = () => {
                 <ActionButton value="PIX →" path="/pagamento_pix"/>
                 <ActionButton value="Cartão →" path="/pagamento_cartao" />
             </div>
-                <ActionButton value="Voltar ←" path="/catalogo_produtos" />
+                <ActionButton value="Voltar ←" path="/catalogo_itens" />
         </div>
     )
 }

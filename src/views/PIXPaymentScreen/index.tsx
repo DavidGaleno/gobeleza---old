@@ -28,7 +28,7 @@ export const PIXPaymentScreen = () => {
 
   const avancar = (data: pixPaymentType) => {
     console.log(data)
-    navigate('/catalogo_produtos')
+    navigate('/catalogo_itens')
   }
 
   const { handleSubmit, formState: { errors } } = pixPaymentUseForm

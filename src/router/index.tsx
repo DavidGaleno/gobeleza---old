@@ -32,7 +32,7 @@ export const router = createBrowserRouter([
                 element: <SaloonCatalogScreen />
             },
             {
-                path: '/catalogo_produtos',
+                path: '/catalogo_itens',
                 element: <ItemsCatalogScreen />
             },
             {

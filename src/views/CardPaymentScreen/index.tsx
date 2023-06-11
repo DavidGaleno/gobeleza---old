@@ -38,7 +38,7 @@ export const CardPaymentScreen = () => {
 
   const pagar = (data: cartaoPagamentoType) => {
     console.log(data)
-    navigate('/catalogo_produtos')
+    navigate('/catalogo_itens')
   }
 
   const [modalidade, setModalidade] = useState('')
