@@ -2,7 +2,7 @@
 import logo from '../../assets/logo.png'
 import menuHamburguer from '../../assets/menuHamburguer.svg'
 import carrinhoCompras from '../../assets/carrinhoCompras.svg'
-import listaDesejos from '../../assets/listaDesejos.svg'
+import listaDesejosIcon from '../../assets/listaDesejos.svg'
 import { LoginIcon } from '../../components/LoginIcon'
 //CSS
 import styles from './styles.module.css'
@@ -18,17 +18,17 @@ import { Item } from '../../components/Item'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { CatalogoItensContext } from '../../Context/CatalogoItensContext'
-import { IProduto } from '../../interfaces/IProduto'
-import { IServico } from '../../interfaces/IServico'
+import { Iitem } from '../../interfaces/Iitem'
 
 
 export const ItemsCatalogScreen = () => {
+
 
     const [menuVisible, setMenuVisible] = useState(false)
     const [carrinhoComprasVisible, setCarrinhoComprasVisible] = useState(false)
     const [listaDesejosVisible, setListaDesejosVisible] = useState(false)
     const [itensExibidos, setItensExibidos] = useState('Produtos')
-    const { produtos, servicos } = useContext(CatalogoItensContext)
+    const { itens} = useContext(CatalogoItensContext)
 
     return (
         <div className={styles.container}>
@@ -47,19 +47,19 @@ export const ItemsCatalogScreen = () => {
                     </div>
                     <LoginIcon fatherClass={`${styles.mobileMenu}`} image={menuHamburguer} alt='Menu' onClick={() => setMenuVisible(!menuVisible)} />
                     <LoginIcon fatherClass={`${styles.desktopIcon}`} image={carrinhoCompras} alt='Carrinho de Compras' onClick={() => setCarrinhoComprasVisible(!carrinhoComprasVisible)} />
-                    <LoginIcon fatherClass={`${styles.desktopIcon}`} image={listaDesejos} alt='Lista de Desejos' onClick={() => setListaDesejosVisible(!listaDesejosVisible)} />
+                    <LoginIcon fatherClass={`${styles.desktopIcon}`} image={listaDesejosIcon} alt='Lista de Desejos' onClick={() => setListaDesejosVisible(!listaDesejosVisible)} />
                 </nav>
             </header>
             <main>
                 <Title value={`Catalogo de ${itensExibidos}`} />
                 <div className={styles.itens}>
                     {itensExibidos === 'Produtos' ?
-                        produtos.map((produto: IProduto) => (
-                            <Item key={produto.id} image={produto.imagem} alt={produto.nome} nome={produto.nome} preco={produto.preco} />
+                        itens.filter(item => item.categoria === 'produto').map((item: Iitem) => (
+                            <Item item={item} key={item.id} image={item.imagem} alt={item.nome} nome={item.nome} preco={item.preco} />
                         ))
                         :
-                        servicos.map((servico: IServico) => (
-                            <Item key={servico.id} image={servico.imagem} alt={servico.nome} nome={servico.nome} preco={servico.preco} />
+                        itens.filter(item => item.categoria === 'servico').map((item: Iitem) => (
+                            <Item item={item} key={item.id} image={item.imagem} alt={item.nome} nome={item.nome} preco={item.preco} />
                         ))
                     }
                 </div>

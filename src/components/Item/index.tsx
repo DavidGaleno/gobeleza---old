@@ -1,15 +1,20 @@
+import { Iitem } from "../../interfaces/Iitem"
 import { ActionButton } from "../ActionButton"
 import { DesireListButton } from "../DesireListButton"
 
 import styles from './styles.module.css'
 
 interface Props {
+    item: Iitem
     image: string
     alt: string
     nome: string
     preco: number
 }
-export const Item = ({ image, alt, nome, preco }: Props) => {
+
+export const Item = ({ item, image, alt, nome, preco }: Props) => {
+
+
     return (
         <div className={`${styles.container}`}>
             <img src={image} alt={alt} />
@@ -19,7 +24,7 @@ export const Item = ({ image, alt, nome, preco }: Props) => {
             </div>
             <div className={styles.buttons}>
                 <ActionButton value="Comprar →" />
-                <DesireListButton />
+                <DesireListButton item={item} />
             </div>
 
         </div>

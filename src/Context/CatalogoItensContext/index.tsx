@@ -1,5 +1,4 @@
 import { createContext, useState } from "react";
-import { IProduto } from "../../interfaces/IProduto";
 
 
 
@@ -27,7 +26,8 @@ import progressiva from '../../assets/progressiva.png'
 import luzes from '../../assets/luzes.png'
 import sobrancelha from '../../assets/sobrancelha.png'
 import { ICatalogoItens } from "../../interfaces/ICatalogoItens";
-import { IServico } from "../../interfaces/IServico";
+import { Iitem } from "../../interfaces/Iitem";
+import { tipoItemEnum } from "../../Enuns/tipoItemEnum";
 export const CatalogoItensContext = createContext<ICatalogoItens>({} as ICatalogoItens)
 CatalogoItensContext.displayName = 'Catalogo Produtos Context'
 
@@ -61,7 +61,7 @@ const datasHorariosAgendamento = ["Sun Jun 11 2023 08:00:00 GMT-0300 (Horário P
 
 export const CatalogoItensProvider = ({ children }: any) => {
 
-    const [produtos, setProdutos] = useState<IProduto[]>([
+    const [itens, setItens] = useState<Iitem[]>([
         {
             id: 1,
             nome: 'Batom',
@@ -69,7 +69,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             imagem: batom,
             listaDesejos: false,
             carrinhoCompras: false,
-            quantidadeEstoque: 500
+            quantidadeEstoque: 500,
+            categoria: tipoItemEnum['produto']
         },
         {
             id: 2,
@@ -78,7 +79,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             imagem: barbeador,
             listaDesejos: false,
             carrinhoCompras: false,
-            quantidadeEstoque: 50
+            quantidadeEstoque: 50,
+            categoria: tipoItemEnum['produto']
         },
         {
             id: 3,
@@ -87,7 +89,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             imagem: maquiagem,
             listaDesejos: false,
             carrinhoCompras: false,
-            quantidadeEstoque: 146
+            quantidadeEstoque: 146,
+            categoria: tipoItemEnum['produto']
         },
         {
             id: 4,
@@ -96,7 +99,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             imagem: cortadorUnha,
             listaDesejos: false,
             carrinhoCompras: false,
-            quantidadeEstoque: 94
+            quantidadeEstoque: 94,
+            categoria: tipoItemEnum['produto']
         },
         {
             id: 5,
@@ -105,7 +109,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             imagem: tesoura,
             carrinhoCompras: false,
             listaDesejos: false,
-            quantidadeEstoque: 32
+            quantidadeEstoque: 32,
+            categoria: tipoItemEnum['produto']
         },
         {
             id: 6,
@@ -114,7 +119,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             imagem: shampoo,
             carrinhoCompras: false,
             listaDesejos: false,
-            quantidadeEstoque: 25
+            quantidadeEstoque: 25,
+            categoria: tipoItemEnum['produto']
         },
         {
             id: 7,
@@ -123,7 +129,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             imagem: hidratanteFacial,
             carrinhoCompras: false,
             listaDesejos: false,
-            quantidadeEstoque: 10
+            quantidadeEstoque: 10,
+            categoria: tipoItemEnum['produto']
         },
         {
             id: 8,
@@ -132,7 +139,9 @@ export const CatalogoItensProvider = ({ children }: any) => {
             imagem: perfumeMasculino,
             carrinhoCompras: false,
             listaDesejos: false,
-            quantidadeEstoque: 34
+            quantidadeEstoque: 34,
+            categoria: tipoItemEnum['produto']
+
         },
         {
             id: 9,
@@ -141,7 +150,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             imagem: perfumeFeminino,
             carrinhoCompras: false,
             listaDesejos: false,
-            quantidadeEstoque: 48
+            quantidadeEstoque: 48,
+            categoria: tipoItemEnum['produto']
         },
         {
             id: 10,
@@ -150,7 +160,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             imagem: cremeMaos,
             carrinhoCompras: false,
             listaDesejos: false,
-            quantidadeEstoque: 48
+            quantidadeEstoque: 48,
+            categoria: tipoItemEnum['produto']
         },
         {
             id: 11,
@@ -159,7 +170,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             imagem: cremeCorporal,
             carrinhoCompras: false,
             listaDesejos: false,
-            quantidadeEstoque: 23
+            quantidadeEstoque: 23,
+            categoria: tipoItemEnum['produto']
         },
         {
             id: 12,
@@ -168,7 +180,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             imagem: escovaCabelo,
             carrinhoCompras: false,
             listaDesejos: false,
-            quantidadeEstoque: 102
+            quantidadeEstoque: 102,
+            categoria: tipoItemEnum['produto']
         },
         {
             id: 13,
@@ -177,88 +190,100 @@ export const CatalogoItensProvider = ({ children }: any) => {
             imagem: gelBarbear,
             carrinhoCompras: false,
             listaDesejos: false,
-            quantidadeEstoque: 48
-        }
-    ])
-
-    const [servicos, setServicos] = useState<IServico[]>([
+            quantidadeEstoque: 48,
+            categoria: tipoItemEnum['produto']
+        },
         {
-            id: 1,
+            id: 14,
             nome: 'Lavar Cabelo',
             preco: 79.99,
             imagem: lavarCabelo,
             listaDesejos: false,
             carrinhoCompras: false,
-            dataHorarioAgendamento: datasHorariosAgendamento
+            dataHorarioAgendamento: datasHorariosAgendamento,
+            categoria: tipoItemEnum['servico']
         },
         {
-            id: 2,
+            id: 15,
             nome: 'Cortar Cabelo de Mulher',
             preco: 49.99,
             imagem: cortarCabeloMulher,
             listaDesejos: false,
             carrinhoCompras: false,
-            dataHorarioAgendamento: datasHorariosAgendamento
+            dataHorarioAgendamento: datasHorariosAgendamento,
+            categoria: tipoItemEnum['servico']
 
         },
         {
-            id: 3,
+            id: 16,
             nome: 'Manicure',
             preco: 29.99,
             imagem: manicure,
             listaDesejos: false,
             carrinhoCompras: false,
-            dataHorarioAgendamento: datasHorariosAgendamento
+            dataHorarioAgendamento: datasHorariosAgendamento,
+            categoria: tipoItemEnum['servico']
+
         },
         {
-            id: 4,
+            id: 17,
             nome: 'Pintar Cabelo Mulher',
             preco: 69.99,
             imagem: pintarCabeloMulher,
             listaDesejos: false,
             carrinhoCompras: false,
-            dataHorarioAgendamento: datasHorariosAgendamento
+            dataHorarioAgendamento: datasHorariosAgendamento,
+            categoria: tipoItemEnum['servico']
+
         },
         {
-            id: 5,
+            id: 18,
             nome: 'Cortar Cabelo de Homem',
             preco: 39.99,
             imagem: cortarCabeloHomem,
             carrinhoCompras: false,
             listaDesejos: false,
-            dataHorarioAgendamento: datasHorariosAgendamento
+            dataHorarioAgendamento: datasHorariosAgendamento,
+            categoria: tipoItemEnum['servico']
+
         },
         {
-            id: 6,
+            id: 19,
             nome: "Progressiva",
             preco: 199.99,
             imagem: progressiva,
             carrinhoCompras: false,
             listaDesejos: false,
-            dataHorarioAgendamento: datasHorariosAgendamento
+            dataHorarioAgendamento: datasHorariosAgendamento,
+            categoria: tipoItemEnum['servico']
+
         },
         {
-            id: 7,
+            id: 20,
             nome: "Luzes",
             preco: 79.99,
             imagem: luzes,
             carrinhoCompras: false,
             listaDesejos: false,
-            dataHorarioAgendamento: datasHorariosAgendamento
+            dataHorarioAgendamento: datasHorariosAgendamento,
+            categoria: tipoItemEnum['servico']
+
         },
         {
-            id: 8,
+            id: 21,
             nome: "Sobrancelha",
             preco: 89.99,
             imagem: sobrancelha,
             carrinhoCompras: false,
             listaDesejos: false,
-            dataHorarioAgendamento: datasHorariosAgendamento
-        },
+            dataHorarioAgendamento: datasHorariosAgendamento,
+            categoria: tipoItemEnum['servico']
+
+        }
 
     ])
     return (
-        <CatalogoItensContext.Provider value={{ produtos, setProdutos, servicos, setServicos }}>
+        <CatalogoItensContext.Provider value={{ itens, setItens }}>
             {children}
         </CatalogoItensContext.Provider>
     )
