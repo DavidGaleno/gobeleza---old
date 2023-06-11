@@ -16,6 +16,7 @@ import { MinhaContaFuncionario } from "../views/MinhaContaFuncionario";
 import { MinhaContaUsuario } from "../views/MinhaContaUsuario";
 import { SaloonCatalogScreen } from "../views/SaloonCatalogScreen";
 import { LoginScreen } from "../views/LoginScreen/index";
+import { NovaSenhaScreen } from "../views/NovaSenhaScreen";
 
 export const router = createBrowserRouter([
     {
@@ -69,6 +70,10 @@ export const router = createBrowserRouter([
             {
                 path: '/recuperar_senha_opcoes',
                 element: <SelectPasswordRecoveryOptionsScreen />
+            },
+            {
+                path: '/nova_senha',
+                element: <NovaSenhaScreen />
             },
             {
                 path: '/cadastrar_opcoes',

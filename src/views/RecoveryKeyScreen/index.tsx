@@ -28,7 +28,7 @@ export const RecoveryKeyScreen = () => {
 
   const enviar = (data: recoveryKeyType) => {
     console.log(data)
-    navigate('/catalogo_opcoes')
+    navigate('/nova_senha')
   }
   return (
     <div className={styles.container}>
