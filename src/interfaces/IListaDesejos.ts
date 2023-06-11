@@ -1,8 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
-import { IProduto } from "./IProduto";
-import { IServico } from "./IServico";
+import { Iitem } from "./Iitem";
 
 export interface IListaDesejos {
-    listaDesejos: IProduto[] | IServico[]
-    setListaDesejos: Dispatch<SetStateAction<IProduto[] | IServico[]>>
+    listaDesejos: Iitem[]
+    setListaDesejos: Dispatch<SetStateAction<Iitem[]>>
 }
