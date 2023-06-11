@@ -36,14 +36,15 @@ export const DashboardScreen = () => {
                         <span className={`${styles.category} ${styles.filter}`}>Serviços</span>
                         <span className={`${styles.category} ${styles.filter}`}>Usuários</span>
                     </div>
-                    <div className={styles.categories}><span className={styles.filter}>Todos</span></div>
                 </div>
                 <div className={styles.data}>
                     <LoginIcon fatherClass={styles.desktopDashboardIcon} image={powerBI} alt='PowerBI' />
                     <div className={styles.cards}>
-                        <Card label='Quantidade' value='353' />
-                        <Card label='Porcentagem' value='100%' />
-                    </div>
+                        <Card label='Vendas' value='353' />
+                        <Card label='Produto Mais Vendido' value='Batom' />
+                        <Card label='Serviço Mais Vendido' value='Batom' />
+                        <Card label='Maior Comprador' value='Lúcio Costa' />
+                    </div>  
                     <LoginIcon fatherClass={styles.desktopDashboardIcon} image={excel} alt='Excel' />
 
                     <div className={`${styles.dashboardIcons} ${styles.mobileDashboardIcons}`}>

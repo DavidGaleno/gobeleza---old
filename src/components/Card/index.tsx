@@ -6,8 +6,8 @@ interface Props {
 export const Card = ({ label, value }: Props) => {
     return (
         <div className={styles.card}>
-            <h2>{label}</h2>
-            <h3>{value}</h3>
+            <h2 className={styles.label}>{label}</h2>
+            <h3 className={styles.value}>{value}</h3>
         </div>
     )
 }
