@@ -11,6 +11,33 @@ header {
     width: 6rem;
 }
 
+.carrinhoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.counter {
+    content: '';
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    top: 0;
+    right: 0;
+    background-color: black;
+    border-radius: 50%;
+    z-index: 5;
+}
+
+.counterText {
+    color: white;
+    font-size: 1.7rem;
+}
+
 nav {
     display: flex;
     justify-content: center;
@@ -45,7 +72,7 @@ main {
     padding: 3rem;
 }
 
-.filter{
+.filter {
     cursor: pointer;
 }
 
@@ -63,7 +90,8 @@ h1 {
     font-size: 2rem;
     transition: all .1s ease, transform .3s ease-in-out;
 }
-.desktopMenu > a:hover{
+
+.desktopMenu>a:hover {
     color: var(--black);
     transform: scale(1.1);
 }
@@ -80,13 +108,13 @@ h1 {
         display: grid;
         justify-content: flex-start;
         align-content: center;
-        grid-template-columns:  repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media screen and (min-width:1024px) {
     .itens {
-        grid-template-columns:  repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -95,9 +123,11 @@ h1 {
     .logo {
         width: 9rem;
     }
+
     .itens {
-        grid-template-columns:  repeat(4,1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
+
     .desktopMenu>a {
         font-size: 3rem;
     }
@@ -109,9 +139,11 @@ h1 {
     .logo {
         width: 9rem;
     }
+
     .itens {
-        grid-template-columns: repeat(5,1fr);
+        grid-template-columns: repeat(5, 1fr);
     }
+
     .desktopMenu>a {
         font-size: 3rem;
     }

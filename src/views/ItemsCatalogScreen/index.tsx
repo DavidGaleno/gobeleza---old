@@ -1,7 +1,7 @@
 //Images
 import logo from '../../assets/logo.png'
 import menuHamburguer from '../../assets/menuHamburguer.svg'
-import carrinhoCompras from '../../assets/carrinhoCompras.svg'
+import carrinhoComprasIcon from '../../assets/carrinhoCompras.svg'
 import listaDesejosIcon from '../../assets/listaDesejos.svg'
 import { LoginIcon } from '../../components/LoginIcon'
 //CSS
@@ -10,6 +10,7 @@ import styles from './styles.module.css'
 //React Libraries
 import { useState } from 'react'
 
+//Components
 import { MobileMenu } from '../../components/MobileMenu'
 import { CarrinhoCompras } from '../../components/CarrinhoCompras'
 import { Title } from '../../components/Title'
@@ -18,7 +19,10 @@ import { Item } from '../../components/Item'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { CatalogoItensContext } from '../../Context/CatalogoItensContext'
+
+//Interfaces
 import { Iitem } from '../../interfaces/Iitem'
+import { CarrinhoComprasContext } from '../../Context/CarrinhoComprasContext'
 
 
 export const ItemsCatalogScreen = () => {
@@ -28,7 +32,9 @@ export const ItemsCatalogScreen = () => {
     const [carrinhoComprasVisible, setCarrinhoComprasVisible] = useState(false)
     const [listaDesejosVisible, setListaDesejosVisible] = useState(false)
     const [itensExibidos, setItensExibidos] = useState('Produtos')
-    const { itens} = useContext(CatalogoItensContext)
+    const { itens } = useContext(CatalogoItensContext)
+
+    const { carrinhoCompras } = useContext(CarrinhoComprasContext)
 
     return (
         <div className={styles.container}>
@@ -46,7 +52,14 @@ export const ItemsCatalogScreen = () => {
 
                     </div>
                     <LoginIcon fatherClass={`${styles.mobileMenu}`} image={menuHamburguer} alt='Menu' onClick={() => setMenuVisible(!menuVisible)} />
-                    <LoginIcon fatherClass={`${styles.desktopIcon}`} image={carrinhoCompras} alt='Carrinho de Compras' onClick={() => setCarrinhoComprasVisible(!carrinhoComprasVisible)} />
+                    <div className={styles.carrinhoContainer}>
+                        {carrinhoCompras.length > 0 &&
+                            <div className={styles.counter}>
+                                <span className={styles.counterText}>{carrinhoCompras.length}X</span>
+                            </div>
+                        }
+                        <LoginIcon fatherClass={`${styles.desktopIcon}`} image={carrinhoComprasIcon} alt='Carrinho de Compras' onClick={() => setCarrinhoComprasVisible(!carrinhoComprasVisible)} />
+                    </div>
                     <LoginIcon fatherClass={`${styles.desktopIcon}`} image={listaDesejosIcon} alt='Lista de Desejos' onClick={() => setListaDesejosVisible(!listaDesejosVisible)} />
                 </nav>
             </header>

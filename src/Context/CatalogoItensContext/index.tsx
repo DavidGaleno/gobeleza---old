@@ -70,7 +70,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             listaDesejos: false,
             carrinhoCompras: false,
             quantidadeEstoque: 500,
-            categoria: tipoItemEnum['produto']
+            categoria: tipoItemEnum['produto'],
+            quantidadeCarrinho: 0
         },
         {
             id: 2,
@@ -80,7 +81,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             listaDesejos: false,
             carrinhoCompras: false,
             quantidadeEstoque: 50,
-            categoria: tipoItemEnum['produto']
+            categoria: tipoItemEnum['produto'],
+            quantidadeCarrinho: 0
         },
         {
             id: 3,
@@ -90,7 +92,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             listaDesejos: false,
             carrinhoCompras: false,
             quantidadeEstoque: 146,
-            categoria: tipoItemEnum['produto']
+            categoria: tipoItemEnum['produto'],
+            quantidadeCarrinho: 0
         },
         {
             id: 4,
@@ -100,7 +103,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             listaDesejos: false,
             carrinhoCompras: false,
             quantidadeEstoque: 94,
-            categoria: tipoItemEnum['produto']
+            categoria: tipoItemEnum['produto'],
+            quantidadeCarrinho: 0
         },
         {
             id: 5,
@@ -110,7 +114,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             carrinhoCompras: false,
             listaDesejos: false,
             quantidadeEstoque: 32,
-            categoria: tipoItemEnum['produto']
+            categoria: tipoItemEnum['produto'],
+            quantidadeCarrinho: 0
         },
         {
             id: 6,
@@ -120,7 +125,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             carrinhoCompras: false,
             listaDesejos: false,
             quantidadeEstoque: 25,
-            categoria: tipoItemEnum['produto']
+            categoria: tipoItemEnum['produto'],
+            quantidadeCarrinho: 0
         },
         {
             id: 7,
@@ -130,7 +136,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             carrinhoCompras: false,
             listaDesejos: false,
             quantidadeEstoque: 10,
-            categoria: tipoItemEnum['produto']
+            categoria: tipoItemEnum['produto'],
+            quantidadeCarrinho: 0
         },
         {
             id: 8,
@@ -140,8 +147,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             carrinhoCompras: false,
             listaDesejos: false,
             quantidadeEstoque: 34,
-            categoria: tipoItemEnum['produto']
-
+            categoria: tipoItemEnum['produto'],
+            quantidadeCarrinho: 0
         },
         {
             id: 9,
@@ -151,7 +158,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             carrinhoCompras: false,
             listaDesejos: false,
             quantidadeEstoque: 48,
-            categoria: tipoItemEnum['produto']
+            categoria: tipoItemEnum['produto'],
+            quantidadeCarrinho: 0
         },
         {
             id: 10,
@@ -161,7 +169,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             carrinhoCompras: false,
             listaDesejos: false,
             quantidadeEstoque: 48,
-            categoria: tipoItemEnum['produto']
+            categoria: tipoItemEnum['produto'],
+            quantidadeCarrinho: 0
         },
         {
             id: 11,
@@ -171,7 +180,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             carrinhoCompras: false,
             listaDesejos: false,
             quantidadeEstoque: 23,
-            categoria: tipoItemEnum['produto']
+            categoria: tipoItemEnum['produto'],
+            quantidadeCarrinho: 0
         },
         {
             id: 12,
@@ -181,7 +191,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             carrinhoCompras: false,
             listaDesejos: false,
             quantidadeEstoque: 102,
-            categoria: tipoItemEnum['produto']
+            categoria: tipoItemEnum['produto'],
+            quantidadeCarrinho: 0
         },
         {
             id: 13,
@@ -191,7 +202,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             carrinhoCompras: false,
             listaDesejos: false,
             quantidadeEstoque: 48,
-            categoria: tipoItemEnum['produto']
+            categoria: tipoItemEnum['produto'],
+            quantidadeCarrinho: 0
         },
         {
             id: 14,
@@ -201,7 +213,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             listaDesejos: false,
             carrinhoCompras: false,
             dataHorarioAgendamento: datasHorariosAgendamento,
-            categoria: tipoItemEnum['servico']
+            categoria: tipoItemEnum['servico'],
+            quantidadeCarrinho: 0
         },
         {
             id: 15,
@@ -211,7 +224,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             listaDesejos: false,
             carrinhoCompras: false,
             dataHorarioAgendamento: datasHorariosAgendamento,
-            categoria: tipoItemEnum['servico']
+            categoria: tipoItemEnum['servico'],
+            quantidadeCarrinho: 0
 
         },
         {
@@ -222,7 +236,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             listaDesejos: false,
             carrinhoCompras: false,
             dataHorarioAgendamento: datasHorariosAgendamento,
-            categoria: tipoItemEnum['servico']
+            categoria: tipoItemEnum['servico'],
+            quantidadeCarrinho: 0
 
         },
         {
@@ -233,7 +248,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             listaDesejos: false,
             carrinhoCompras: false,
             dataHorarioAgendamento: datasHorariosAgendamento,
-            categoria: tipoItemEnum['servico']
+            categoria: tipoItemEnum['servico'],
+            quantidadeCarrinho: 0
 
         },
         {
@@ -244,7 +260,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             carrinhoCompras: false,
             listaDesejos: false,
             dataHorarioAgendamento: datasHorariosAgendamento,
-            categoria: tipoItemEnum['servico']
+            categoria: tipoItemEnum['servico'],
+            quantidadeCarrinho: 0
 
         },
         {
@@ -255,7 +272,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             carrinhoCompras: false,
             listaDesejos: false,
             dataHorarioAgendamento: datasHorariosAgendamento,
-            categoria: tipoItemEnum['servico']
+            categoria: tipoItemEnum['servico'],
+            quantidadeCarrinho: 0
 
         },
         {
@@ -266,7 +284,9 @@ export const CatalogoItensProvider = ({ children }: any) => {
             carrinhoCompras: false,
             listaDesejos: false,
             dataHorarioAgendamento: datasHorariosAgendamento,
-            categoria: tipoItemEnum['servico']
+            categoria: tipoItemEnum['servico'],
+            quantidadeCarrinho: 0
+
 
         },
         {
@@ -277,7 +297,8 @@ export const CatalogoItensProvider = ({ children }: any) => {
             carrinhoCompras: false,
             listaDesejos: false,
             dataHorarioAgendamento: datasHorariosAgendamento,
-            categoria: tipoItemEnum['servico']
+            categoria: tipoItemEnum['servico'],
+            quantidadeCarrinho: 0
 
         }
 

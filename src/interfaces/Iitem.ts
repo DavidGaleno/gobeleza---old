@@ -10,4 +10,5 @@ export interface Iitem {
     quantidadeEstoque?: number
     dataHorarioAgendamento?: string[]
     categoria: tipoItemEnum
+    quantidadeCarrinho: number
 }
