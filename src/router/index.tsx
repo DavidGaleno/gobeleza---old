@@ -17,6 +17,7 @@ import { MinhaContaUsuario } from "../views/MinhaContaUsuario";
 import { SaloonCatalogScreen } from "../views/SaloonCatalogScreen";
 import { LoginScreen } from "../views/LoginScreen/index";
 import { NovaSenhaScreen } from "../views/NovaSenhaScreen";
+import { ReciboScreen } from "../views/ReciboScreen";
 
 export const router = createBrowserRouter([
     {
@@ -82,6 +83,10 @@ export const router = createBrowserRouter([
             {
                 path: '/pagamento_opcoes',
                 element: <SelectPaymentMethodOption />
+            },
+            {
+                path: 'recibo_compra',
+                element: <ReciboScreen />
             },
             {
                 path: '/minha_conta_funcionario',

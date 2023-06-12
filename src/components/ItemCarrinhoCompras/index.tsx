@@ -18,7 +18,7 @@ export const ItemCarrinhoCompras = ({ item, image, alt, nome, preco }: Props) =>
     const { valorTotal, setValorTotal } = useContext(CarrinhoComprasContext)
     return (
         <div className={`${styles.container}`}>
-            <img className="image" src={image} alt={alt} />
+            <img className={styles.image} src={image} alt={alt} />
             <div className={styles.text}>
                 <h2>{nome}</h2>
                 <h3>R${preco.toFixed(2).toString().replace('.', ',')}{item.quantidadeCarrinho > 1 && `(${item.quantidadeCarrinho}X)`}</h3>

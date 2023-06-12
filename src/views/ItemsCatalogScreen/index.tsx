@@ -54,7 +54,7 @@ export const ItemsCatalogScreen = () => {
                     <LoginIcon fatherClass={`${styles.mobileMenu}`} image={menuHamburguer} alt='Menu' onClick={() => setMenuVisible(!menuVisible)} />
                     <div className={styles.carrinhoContainer}>
                         {carrinhoCompras.length > 0 &&
-                            <div className={styles.counter}>
+                            <div className={styles.counter} onClick={() => setCarrinhoComprasVisible(!carrinhoComprasVisible)}>
                                 <span className={styles.counterText}>{carrinhoCompras.length}X</span>
                             </div>
                         }

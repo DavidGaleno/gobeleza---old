@@ -25,7 +25,7 @@ export const Campo = ({ label, value, changeValue, fatherClass, shortValue }: Pr
 
                     <div className={styles.valueGroup}>
                         <span className={styles.value}>{showPassword ? !shortValue ? value : value.length >= 12 ? value : `${value.substring(0, 12)}...` : '.'.repeat(value.length)}</span>
-                        {showPassword ? <FontAwesomeIcon size="3x" icon={faEye} onClick={() => setShowPassword(!showPassword)} /> : <FontAwesomeIcon onClick={() => setShowPassword(!showPassword)} size="3x" icon={faEyeSlash} />
+                        {showPassword ? <FontAwesomeIcon className={styles.passwordIcon} size="3x" icon={faEye} onClick={() => setShowPassword(!showPassword)} /> : <FontAwesomeIcon className={styles.passwordIcon} onClick={() => setShowPassword(!showPassword)} size="3x" icon={faEyeSlash} />
 
                         }
                         {changeValue ? <ActionButton onClick={() => setChangeDataScreenVisible(!changeDataScreenVisible)} fatherClass={styles.button} value={'Alterar →'} /> : ''}

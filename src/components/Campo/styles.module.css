@@ -12,6 +12,10 @@
     gap: .5rem;
 }
 
+.passwordIcon:hover {
+    cursor: pointer !important;
+}
+
 .label,
 .value {
     font-size: 2.1rem;
