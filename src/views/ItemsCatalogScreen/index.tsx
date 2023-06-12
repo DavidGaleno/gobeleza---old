@@ -23,6 +23,7 @@ import { CatalogoItensContext } from '../../Context/CatalogoItensContext'
 //Interfaces
 import { Iitem } from '../../interfaces/Iitem'
 import { CarrinhoComprasContext } from '../../Context/CarrinhoComprasContext'
+import { Header } from '../../components/Header'
 
 
 export const ItemsCatalogScreen = () => {
@@ -38,31 +39,7 @@ export const ItemsCatalogScreen = () => {
 
     return (
         <div className={styles.container}>
-            <header>
-                <img className={styles.logo} src={logo} alt="Logo" />
-                <MobileMenu visible={menuVisible} setVisible={setMenuVisible} />
-                <CarrinhoCompras visible={carrinhoComprasVisible} setVisible={setCarrinhoComprasVisible} />
-                <ListaDesejos visible={listaDesejosVisible} setVisible={setListaDesejosVisible} />
-                <nav>
-                    <div className={styles.desktopMenu}>
-                        <a className={styles.filter} onClick={() => setItensExibidos('Produtos')}>Produtos</a>
-                        <a className={styles.filter} onClick={() => setItensExibidos('Serviços')}>Serviços</a>
-                        <Link color='gray' to={'/minha_conta_usuario'}>Minha Conta</Link>
-                        <Link color='gray' to={'/'}>Sair</Link>
-
-                    </div>
-                    <LoginIcon fatherClass={`${styles.mobileMenu}`} image={menuHamburguer} alt='Menu' onClick={() => setMenuVisible(!menuVisible)} />
-                    <div className={styles.carrinhoContainer}>
-                        {carrinhoCompras.length > 0 &&
-                            <div className={styles.counter} onClick={() => setCarrinhoComprasVisible(!carrinhoComprasVisible)}>
-                                <span className={styles.counterText}>{carrinhoCompras.length}X</span>
-                            </div>
-                        }
-                        <LoginIcon fatherClass={`${styles.desktopIcon}`} image={carrinhoComprasIcon} alt='Carrinho de Compras' onClick={() => setCarrinhoComprasVisible(!carrinhoComprasVisible)} />
-                    </div>
-                    <LoginIcon fatherClass={`${styles.desktopIcon}`} image={listaDesejosIcon} alt='Lista de Desejos' onClick={() => setListaDesejosVisible(!listaDesejosVisible)} />
-                </nav>
-            </header>
+            <Header setItensExibidos={setItensExibidos} />
             <main>
                 <Title value={`Catalogo de ${itensExibidos}`} />
                 <div className={styles.itens}>
