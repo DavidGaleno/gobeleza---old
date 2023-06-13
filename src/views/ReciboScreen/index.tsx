@@ -3,12 +3,36 @@ import { Campo } from '../../components/Campo'
 import styles from './styles.module.css'
 import logo from '../../assets/logo.png'
 import { CheckLogin } from '../../components/CheckLogin'
+import { useContext, useEffect } from 'react'
+import { UsuariosContext } from '../../Context/UsuariosContext'
+import { CarrinhoComprasContext } from '../../Context/CarrinhoComprasContext'
+import { CatalogoItensContext } from '../../Context/CatalogoItensContext'
 export const ReciboScreen = () => {
+    const { itens, setItens } = useContext(CatalogoItensContext)
+    const { carrinhoCompras, valorTotal, setValorTotal } = useContext(CarrinhoComprasContext)
+    const { loggedAccount, compras, setCompras } = useContext(UsuariosContext)
+    useEffect(() => {
 
+        const compra = {
+            id: compras.length + 1,
+            email: loggedAccount.email,
+            nome: loggedAccount.nome,
+            compras: carrinhoCompras,
+            valor: valorTotal
+        }
+        console.log(carrinhoCompras)
+        const updatedItens = [...itens]
+        updatedItens.forEach(item => {
+            if (carrinhoCompras.includes(item))
+                item.quantidadeCarrinho = 0
+        })
+        setValorTotal(0)
+        setItens(updatedItens)
+        setCompras(prevCompras => [...prevCompras, compra])
+    }, [])
     return (
-
         <div className={styles.container}>
-                <CheckLogin />
+            <CheckLogin />
             <img className={styles.logo} src={logo} alt='GOBELEZA' />
             <div className={styles.dados}>
                 <Campo label='Nome' value='David Galeno' changeValue={false} />

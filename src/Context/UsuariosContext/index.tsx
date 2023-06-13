@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 import { IUsuariosContext } from "../../interfaces/IUsuariosContext";
 import { ICliente } from "../../interfaces/ICliente";
+import { ICompra } from "../../interfaces/ICompra";
 
 export const UsuariosContext = createContext<IUsuariosContext>({} as IUsuariosContext)
 UsuariosContext.displayName = 'UsuariosContext'
@@ -19,8 +20,9 @@ export const UsuariosContextProvider = ({ children }: any) => {
         }
     ])
     const [loggedAccount, setLoggedAccount] = useState<ICliente>({} as ICliente)
+    const [compras, setCompras] = useState<ICompra[]>([])
     return (
-        <UsuariosContext.Provider value={{ clientes, setClientes, loggedAccount, setLoggedAccount }}>
+        <UsuariosContext.Provider value={{ clientes, setClientes, loggedAccount, setLoggedAccount, compras, setCompras }}>
             {children}
         </UsuariosContext.Provider>
     )

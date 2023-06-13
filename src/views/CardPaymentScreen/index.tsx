@@ -38,7 +38,7 @@ export const CardPaymentScreen = () => {
 
   const pagar = (data: cartaoPagamentoType) => {
     console.log(data)
-    navigate('/catalogo_itens')
+    navigate('/recibo_compra')
   }
 
 
