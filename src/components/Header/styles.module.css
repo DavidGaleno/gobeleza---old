@@ -24,7 +24,7 @@ nav {
 }
 
 .desktopMenu>a {
-    font-size: 2rem;
+    font-size: 3rem;
     transition: all .1s ease, transform .3s ease-in-out;
     cursor: pointer;
 }
@@ -73,19 +73,11 @@ nav {
     .logo {
         width: 9rem;
     }
-
-    .desktopMenu>a {
-        font-size: 3rem;
-    }
 }
 
 @media screen and (min-width:1920px) {
     .logo {
         width: 9rem;
-    }
-
-    .desktopMenu>a {
-        font-size: 3rem;
     }
 }
 

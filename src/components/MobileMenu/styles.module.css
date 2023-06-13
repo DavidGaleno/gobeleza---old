@@ -27,6 +27,9 @@
     flex-direction: column;
     font-size: 3rem;
 }
+.options > a{
+    font-size: 3rem;
+}
 .fade{
     position: fixed;
     top: 0;
