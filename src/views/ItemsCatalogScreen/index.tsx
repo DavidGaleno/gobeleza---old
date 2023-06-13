@@ -3,7 +3,7 @@
 import styles from './styles.module.css'
 
 //React Libraries
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 //Components
 import { Title } from '../../components/Title'
@@ -19,6 +19,13 @@ import { CheckLogin } from '../../components/CheckLogin'
 
 export const ItemsCatalogScreen = () => {
 
+    const [fixed, setFixed] = useState(false)
+
+    useEffect(() => {
+        if (window.scrollY > 0) setFixed(true)
+        else setFixed(false)
+    }, [window.scrollY])
+
 
     const [itensExibidos, setItensExibidos] = useState('Produtos')
     const { itens } = useContext(CatalogoItensContext)
@@ -27,7 +34,8 @@ export const ItemsCatalogScreen = () => {
     return (
         <div className={styles.container}>
             <CheckLogin />
-            <Header setItensExibidos={setItensExibidos} />
+            <Header fixed={fixed} setItensExibidos={setItensExibidos} />
+
             <main>
                 <Title value={`Catalogo de ${itensExibidos}`} />
                 <div className={styles.itens}>

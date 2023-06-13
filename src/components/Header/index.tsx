@@ -20,9 +20,10 @@ import { ICliente } from '../../interfaces/ICliente'
 
 interface Props {
     setItensExibidos?: (itensExibidos: string) => void
+    fixed?: boolean
 }
 
-export const Header = ({ setItensExibidos }: Props) => {
+export const Header = ({ setItensExibidos, fixed }: Props) => {
     const navigate = useNavigate()
     const { setLoggedAccount } = useContext(UsuariosContext)
     const [menuVisible, setMenuVisible] = useState(false)
@@ -31,7 +32,7 @@ export const Header = ({ setItensExibidos }: Props) => {
     const { carrinhoCompras } = useContext(CarrinhoComprasContext)
     const location = useLocation()
     return (
-        <header>
+        <header className={fixed ? styles.fixed : ''}>
             <img className={styles.logo} src={logo} alt="Logo" />
             <MobileMenu setItensExibidos={setItensExibidos && setItensExibidos} visible={menuVisible} setVisible={setMenuVisible} />
             <CarrinhoCompras visible={carrinhoComprasVisible} setVisible={setCarrinhoComprasVisible} />
