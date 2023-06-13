@@ -31,7 +31,7 @@ export const PIXPaymentScreen = () => {
 
   const avancar = (data: pixPaymentType) => {
     console.log(data)
-    navigate('/recuperar_senha_chave')
+    navigate('/recibo_compra')
   }
 
   const { handleSubmit, formState: { errors } } = pixPaymentUseForm
