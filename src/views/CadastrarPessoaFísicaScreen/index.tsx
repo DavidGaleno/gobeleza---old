@@ -32,7 +32,7 @@ const cadastroPessoaFisicaSchema = z.object({
 
 export const CadastrarPessoaFisica = () => {
 
-  const { clientes, setClientes } = useContext(UsuariosContext)
+  const { setClientes } = useContext(UsuariosContext)
 
   const navigate = useNavigate()
 
