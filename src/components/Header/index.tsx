@@ -13,7 +13,7 @@ import specialPassword from '../../assets/specialPassword.png'
 
 import styles from './styles.module.css'
 import { useContext, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { CarrinhoComprasContext } from '../../Context/CarrinhoComprasContext'
 import { UsuariosContext } from '../../Context/UsuariosContext'
 import { ICliente } from '../../interfaces/ICliente'
@@ -23,6 +23,7 @@ interface Props {
 }
 
 export const Header = ({ setItensExibidos }: Props) => {
+    const navigate = useNavigate()
     const { setLoggedAccount } = useContext(UsuariosContext)
     const [menuVisible, setMenuVisible] = useState(false)
     const [carrinhoComprasVisible, setCarrinhoComprasVisible] = useState(false)
@@ -63,7 +64,7 @@ export const Header = ({ setItensExibidos }: Props) => {
                 }
                 {location.pathname === '/dashboard' &&
                     <>
-                        <LoginIcon fatherClass={`${styles.desktopIcon} `} image={dashboard} alt='Dashboard' />
+                        <LoginIcon onClick={() => navigate('/dashboard')} fatherClass={`${styles.desktopIcon} `} image={dashboard} alt='Dashboard' />
                         <LoginIcon fatherClass={`${styles.desktopIcon} `} image={specialPassword} alt='Senha Acesso Especial' />
                     </>}
 
