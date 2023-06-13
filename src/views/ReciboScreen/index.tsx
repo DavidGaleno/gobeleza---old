@@ -29,7 +29,6 @@ export const ReciboScreen = () => {
             compras: itensCompras,
             valor: valorTotal
         }
-        console.log(carrinhoCompras)
         const updatedItens = [...itens]
         updatedItens.forEach(item => {
             if (carrinhoCompras.includes(item))

@@ -1,5 +1,6 @@
 .card {
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -12,4 +13,5 @@
 .label,.value{
     font-size: 5rem !important;
     text-align: center;
+    white-space: nowrap;
 }

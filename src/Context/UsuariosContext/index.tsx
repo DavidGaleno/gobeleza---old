@@ -20,7 +20,58 @@ export const UsuariosContextProvider = ({ children }: any) => {
         }
     ])
     const [loggedAccount, setLoggedAccount] = useState<ICliente>({} as ICliente)
-    const [compras, setCompras] = useState<ICompra[]>([])
+    const [compras, setCompras] = useState<ICompra[]>([
+        {
+            id: 1,
+            compras: [{
+                nome: "Batom",
+                quantidade: 1,
+                valor: 9.99,
+                categoria: "produto"
+            },
+            {
+                nome: "Barbeador",
+                quantidade: 2,
+                valor: 199.98,
+                categoria: "produto"
+            },
+            {
+                nome: "Maquiagem",
+                quantidade: 1,
+                valor: 29.99,
+                categoria: "produto"
+
+            }],
+            email: "davidgaleno@gmail.com",
+            nome: "David Galeno",
+            valor: 239.96
+        },
+        {
+            id: 2,
+            compras: [{
+                nome: "Manicure",
+                quantidade: 1,
+                valor: 49.99,
+                categoria: "servico"
+            },
+            {
+                nome: "Lavar Cabelo",
+                quantidade: 2,
+                valor: 89.98,
+                categoria: "servico"
+            },
+            {
+                nome: "Pintar Cabelo",
+                quantidade: 1,
+                valor: 29.99,
+                categoria: "servico"
+
+            }],
+            email: "davidgaleno@gmail.com",
+            nome: "David Galeno",
+            valor: 239.96
+        }
+    ])
     return (
         <UsuariosContext.Provider value={{ clientes, setClientes, loggedAccount, setLoggedAccount, compras, setCompras }}>
             {children}

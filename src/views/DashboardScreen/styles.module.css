@@ -36,12 +36,12 @@ nav {
     position: relative;
 }
 
-.itens {
+.itensCards {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 4rem;
+    gap: 10rem;
 
 }
 
@@ -103,13 +103,20 @@ h1 {
 }
 
 
-.data {
+.itemData {
     display: flex;
     flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 7rem;
+}
+
+.itens{
+    display: flex;
+    flex-direction: column;
+
+    gap: 3rem;
 }
 
 .cards{
@@ -150,7 +157,7 @@ h1 {
         display: block;
     }
     
-    .data{
+    .itemData{
         flex-direction: row;
         
     }
@@ -169,13 +176,16 @@ h1 {
     .logo {
         width: 9rem;
     }
-    .cards{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      
+    .cardGroup{
+        display: flex; 
+        gap: 5rem;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
+ 
     .container{
-        height: 100vh;
+        height:100%;
     }
     .itens {
         grid-template-columns: repeat(4, 1fr);
