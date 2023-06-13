@@ -8,6 +8,9 @@ import { Select } from '../../components/Select'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useNavigate } from 'react-router'
+import { useContext } from 'react'
+import { UsuariosContext } from '../../Context/UsuariosContext'
+import { ICliente } from '../../interfaces/ICliente'
 
 const cadastroPessoaFisicaSchema = z.object({
   email: z.string().nonempty('*Obrigatório').email('Formato de Email inválido').transform(email => email.toLocaleLowerCase()).refine(email => email.endsWith('@gmail.com') || email.endsWith('@hotmail.com'), {
@@ -29,6 +32,7 @@ const cadastroPessoaFisicaSchema = z.object({
 
 export const CadastrarPessoaFisica = () => {
 
+  const { clientes, setClientes } = useContext(UsuariosContext)
 
   const navigate = useNavigate()
 
@@ -43,7 +47,8 @@ export const CadastrarPessoaFisica = () => {
 
   const { handleSubmit, formState: { errors } } = cadastroPessoaJuridicaUseForm
   const cadastrar = (data: CadastroPessoaFisicaType) => {
-    console.log(data)
+    const { passwordMatch, ...cliente } = data
+    setClientes((prevClientes: ICliente[]) => [...prevClientes, cliente])
     navigate('/')
   }
 
