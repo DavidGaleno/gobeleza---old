@@ -24,6 +24,7 @@ export const MobileMenu = ({ visible, setVisible, setItensExibidos }: Props) => 
                         setItensExibidos?.('Serviços')
                         setVisible(!visible)
                     }}>Serviços</a>
+                    <Link color='gray' to={'/catalogo_saloes'}>Salões</Link>
                     <Link color='gray' to={'/minha_conta_usuario'}>Minha Conta</Link>
                     <Link color='gray' to={'/'}>Sair</Link>
                 </div>
