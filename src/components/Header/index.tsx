@@ -8,6 +8,8 @@ import menuHamburguer from '../../assets/menuHamburguer.svg'
 import carrinhoComprasIcon from '../../assets/carrinhoCompras.svg'
 import listaDesejosIcon from '../../assets/listaDesejos.svg'
 import { LoginIcon } from '../../components/LoginIcon'
+import dashboard from '../../assets/dashboard.png'
+import specialPassword from '../../assets/specialPassword.png'
 
 import styles from './styles.module.css'
 import { useContext, useState } from 'react'
@@ -59,6 +61,11 @@ export const Header = ({ setItensExibidos }: Props) => {
                         <LoginIcon fatherClass={`${styles.desktopIcon}`} image={listaDesejosIcon} alt='Lista de Desejos' onClick={() => setListaDesejosVisible(!listaDesejosVisible)} />
                     </>
                 }
+                {location.pathname === '/dashboard' &&
+                    <>
+                        <LoginIcon fatherClass={`${styles.desktopIcon} `} image={dashboard} alt='Dashboard' />
+                        <LoginIcon fatherClass={`${styles.desktopIcon} `} image={specialPassword} alt='Senha Acesso Especial' />
+                    </>}
 
             </nav>
         </header>

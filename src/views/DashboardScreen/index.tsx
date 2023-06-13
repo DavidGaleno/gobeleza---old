@@ -1,12 +1,7 @@
-import logo from '../../assets/logo.png'
-import dashboard from '../../assets/dashboard.png'
-import specialPassword from '../../assets/specialPassword.png'
-import menuHamburguer from '../../assets/menuHamburguer.svg'
 import powerBI from '../../assets/powerBISymbol.png'
 import excel from '../../assets/excelSymbol.png'
 import styles from './styles.module.css'
 import { LoginIcon } from '../../components/LoginIcon'
-import { MobileMenu } from '../../components/MobileMenu'
 import { useContext, useState } from 'react'
 import { Card } from '../../components/Card'
 import { UsuariosContext } from '../../Context/UsuariosContext'
@@ -14,6 +9,7 @@ import { IitemCompra } from '../../interfaces/IitemCompra'
 import { Title } from '../../components/Title'
 import { IComprador } from '../../interfaces/IComprador'
 import { ICompra } from '../../interfaces/ICompra'
+import { Header } from '../../components/Header'
 export const DashboardScreen = () => {
     const { compras } = useContext(UsuariosContext)
     const produtosVendidos: IitemCompra[] = []
@@ -111,25 +107,10 @@ export const DashboardScreen = () => {
 
 
 
-    const [menuVisible, setMenuVisible] = useState(false)
     const [filtro, setFiltro] = useState('produtos')
     return (
         <div className={styles.container}>
-            <header>
-                <img className={styles.logo} src={logo} alt="Logo" />
-                <MobileMenu visible={menuVisible} setVisible={setMenuVisible} />
-                <nav>
-                    <div className={styles.desktopMenu}>
-                        <a href="#">Produtos</a>
-                        <a href="#">Serviços</a>
-                        <a href="#">Minha Conta</a>
-                        <a href="#">Sair</a>
-                    </div>
-                    <LoginIcon fatherClass={`${styles.desktopIcon} `} image={dashboard} alt='Carrinho de Compras' />
-                    <LoginIcon fatherClass={`${styles.desktopIcon} `} image={specialPassword} alt='Lista de Desejos' />
-                    <LoginIcon fatherClass={`${styles.mobileMenu}`} image={menuHamburguer} alt='Menu' onClick={() => setMenuVisible(!menuVisible)} />
-                </nav>
-            </header>
+            <Header />
             <main>
                 <div className={styles.filters}>
                     <div className={styles.categories}>
