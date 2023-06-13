@@ -7,17 +7,26 @@ import { useContext, useEffect } from 'react'
 import { UsuariosContext } from '../../Context/UsuariosContext'
 import { CarrinhoComprasContext } from '../../Context/CarrinhoComprasContext'
 import { CatalogoItensContext } from '../../Context/CatalogoItensContext'
+import { IitemCompra } from '../../interfaces/IitemCompra'
+import { ICompra } from '../../interfaces/ICompra'
 export const ReciboScreen = () => {
     const { itens, setItens } = useContext(CatalogoItensContext)
     const { carrinhoCompras, valorTotal, setValorTotal } = useContext(CarrinhoComprasContext)
     const { loggedAccount, compras, setCompras } = useContext(UsuariosContext)
     useEffect(() => {
-
-        const compra = {
+        const itensCompras: IitemCompra[] = []
+        carrinhoCompras.map(itemCompra => {
+            itensCompras.push({
+                nome: itemCompra.nome,
+                quantidade: itemCompra.quantidadeCarrinho,
+                valor: itemCompra.preco * itemCompra.quantidadeCarrinho
+            })
+        })
+        const compra: ICompra = {
             id: compras.length + 1,
             email: loggedAccount.email,
             nome: loggedAccount.nome,
-            compras: carrinhoCompras,
+            compras: itensCompras,
             valor: valorTotal
         }
         console.log(carrinhoCompras)

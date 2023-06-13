@@ -1,9 +1,9 @@
-import { Iitem } from "./Iitem"
+import { IitemCompra } from "./IitemCompra"
 
 export interface ICompra {
     id: number
     email: string
     nome: string
-    compras: Iitem[]
+    compras: IitemCompra[]
     valor: number
 }
