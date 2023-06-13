@@ -33,7 +33,7 @@ export const Header = ({ setItensExibidos }: Props) => {
     return (
         <header>
             <img className={styles.logo} src={logo} alt="Logo" />
-            <MobileMenu visible={menuVisible} setVisible={setMenuVisible} />
+            <MobileMenu setItensExibidos={setItensExibidos && setItensExibidos} visible={menuVisible} setVisible={setMenuVisible} />
             <CarrinhoCompras visible={carrinhoComprasVisible} setVisible={setCarrinhoComprasVisible} />
             <ListaDesejos visible={listaDesejosVisible} setVisible={setListaDesejosVisible} />
             <nav>
