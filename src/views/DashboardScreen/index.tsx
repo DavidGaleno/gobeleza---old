@@ -10,6 +10,7 @@ import { MobileMenu } from '../../components/MobileMenu'
 import { useState } from 'react'
 import { Card } from '../../components/Card'
 export const DashboardScreen = () => {
+
     const [menuVisible, setMenuVisible] = useState(false)
     return (
         <div className={styles.container}>

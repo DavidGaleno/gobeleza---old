@@ -8,6 +8,7 @@ import { FormProvider, useForm } from 'react-hook-form'
 import styles from './styles.module.css'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useNavigate } from 'react-router'
+import { CheckLogin } from '../../components/CheckLogin'
 
 
 const pixPaymentSchema = z.object({
@@ -17,6 +18,8 @@ const pixPaymentSchema = z.object({
 
 
 export const PIXPaymentScreen = () => {
+
+
 
   const navigate = useNavigate()
 
@@ -35,6 +38,7 @@ export const PIXPaymentScreen = () => {
 
   return (
     <div className={styles.container}>
+        <CheckLogin />
       <img className={styles.logo} src={logo} alt="GoBeleza" />
       <FormProvider {...pixPaymentUseForm}>
         <form onSubmit={handleSubmit(avancar)} className={styles.form}>

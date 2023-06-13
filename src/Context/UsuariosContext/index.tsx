@@ -18,8 +18,9 @@ export const UsuariosContextProvider = ({ children }: any) => {
             telefone: '(42)94002-8922'
         }
     ])
+    const [loggedAccount, setLoggedAccount] = useState<ICliente>({} as ICliente)
     return (
-        <UsuariosContext.Provider value={{ clientes, setClientes }}>
+        <UsuariosContext.Provider value={{ clientes, setClientes, loggedAccount, setLoggedAccount }}>
             {children}
         </UsuariosContext.Provider>
     )

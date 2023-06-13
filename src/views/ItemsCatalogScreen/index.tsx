@@ -14,6 +14,7 @@ import { CatalogoItensContext } from '../../Context/CatalogoItensContext'
 //Interfaces
 import { Iitem } from '../../interfaces/Iitem'
 import { Header } from '../../components/Header'
+import { CheckLogin } from '../../components/CheckLogin'
 
 
 export const ItemsCatalogScreen = () => {
@@ -25,6 +26,7 @@ export const ItemsCatalogScreen = () => {
 
     return (
         <div className={styles.container}>
+            <CheckLogin />
             <Header setItensExibidos={setItensExibidos} />
             <main>
                 <Title value={`Catalogo de ${itensExibidos}`} />

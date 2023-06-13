@@ -2,9 +2,13 @@ import { ActionButton } from '../../components/ActionButton'
 import { Campo } from '../../components/Campo'
 import styles from './styles.module.css'
 import logo from '../../assets/logo.png'
+import { CheckLogin } from '../../components/CheckLogin'
 export const ReciboScreen = () => {
+
     return (
+
         <div className={styles.container}>
+                <CheckLogin />
             <img className={styles.logo} src={logo} alt='GOBELEZA' />
             <div className={styles.dados}>
                 <Campo label='Nome' value='David Galeno' changeValue={false} />

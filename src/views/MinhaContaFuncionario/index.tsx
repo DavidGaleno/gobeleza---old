@@ -3,12 +3,16 @@ import logo from '../../assets/logo.png'
 import { Campo } from '../../components/Campo'
 import { ActionButton } from '../../components/ActionButton'
 import { useNavigate } from 'react-router-dom'
+import { CheckLogin } from '../../components/CheckLogin'
 export const MinhaContaFuncionario = () => {
+    <CheckLogin />
+
     const telefone = 61940028922
     const formattedTelefone = telefone.toString()
     const navigate = useNavigate()
     return (
         <>
+            <CheckLogin />
             <div className={styles.container}>
                 <img className={styles.logo} src={logo} alt='GOBELEZA' />
                 <div className={styles.dados}>

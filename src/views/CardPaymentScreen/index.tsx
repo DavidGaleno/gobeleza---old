@@ -10,10 +10,10 @@ import { Select } from '../../components/Select'
 import { useForm, FormProvider } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useNavigate } from 'react-router'
+import { CheckLogin } from '../../components/CheckLogin'
 
 
 export const CardPaymentScreen = () => {
-
   const cartaoPagamentoSchema = z.object({
     numero: z.string().nonempty('*Obrigatório'),
     titular: z.string().nonempty('*Obrigatório'),
@@ -41,9 +41,12 @@ export const CardPaymentScreen = () => {
     navigate('/catalogo_itens')
   }
 
+
   const [modalidade, setModalidade] = useState('')
   return (
     <div className={styles.container}>
+      <CheckLogin />
+
       <img className={styles.logo} src={logo} alt="GoBeleza" />
       <FormProvider {...cartaoPagamentoUserForm}>
         <form onSubmit={handleSubmit(pagar)} className={styles.form}>
@@ -56,7 +59,7 @@ export const CardPaymentScreen = () => {
             <Select registerName={'parcelas'} label="Selecione o número de parcelas" options={['1X', '2X', '4X', '6X', '8X', '10X', '12X']} />
           }
           {modalidade === 'Débito' &&
-            <input {...register('parcelas')} type="hidden" name="" value={'1X'}/>
+            <input {...register('parcelas')} type="hidden" name="" value={'1X'} />
           }
           <div className={styles.buttons}>
             <ActionButton value="Confirmar →" />

@@ -13,12 +13,15 @@ import styles from './styles.module.css'
 import { useContext, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { CarrinhoComprasContext } from '../../Context/CarrinhoComprasContext'
+import { UsuariosContext } from '../../Context/UsuariosContext'
+import { ICliente } from '../../interfaces/ICliente'
 
 interface Props {
     setItensExibidos?: (itensExibidos: string) => void
 }
 
 export const Header = ({ setItensExibidos }: Props) => {
+    const { setLoggedAccount } = useContext(UsuariosContext)
     const [menuVisible, setMenuVisible] = useState(false)
     const [carrinhoComprasVisible, setCarrinhoComprasVisible] = useState(false)
     const [listaDesejosVisible, setListaDesejosVisible] = useState(false)
@@ -39,7 +42,7 @@ export const Header = ({ setItensExibidos }: Props) => {
                     </>
                     }
                     <Link color='gray' to={'/minha_conta_usuario'}>Minha Conta</Link>
-                    <Link color='gray' to={'/'}>Sair</Link>
+                    <Link color='gray' onClick={() => setLoggedAccount({} as ICliente)} to={'/'}>Sair</Link>
 
                 </div>
                 {location.pathname === '/catalogo_itens' &&

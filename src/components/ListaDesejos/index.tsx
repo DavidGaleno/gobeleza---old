@@ -22,7 +22,7 @@ export const ListaDesejos = ({ visible, setVisible }: Props) => {
                     {listaDesejos.length === 0 && <Title value='Sua Lista de Desejos está vazia' />
                     }
                     {listaDesejos.map((item: Iitem) => (
-                        <Item item={item} image={item.imagem} alt={item.nome} nome={item.nome} preco={item.preco} />
+                        <Item key={item.id} item={item} image={item.imagem} alt={item.nome} nome={item.nome} preco={item.preco} />
                     ))}
 
                 </div>

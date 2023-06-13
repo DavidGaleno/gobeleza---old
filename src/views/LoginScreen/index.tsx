@@ -23,7 +23,7 @@ import { UsuariosContext } from '../../Context/UsuariosContext'
 
 
 export const LoginScreen = () => {
-  const { clientes } = useContext(UsuariosContext)
+  const { clientes, setLoggedAccount } = useContext(UsuariosContext)
   const navigate = useNavigate()
   const loginScreenSchema = z.object({
     login: z.string().nonempty('*Obrigatório'),
@@ -32,7 +32,10 @@ export const LoginScreen = () => {
     const { ...cliente } = data
     let cadastrado = false
     clientes.forEach(clienteCadastrado => {
-      if (clienteCadastrado.email === cliente.login && clienteCadastrado.password === cliente.password) cadastrado = true
+      if (clienteCadastrado.email === cliente.login && clienteCadastrado.password === cliente.password) {
+        cadastrado = true
+      }
+      setLoggedAccount(clienteCadastrado)
     })
     return cadastrado
   }, {
@@ -44,8 +47,7 @@ export const LoginScreen = () => {
   const loginScreenUseForm = useForm<loginScreenType>({
     resolver: zodResolver(loginScreenSchema)
   })
-  const enviar = (data: loginScreenType) => {
-    console.log(data)
+  const enviar = () => {
     navigate('/catalogo_saloes')
   }
   const { handleSubmit, formState: { errors } } = loginScreenUseForm
