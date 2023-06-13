@@ -61,20 +61,24 @@ export const DashboardScreen = () => {
             quantidade += item.quantidade
             valor += item.valor
         })
-        let comprador = {
+        let comprador: IComprador = {
             email: compra.email,
             nome: compra.nome,
             quantidade: quantidade,
             valor: valor
         }
-        if (compradores.includes(comprador)) {
-            compradores[compradores.indexOf(comprador)].quantidade = comprador.quantidade
-            compradores[compradores.indexOf(comprador)].quantidade = comprador.valor
-        }
-        else {
-            compradores.push(comprador)
-        }
+        let compradorJaExiste = false
+        compradores.forEach(compradorLista => {
+            if (compradorLista.email === comprador.email) {
+                compradorJaExiste = true
+                compradores[compradores.indexOf(compradorLista)].quantidade = comprador.quantidade
+                compradores[compradores.indexOf(compradorLista)].quantidade = comprador.valor
+            }
+        })
+        if (!compradorJaExiste) compradores.push(comprador)
+
     })
+    console.log(compradores)
 
     compradores.forEach(comprador => {
         compras.forEach((compra: ICompra) => {
