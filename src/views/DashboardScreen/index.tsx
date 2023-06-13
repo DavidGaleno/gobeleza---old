@@ -7,7 +7,6 @@ import excel from '../../assets/excelSymbol.png'
 import styles from './styles.module.css'
 import { LoginIcon } from '../../components/LoginIcon'
 import { MobileMenu } from '../../components/MobileMenu'
-import { useContext, useState } from 'react'
 import { Card } from '../../components/Card'
 export const DashboardScreen = () => {
     const [menuVisible, setMenuVisible] = useState(false)
