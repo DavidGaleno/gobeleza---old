@@ -16,15 +16,29 @@ import { FormProvider, useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useNavigate } from 'react-router'
+import { useContext } from 'react'
+import { UsuariosContext } from '../../Context/UsuariosContext'
 
 
-const loginScreenSchema = z.object({
-  login: z.string().nonempty('*Obrigatório'),
-  password: z.string().nonempty('*Obrigatório').min(8, 'A senha tem no mínimo 8 caracteres')
-})
+
 
 export const LoginScreen = () => {
+  const { clientes } = useContext(UsuariosContext)
   const navigate = useNavigate()
+  const loginScreenSchema = z.object({
+    login: z.string().nonempty('*Obrigatório'),
+    password: z.string().nonempty('*Obrigatório').min(8, 'A senha tem no mínimo 8 caracteres')
+  }).refine(data => {
+    const { ...cliente } = data
+    let cadastrado = false
+    clientes.forEach(clienteCadastrado => {
+      if (clienteCadastrado.email === cliente.login && clienteCadastrado.password === cliente.password) cadastrado = true
+    })
+    return cadastrado
+  }, {
+    path: ['password'],
+    message: 'Os dados não correspondem a nenhum usuário'
+  })
 
   type loginScreenType = z.infer<typeof loginScreenSchema>
   const loginScreenUseForm = useForm<loginScreenType>({
