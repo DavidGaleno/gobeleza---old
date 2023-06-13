@@ -7,6 +7,7 @@ import excel from '../../assets/excelSymbol.png'
 import styles from './styles.module.css'
 import { LoginIcon } from '../../components/LoginIcon'
 import { MobileMenu } from '../../components/MobileMenu'
+import { useState } from 'react'
 import { Card } from '../../components/Card'
 export const DashboardScreen = () => {
     const [menuVisible, setMenuVisible] = useState(false)
@@ -42,7 +43,7 @@ export const DashboardScreen = () => {
                         <Card label='Produto Mais Vendido' value='Batom' />
                         <Card label='Serviço Mais Vendido' value='Batom' />
                         <Card label='Maior Comprador' value='Lúcio Costa' />
-                    </div>  
+                    </div>
                     <LoginIcon fatherClass={styles.desktopDashboardIcon} image={excel} alt='Excel' />
 
                     <div className={`${styles.dashboardIcons} ${styles.mobileDashboardIcons}`}>
