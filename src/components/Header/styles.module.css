@@ -6,6 +6,14 @@ header {
     align-items: center;
     overflow-x: hidden;
 }
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
 .logo {
     width: 6rem;
 }
@@ -18,12 +26,41 @@ header {
 .desktopMenu>a {
     font-size: 2rem;
     transition: all .1s ease, transform .3s ease-in-out;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .desktopMenu>a:hover {
     color: var(--black);
     transform: scale(1.1);
+}
+
+.carrinhoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.counter {
+    content: '';
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    top: 0;
+    right: 0;
+    background-color: black;
+    border-radius: 50%;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.counterText {
+    color: white;
+    font-size: 1.7rem;
 }
 
 @media screen and (max-width:767px) {
@@ -75,6 +112,3 @@ header {
         display: none;
     }
 }
-
-
-

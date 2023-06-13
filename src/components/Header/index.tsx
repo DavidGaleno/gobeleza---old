@@ -11,11 +11,11 @@ import { LoginIcon } from '../../components/LoginIcon'
 
 import styles from './styles.module.css'
 import { useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { CarrinhoComprasContext } from '../../Context/CarrinhoComprasContext'
 
 interface Props {
-    setItensExibidos: (itensExibidos: string) => void
+    setItensExibidos?: (itensExibidos: string) => void
 }
 
 export const Header = ({ setItensExibidos }: Props) => {
@@ -23,7 +23,7 @@ export const Header = ({ setItensExibidos }: Props) => {
     const [carrinhoComprasVisible, setCarrinhoComprasVisible] = useState(false)
     const [listaDesejosVisible, setListaDesejosVisible] = useState(false)
     const { carrinhoCompras } = useContext(CarrinhoComprasContext)
-
+    const location = useLocation()
     return (
         <header>
             <img className={styles.logo} src={logo} alt="Logo" />
@@ -32,22 +32,31 @@ export const Header = ({ setItensExibidos }: Props) => {
             <ListaDesejos visible={listaDesejosVisible} setVisible={setListaDesejosVisible} />
             <nav>
                 <div className={styles.desktopMenu}>
-                    <a className={styles.filter} onClick={() => setItensExibidos('Produtos')}>Produtos</a>
-                    <a className={styles.filter} onClick={() => setItensExibidos('Serviços')}>Serviços</a>
+                    {location.pathname === '/catalogo_itens' && <>
+                        <a className={styles.filter} onClick={() => setItensExibidos?.('Produtos')}>Produtos</a>
+                        <a className={styles.filter} onClick={() => setItensExibidos?.('Serviços')}>Serviços</a>
+                        <Link color='gray' to={'/catalogo_saloes'}>Salões</Link>
+                    </>
+                    }
                     <Link color='gray' to={'/minha_conta_usuario'}>Minha Conta</Link>
                     <Link color='gray' to={'/'}>Sair</Link>
 
                 </div>
-                <LoginIcon fatherClass={`${styles.mobileMenu}`} image={menuHamburguer} alt='Menu' onClick={() => setMenuVisible(!menuVisible)} />
-                <div className={styles.carrinhoContainer}>
-                    {carrinhoCompras.length > 0 &&
-                        <div className={styles.counter} onClick={() => setCarrinhoComprasVisible(!carrinhoComprasVisible)}>
-                            <span className={styles.counterText}>{carrinhoCompras.length}X</span>
+                {location.pathname === '/catalogo_itens' &&
+                    <>
+                        <LoginIcon fatherClass={`${styles.mobileMenu}`} image={menuHamburguer} alt='Menu' onClick={() => setMenuVisible(!menuVisible)} />
+                        <div className={styles.carrinhoContainer}>
+                            {carrinhoCompras.length > 0 &&
+                                <div className={styles.counter} onClick={() => setCarrinhoComprasVisible(!carrinhoComprasVisible)}>
+                                    <span className={styles.counterText}>{carrinhoCompras.length}X</span>
+                                </div>
+                            }
+                            <LoginIcon fatherClass={`${styles.desktopIcon}`} image={carrinhoComprasIcon} alt='Carrinho de Compras' onClick={() => setCarrinhoComprasVisible(!carrinhoComprasVisible)} />
                         </div>
-                    }
-                    <LoginIcon fatherClass={`${styles.desktopIcon}`} image={carrinhoComprasIcon} alt='Carrinho de Compras' onClick={() => setCarrinhoComprasVisible(!carrinhoComprasVisible)} />
-                </div>
-                <LoginIcon fatherClass={`${styles.desktopIcon}`} image={listaDesejosIcon} alt='Lista de Desejos' onClick={() => setListaDesejosVisible(!listaDesejosVisible)} />
+                        <LoginIcon fatherClass={`${styles.desktopIcon}`} image={listaDesejosIcon} alt='Lista de Desejos' onClick={() => setListaDesejosVisible(!listaDesejosVisible)} />
+                    </>
+                }
+
             </nav>
         </header>
     )

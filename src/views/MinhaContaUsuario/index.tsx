@@ -2,10 +2,11 @@ import styles from './styles.module.css'
 import logo from '../../assets/logo.png'
 import { Campo } from '../../components/Campo'
 import { ActionButton } from '../../components/ActionButton'
+import { useNavigate } from 'react-router-dom'
 export const MinhaContaUsuario = () => {
     const telefone = 61940028922
     const formattedTelefone = telefone.toString()
-
+    const navigate = useNavigate()
     return (
 
         <div className={styles.container}>
@@ -19,7 +20,7 @@ export const MinhaContaUsuario = () => {
                 <Campo label='Senha' value='12312312123g' changeValue={true} />
                 <Campo label='Tipo Conta' value='Cliente' changeValue={false} />
             </div>
-            <ActionButton fatherClass={styles.button} value="Voltar ←" path='/catalogo_itens' />
+            <ActionButton fatherClass={styles.button} value="Voltar ←" onClick={() => navigate(-1)} />
         </div>
 
     )
