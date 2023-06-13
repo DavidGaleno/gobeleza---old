@@ -19,7 +19,8 @@ export const ReciboScreen = () => {
             itensCompras.push({
                 nome: itemCompra.nome,
                 quantidade: itemCompra.quantidadeCarrinho,
-                valor: itemCompra.preco * itemCompra.quantidadeCarrinho
+                valor: itemCompra.preco * itemCompra.quantidadeCarrinho,
+                categoria: itemCompra.categoria
             })
         })
         const compra: ICompra = {
