@@ -19,13 +19,7 @@ import { CheckLogin } from '../../components/CheckLogin'
 
 export const ItemsCatalogScreen = () => {
 
-    const [fixed, setFixed] = useState(false)
-
-
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 0) return setFixed(true)
-        return setFixed(false)
-    })
+    
 
     const [itensExibidos, setItensExibidos] = useState('Produtos')
     const { itens } = useContext(CatalogoItensContext)
@@ -34,7 +28,7 @@ export const ItemsCatalogScreen = () => {
     return (
         <div className={styles.container}>
             <CheckLogin />
-            <Header fixed={fixed} setItensExibidos={setItensExibidos} />
+            <Header setItensExibidos={setItensExibidos} />
 
             <main>
                 <Title value={`Catalogo de ${itensExibidos}`} />

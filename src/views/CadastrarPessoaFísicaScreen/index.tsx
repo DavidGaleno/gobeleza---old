@@ -13,8 +13,8 @@ import { UsuariosContext } from '../../Context/UsuariosContext'
 import { ICliente } from '../../interfaces/ICliente'
 
 const cadastroPessoaFisicaSchema = z.object({
-  email: z.string().nonempty('*Obrigatório').email('Formato de Email inválido').transform(email => email.toLocaleLowerCase()).refine(email => email.endsWith('@gmail.com') || email.endsWith('@hotmail.com'), {
-    message: 'O E-mail deve terminar com @gmail.com ou @hotmail.com'
+  email: z.string().nonempty('*Obrigatório').email('Formato de Email inválido').transform(email => email.toLocaleLowerCase()).refine(email => email.endsWith('@gmail.com') || email.endsWith('@hotmail.com') || email.endsWith('@outlook.com'), {
+    message: 'O Email deve terminar com @outlook.com, @gmail.com ou @hotmail.com'
   }),
   cpf: z.string().nonempty('*Obrigatório').transform(cpf => cpf.toLocaleLowerCase().trim()),
   nome: z.string().nonempty('*Obrigatório').transform(nome => nome.toLocaleLowerCase().trim()),

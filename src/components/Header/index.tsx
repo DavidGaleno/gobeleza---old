@@ -20,11 +20,17 @@ import { ICliente } from '../../interfaces/ICliente'
 
 interface Props {
     setItensExibidos?: (itensExibidos: string) => void
-    fixed?: boolean
 }
 
-export const Header = ({ setItensExibidos, fixed }: Props) => {
+export const Header = ({ setItensExibidos }: Props) => {
     const navigate = useNavigate()
+    const [fixed, setFixed] = useState(false)
+
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 0) return setFixed(true)
+        return setFixed(false)
+    })
     const { setLoggedAccount } = useContext(UsuariosContext)
     const [menuVisible, setMenuVisible] = useState(false)
     const [carrinhoComprasVisible, setCarrinhoComprasVisible] = useState(false)
