@@ -26,8 +26,8 @@ export const LoginScreen = () => {
   const { clientes, setLoggedAccount } = useContext(UsuariosContext)
   const navigate = useNavigate()
   const loginScreenSchema = z.object({
-    login: z.string().nonempty('*Obrigatório'),
-    password: z.string().nonempty('*Obrigatório').min(8, 'A senha tem no mínimo 8 caracteres')
+    login: z.string().nonempty('*Obrigatório').trim(),
+    password: z.string().nonempty('*Obrigatório').min(8, 'A senha tem no mínimo 8 caracteres').trim()
   }).refine(data => {
     const { ...cliente } = data
     let cadastrado = false

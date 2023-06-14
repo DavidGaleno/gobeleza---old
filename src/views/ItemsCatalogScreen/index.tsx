@@ -3,7 +3,7 @@
 import styles from './styles.module.css'
 
 //React Libraries
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 //Components
 import { Title } from '../../components/Title'
@@ -21,11 +21,11 @@ export const ItemsCatalogScreen = () => {
 
     const [fixed, setFixed] = useState(false)
 
-    useEffect(() => {
-        if (window.scrollY > 0) setFixed(true)
-        else setFixed(false)
-    }, [window.scrollY])
 
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 0) return setFixed(true)
+        return setFixed(false)
+    })
 
     const [itensExibidos, setItensExibidos] = useState('Produtos')
     const { itens } = useContext(CatalogoItensContext)
