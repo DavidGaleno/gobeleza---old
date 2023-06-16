@@ -1,13 +1,18 @@
-import { createContext, useState } from "react";
+import { ReactNode, createContext, useState } from "react";
 import { IUsuariosContext } from "../../interfaces/IUsuariosContext";
 import { ICliente } from "../../interfaces/ICliente";
 import { ICompra } from "../../interfaces/ICompra";
 
 export const UsuariosContext = createContext<IUsuariosContext>({} as IUsuariosContext)
 UsuariosContext.displayName = 'UsuariosContext'
-export const UsuariosContextProvider = ({ children }: any) => {
+interface Props {
+    children: ReactNode
+}
+export const UsuariosContextProvider: React.FC<Props> = ({ children }: Props) => {
+
     const [clientes, setClientes] = useState<ICliente[]>([
         {
+            id:1,
             email: 'davidgaleno@gmail.com',
             nome: 'David Galeno',
             cpf: '086.477.891-05',
@@ -20,6 +25,8 @@ export const UsuariosContextProvider = ({ children }: any) => {
         }
     ])
     const [loggedAccount, setLoggedAccount] = useState<ICliente>({} as ICliente)
+
+  
     const [compras, setCompras] = useState<ICompra[]>([
         {
             id: 1,

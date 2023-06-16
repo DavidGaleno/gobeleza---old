@@ -1,4 +1,5 @@
 export interface ICliente {
+    id: number
     email: string
     cpf: string
     nome: string

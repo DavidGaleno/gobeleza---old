@@ -9,18 +9,20 @@ import { UsuariosContext } from '../../Context/UsuariosContext'
 export const MinhaContaUsuario = () => {
     <CheckLogin />
 
-    const {loggedAccount} = useContext(UsuariosContext)
+    const { loggedAccount } = useContext(UsuariosContext)
+
+
 
     const navigate = useNavigate()
     return (
 
         <div className={styles.container}>
-                <CheckLogin />
+            <CheckLogin />
 
             <img className={styles.logo} src={logo} alt='GOBELEZA' />
             <div className={styles.dados}>
-                <Campo label='Nome' value={loggedAccount.nome} changeValue={true} />
                 <Campo label='Email' value={loggedAccount.email} changeValue={true} />
+                <Campo label='Nome' value={loggedAccount.nome} changeValue={true} />
                 <Campo label='Telefone' value={loggedAccount.telefone} changeValue={true} />
                 <Campo label='Endereço' value={loggedAccount.endereco} changeValue={true} />
                 <Campo label='Sexo' value={loggedAccount.sexo} changeValue={true} />

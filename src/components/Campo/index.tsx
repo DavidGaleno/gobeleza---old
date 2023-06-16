@@ -33,7 +33,7 @@ export const Campo = ({ label, value, changeValue, fatherClass, shortValue }: Pr
 
                     :
                     <div className={styles.valueGroup}>
-                        <span className={styles.value}>{shortValue === false ? value : value.length <= 18 ? value : `${value.substring(0, 18)}...`}</span>
+                        <span className={styles.value}>{shortValue === false ? value : value.length <= 30 ? value : `${value.substring(0, 30)}...`}</span>
                         {changeValue ? <ActionButton onClick={() => setChangeDataScreenVisible(!changeDataScreenVisible)} fatherClass={styles.button} value={'Alterar →'} /> : ''}
                     </div>
                 }
