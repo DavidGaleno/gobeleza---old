@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { ReactNode, createContext, useState } from "react";
 
 
 
@@ -58,8 +58,10 @@ const datasHorariosAgendamento = ["Sun Jun 11 2023 08:00:00 GMT-0300 (Horário P
     "Sun Jun 11 2023 19:30:00 GMT-0300 (Horário Padrão de Brasília)",
     "Sun Jun 11 2023 20:00:00 GMT-0300 (Horário Padrão de Brasília)",
 ]
-
-export const CatalogoItensProvider = ({ children }: any) => {
+interface Props {
+    children: ReactNode
+}
+export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
 
     const [itens, setItens] = useState<Iitem[]>([
         {

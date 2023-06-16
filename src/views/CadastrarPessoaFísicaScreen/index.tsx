@@ -48,7 +48,7 @@ export const CadastrarPessoaFisica = () => {
   const { handleSubmit, formState: { errors } } = cadastroPessoaJuridicaUseForm
   const cadastrar = (data: CadastroPessoaFisicaType) => {
     const { passwordMatch, ...cliente } = data
-    setClientes((prevClientes: ICliente[]) => [...prevClientes, cliente])
+    setClientes((prevClientes: ICliente[]) => [...prevClientes, { ...cliente, id: prevClientes.length }])
     navigate('/')
   }
 
