@@ -5,7 +5,7 @@ import { ChangeDataScreen } from "../ChangeDataScreen"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons"
 interface Props {
-    label: string
+    label: string 
     value: string
     changeValue: boolean
     fatherClass?: string
