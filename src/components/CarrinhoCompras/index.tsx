@@ -17,8 +17,8 @@ export const CarrinhoCompras = ({ visible, setVisible }: Props) => {
     const { carrinhoCompras, setCarrinhoCompras, valorTotal } = useContext(CarrinhoComprasContext)
 
     useEffect(() => {
-        if (carrinhoCompras) setCarrinhoCompras(itens.filter((item: Iitem) => item.quantidadeCarrinho > 0))
-    }, [carrinhoCompras, itens, setCarrinhoCompras])
+        setCarrinhoCompras(itens.filter((item: Iitem) => item.quantidadeCarrinho > 0))
+    }, [itens, setCarrinhoCompras])
 
     return (
         <>
