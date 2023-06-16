@@ -7,7 +7,7 @@ export const CheckLogin = () => {
     const { loggedAccount } = useContext(UsuariosContext)
     useEffect(() => {
         if (Object.keys(loggedAccount).length === 0) navigate('/')
-    }, [])
+    }, [loggedAccount, navigate])
     return (
         <></>
     )
