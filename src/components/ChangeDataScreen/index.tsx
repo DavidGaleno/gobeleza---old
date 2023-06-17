@@ -17,12 +17,12 @@ interface Props {
 
 export const ChangeDataScreen = ({ label, value, visible, setVisible }: Props) => {
 
-    const { loggedAccount, setLoggedAccount, clientes, setClientes } = useContext(UsuariosContext)
+    const { loggedAccount, setLoggedAccount, usuarios, setUsuarios } = useContext(UsuariosContext)
 
     useEffect(() => {
-        const updatedLoggedAccount = clientes.filter(cliente => cliente.id === loggedAccount.id)
+        const updatedLoggedAccount = usuarios.filter(usuario => usuario.id === loggedAccount.id)
         setLoggedAccount(updatedLoggedAccount[0])
-    }, [clientes, loggedAccount.id, setLoggedAccount])
+    }, [usuarios, loggedAccount.id, setLoggedAccount])
 
 
     const changeDataSchema = z.object({
@@ -43,13 +43,13 @@ export const ChangeDataScreen = ({ label, value, visible, setVisible }: Props) =
             [atributo]: data.novoValor
         }
 
-        const updatedClientes = clientes.map(cliente => {
-            if (cliente.id === loggedAccount.id) {
-                return { ...cliente, ...updatedData }
+        const updatedUsuario = usuarios.map(usuario => {
+            if (usuario.id === loggedAccount.id) {
+                return { ...usuario, ...updatedData }
             }
-            return cliente
+            return usuario
         })
-        setClientes(updatedClientes)
+        setUsuarios(updatedUsuario)
         setVisible(!visible)
     }
     const { handleSubmit, formState: { errors } } = changeDataUseForm

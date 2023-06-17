@@ -16,7 +16,7 @@ import { useContext, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { CarrinhoComprasContext } from '../../Context/CarrinhoComprasContext'
 import { UsuariosContext } from '../../Context/UsuariosContext'
-import { ICliente } from '../../interfaces/IUsuario'
+import { IUsuario } from '../../interfaces/IUsuario'
 
 interface Props {
     setItensExibidos?: (itensExibidos: string) => void
@@ -52,7 +52,7 @@ export const Header = ({ setItensExibidos }: Props) => {
                     </>
                     }
                     <Link color='gray' to={'/minha_conta_usuario'}>Minha Conta</Link>
-                    <Link color='gray' onClick={() => setLoggedAccount({} as ICliente)} to={'/'}>Sair</Link>
+                    <Link color='gray' onClick={() => setLoggedAccount({} as IUsuario)} to={'/'}>Sair</Link>
 
                 </div>
                 {location.pathname === '/catalogo_itens' &&
