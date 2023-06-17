@@ -37,6 +37,7 @@ export const Campo = ({ label, value, changeValue, fatherClass, shortValue }: Pr
                         {changeValue ? <ActionButton onClick={() => setChangeDataScreenVisible(!changeDataScreenVisible)} fatherClass={styles.button} value={'Alterar →'} /> : ''}
                     </div>
                 }
+                
             </div>
         </>
     )

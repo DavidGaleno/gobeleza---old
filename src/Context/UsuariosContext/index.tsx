@@ -22,7 +22,7 @@ export const UsuariosContextProvider: React.FC<Props> = ({ children }: Props) =>
             password: '123123123',
             sexo: 'Masculino',
             telefone: '(42)94002-8922',
-            tipoConta: 'cliente'
+            tipoConta: 'Cliente'
         }
     ])
     const [loggedAccount, setLoggedAccount] = useState<IUsuario>({} as IUsuario)

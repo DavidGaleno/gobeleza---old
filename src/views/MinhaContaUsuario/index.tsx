@@ -27,7 +27,7 @@ export const MinhaContaUsuario = () => {
                 <Campo label='Endereço' value={loggedAccount.endereco} changeValue={true} />
                 <Campo label='Sexo' value={loggedAccount.sexo} changeValue={true} />
                 <Campo label='Senha' value={loggedAccount.password} changeValue={true} />
-                <Campo label='Tipo Conta' value='Cliente' changeValue={false} />
+                <Campo label='Tipo Conta' value={loggedAccount.tipoConta} changeValue={true} />
             </div>
             <ActionButton fatherClass={styles.button} value="Voltar ←" onClick={() => navigate(-1)} />
         </div>
