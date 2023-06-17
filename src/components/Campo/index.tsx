@@ -4,8 +4,9 @@ import styles from './styles.module.css'
 import { ChangeDataScreen } from "../ChangeDataScreen"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons"
+import { UpgradeContaScreen } from "../UpgradeContaScreen"
 interface Props {
-    label: string 
+    label: string
     value: string
     changeValue: boolean
     fatherClass?: string
@@ -18,7 +19,8 @@ export const Campo = ({ label, value, changeValue, fatherClass, shortValue }: Pr
 
     return (
         <>
-            {changeValue ? <ChangeDataScreen label={label} value={value} visible={changeDataScreenVisible} setVisible={setChangeDataScreenVisible} /> : ''}
+            {changeValue && label === 'Tipo Conta' && <UpgradeContaScreen label={label} value={value} visible={changeDataScreenVisible} setVisible={setChangeDataScreenVisible} />}
+            {changeValue && label !== 'Tipo Conta' && <ChangeDataScreen label={label} value={value} visible={changeDataScreenVisible} setVisible={setChangeDataScreenVisible} />}
             <div className={`${styles.container} ${fatherClass}`}>
                 <span className={styles.label}>{label}:</span>
                 {label.toLocaleLowerCase() === 'senha' ?
@@ -37,7 +39,6 @@ export const Campo = ({ label, value, changeValue, fatherClass, shortValue }: Pr
                         {changeValue ? <ActionButton onClick={() => setChangeDataScreenVisible(!changeDataScreenVisible)} fatherClass={styles.button} value={'Alterar →'} /> : ''}
                     </div>
                 }
-                
             </div>
         </>
     )

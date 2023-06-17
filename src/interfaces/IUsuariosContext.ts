@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 import { IUsuario } from "./IUsuario";
 import { ICompra } from "./ICompra";
+import { ISpecialPasswordUser } from "./ISpecialPassword";
 
 export interface IUsuariosContext {
     usuarios: IUsuario[]
@@ -9,4 +10,6 @@ export interface IUsuariosContext {
     setLoggedAccount: Dispatch<SetStateAction<IUsuario>>
     compras: ICompra[]
     setCompras: Dispatch<SetStateAction<ICompra[]>>
+    specialPasswordUser: ISpecialPasswordUser[]
+    setSpecialPasswordUser: Dispatch<SetStateAction<ISpecialPasswordUser[]>>
 }
