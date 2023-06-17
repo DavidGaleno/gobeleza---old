@@ -10,7 +10,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useNavigate } from 'react-router'
 import { useContext } from 'react'
 import { UsuariosContext } from '../../Context/UsuariosContext'
-import { ICliente } from '../../interfaces/ICliente'
+import { IUsuario } from '../../interfaces/IUsuario'
 
 const cadastroPessoaFisicaSchema = z.object({
   email: z.string().nonempty('*Obrigatório').email('Formato de Email inválido').transform(email => email.toLocaleLowerCase()).refine(email => email.endsWith('@gmail.com') || email.endsWith('@hotmail.com') || email.endsWith('@outlook.com'), {
@@ -32,7 +32,7 @@ const cadastroPessoaFisicaSchema = z.object({
 
 export const CadastrarPessoaFisica = () => {
 
-  const { setClientes } = useContext(UsuariosContext)
+  const { setUsuarios } = useContext(UsuariosContext)
 
   const navigate = useNavigate()
 
@@ -47,8 +47,8 @@ export const CadastrarPessoaFisica = () => {
 
   const { handleSubmit, formState: { errors } } = cadastroPessoaJuridicaUseForm
   const cadastrar = (data: CadastroPessoaFisicaType) => {
-    const { passwordMatch, ...cliente } = data
-    setClientes((prevClientes: ICliente[]) => [...prevClientes, { ...cliente, id: prevClientes.length }])
+    const { passwordMatch, ...usuario } = data
+    setUsuarios((prevUsuarios: IUsuario[]) => [...prevUsuarios, { ...usuario, id: prevUsuarios.length + 1, tipoConta: 'cliente' }])
     navigate('/')
   }
 

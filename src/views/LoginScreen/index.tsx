@@ -23,7 +23,7 @@ import { UsuariosContext } from '../../Context/UsuariosContext'
 
 
 export const LoginScreen = () => {
-  const { clientes, setLoggedAccount } = useContext(UsuariosContext)
+  const { usuarios, setLoggedAccount } = useContext(UsuariosContext)
   const navigate = useNavigate()
   const loginScreenSchema = z.object({
     login: z.string().nonempty('*Obrigatório').email('Formato de Email inválido').trim().refine(login => login.endsWith('@gmail.com') || login.endsWith('@outlook.com') || login.endsWith('@hotmail.com'),{message: 'O Email deve terminar com @outlook.com, @gmail.com ou @hotmail.com'}),
@@ -31,11 +31,11 @@ export const LoginScreen = () => {
   }).refine(data => {
     const { ...cliente } = data
     let cadastrado = false
-    clientes.forEach(clienteCadastrado => {
-      if (clienteCadastrado.email === cliente.login && clienteCadastrado.password === cliente.password) {
+    usuarios.forEach(usuarioCadastrado => {
+      if (usuarioCadastrado.email === cliente.login && usuarioCadastrado.password === cliente.password) {
         cadastrado = true
       }
-      setLoggedAccount(clienteCadastrado)
+      setLoggedAccount(usuarioCadastrado)
     })
     return cadastrado
   }, {

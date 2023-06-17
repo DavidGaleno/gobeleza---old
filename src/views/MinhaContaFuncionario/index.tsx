@@ -4,11 +4,11 @@ import { Campo } from '../../components/Campo'
 import { ActionButton } from '../../components/ActionButton'
 import { useNavigate } from 'react-router-dom'
 import { CheckLogin } from '../../components/CheckLogin'
+import { useContext } from 'react'
+import { UsuariosContext } from '../../Context/UsuariosContext'
 export const MinhaContaFuncionario = () => {
     <CheckLogin />
-
-    const telefone = 61940028922
-    const formattedTelefone = telefone.toString()
+    const { loggedAccount } = useContext(UsuariosContext)
     const navigate = useNavigate()
     return (
         <>
@@ -16,14 +16,14 @@ export const MinhaContaFuncionario = () => {
             <div className={styles.container}>
                 <img className={styles.logo} src={logo} alt='GOBELEZA' />
                 <div className={styles.dados}>
-                    <Campo label='Nome' value='David Galeno' changeValue={true} />
-                    <Campo label='Email' value='chozarplays@gmail.com' changeValue={true} />
-                    <Campo label='Telefone' value={`(${formattedTelefone.slice(0, 2)}) ${formattedTelefone.substring(2, 3)} ${formattedTelefone.substring(3, 7)}-${formattedTelefone.substring(7, 11)}`} changeValue={true} />
-                    <Campo label='Endereço' value='QNJ 35 Lote 2 Casa 1' changeValue={true} />
-                    <Campo label='Sexo' value='Masculino' changeValue={true} />
-                    <Campo label='Tipo Conta' value='Lojista' changeValue={true} />
-                    <Campo label='Senha' value='213sadqwqe123' changeValue={true} />
-                    <Campo label='Salão de Beleza' value='BeleZart' changeValue={false} />
+                    <Campo label='Nome' value={loggedAccount.nome} changeValue={true} />
+                    <Campo label='Email' value={loggedAccount.email} changeValue={true} />
+                    <Campo label='Telefone' value={loggedAccount.telefone} changeValue={true} />
+                    <Campo label='Endereço' value={loggedAccount.endereco} changeValue={true} />
+                    <Campo label='Sexo' value={loggedAccount.sexo} changeValue={true} />
+                    <Campo label='Senha' value={loggedAccount.password} changeValue={true} />
+                    {loggedAccount.salao && <Campo label='Salão de Beleza' value={loggedAccount.salao} changeValue={false} />}
+                    <Campo label='Tipo Conta' value={loggedAccount.tipoConta} changeValue={true} />
                 </div>
                 <ActionButton fatherClass={styles.button} value="Voltar ←" onClick={() => navigate(-1)} />
 

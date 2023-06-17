@@ -16,7 +16,7 @@ import { useContext, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { CarrinhoComprasContext } from '../../Context/CarrinhoComprasContext'
 import { UsuariosContext } from '../../Context/UsuariosContext'
-import { ICliente } from '../../interfaces/ICliente'
+import { ICliente } from '../../interfaces/IUsuario'
 
 interface Props {
     setItensExibidos?: (itensExibidos: string) => void

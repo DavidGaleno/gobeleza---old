@@ -1,6 +1,6 @@
 import { ReactNode, createContext, useState } from "react";
 import { IUsuariosContext } from "../../interfaces/IUsuariosContext";
-import { ICliente } from "../../interfaces/ICliente";
+import { IUsuario } from "../../interfaces/IUsuario";
 import { ICompra } from "../../interfaces/ICompra";
 
 export const UsuariosContext = createContext<IUsuariosContext>({} as IUsuariosContext)
@@ -10,7 +10,7 @@ interface Props {
 }
 export const UsuariosContextProvider: React.FC<Props> = ({ children }: Props) => {
 
-    const [clientes, setClientes] = useState<ICliente[]>([
+    const [usuarios, setUsuarios] = useState<IUsuario[]>([
         {
             id:1,
             email: 'davidgaleno@gmail.com',
@@ -21,10 +21,11 @@ export const UsuariosContextProvider: React.FC<Props> = ({ children }: Props) =>
             numero: 'S/N',
             password: '123123123',
             sexo: 'Masculino',
-            telefone: '(42)94002-8922'
+            telefone: '(42)94002-8922',
+            tipoConta: 'cliente'
         }
     ])
-    const [loggedAccount, setLoggedAccount] = useState<ICliente>({} as ICliente)
+    const [loggedAccount, setLoggedAccount] = useState<IUsuario>({} as IUsuario)
 
   
     const [compras, setCompras] = useState<ICompra[]>([
@@ -80,7 +81,7 @@ export const UsuariosContextProvider: React.FC<Props> = ({ children }: Props) =>
         }
     ])
     return (
-        <UsuariosContext.Provider value={{ clientes, setClientes, loggedAccount, setLoggedAccount, compras, setCompras }}>
+        <UsuariosContext.Provider value={{ usuarios, setUsuarios, loggedAccount, setLoggedAccount, compras, setCompras }}>
             {children}
         </UsuariosContext.Provider>
     )

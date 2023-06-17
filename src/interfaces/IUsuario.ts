@@ -1,4 +1,4 @@
-export interface ICliente {
+export interface IUsuario {
     id: number
     email: string
     cpf: string
@@ -9,4 +9,6 @@ export interface ICliente {
     complemento: string
     numero: string
     password: string
+    tipoConta: string
+    salao?: string
 }
