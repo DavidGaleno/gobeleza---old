@@ -26,7 +26,7 @@ export const Item = ({ item, image, alt, nome, preco }: Props) => {
                 <h3>R${preco.toString().replace('.', ',')}{ }</h3>
             </div>
             <div className={styles.buttons}>
-                <ActionButton onClick={() => {
+                <ActionButton type="button" onClick={() => {
                     if (item.quantidadeCarrinho >= 0) {
                         const updatedCarrinhoCompras = [...itens]
                         updatedCarrinhoCompras[itens.indexOf(item)].quantidadeCarrinho += 1

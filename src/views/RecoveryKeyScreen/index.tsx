@@ -37,8 +37,8 @@ export const RecoveryKeyScreen = () => {
         <form onSubmit={handleSubmit(enviar)} className={styles.form}>
           <Input error={errors.key?.message} registerName='key' type='number' placeholder="Digite o código recebido" />
           <div className={styles.buttons}>
-            <ActionButton value="Confirmar →" />
-            <ActionButton value="Voltar ←" path='/recuperar_senha_opcoes' />
+            <ActionButton type="submit" value="Confirmar →" />
+            <ActionButton type="button" value="Voltar ←" path='/recuperar_senha_opcoes' />
           </div>
         </form>
       </FormProvider>

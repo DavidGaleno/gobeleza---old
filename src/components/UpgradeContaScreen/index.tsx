@@ -43,7 +43,6 @@ export const UpgradeContaScreen = ({ label, value, visible, setVisible }: Props)
         resolver: zodResolver(upgradeContaSchema)
     })
     const upgrade = (data: changeDataUseFormType) => {
-        console.log('i')
         specialPasswordUser.forEach(cadastro => {
             if (cadastro.specialPassword === data.senhaEspecial && loggedAccount.id === cadastro.userId) {
                 const updatedUser = loggedAccount
@@ -55,6 +54,15 @@ export const UpgradeContaScreen = ({ label, value, visible, setVisible }: Props)
                 })
 
             }
+        })
+    }
+    const downgrade = () => {
+        const updatedUser = loggedAccount
+        updatedUser.tipoConta = 'Cliente'
+        setUsuarios(prevUsuarios => {
+            const updatedUsers = [...prevUsuarios]
+            updatedUsers[prevUsuarios.indexOf(loggedAccount)] = updatedUser
+            return updatedUsers
         })
     }
 
@@ -71,12 +79,12 @@ export const UpgradeContaScreen = ({ label, value, visible, setVisible }: Props)
                         {showSenhaEspecial ? <FontAwesomeIcon className={styles.passwordIcon} size="3x" icon={faEye} onClick={() => setShowSenhaEspecial(!showSenhaEspecial)} /> : <FontAwesomeIcon className={styles.passwordIcon} onClick={() => setShowSenhaEspecial(!showSenhaEspecial)} size="3x" icon={faEyeSlash} />}
                     </div>
                     <div className={styles.buttons}>
-                        <ActionButton value="Voltar ←" onClick={() => setVisible(!visible)} />
-                        <ActionButton value="Confirmar →" />
+                        <ActionButton type="button" value="Voltar ←" onClick={() => setVisible(!visible)} />
+                        <ActionButton type="submit" value="Confirmar →" />
                     </div>
                     {loggedAccount.tipoConta !== 'Cliente' &&
-                        <div className={styles.buttons}>
-                            <ActionButton value="Cliente ←" onClick={() => setVisible(!visible)} />
+                        <div className={styles.button}>
+                            <ActionButton type="button" value="Cliente ←" onClick={() => downgrade()} />
                         </div>
                     }
                 </form>

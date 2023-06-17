@@ -39,7 +39,7 @@ export const CarrinhoCompras = ({ visible, setVisible }: Props) => {
                                 <span>R${valorTotal.toFixed(2).toString().replace('.', ',')}</span>
                             </div>
                             <div className={styles.button}>
-                                <ActionButton value="Finalizar Pedido →" path="/pagamento_opcoes" />
+                                <ActionButton type="submit" value="Finalizar Pedido →" path="/pagamento_opcoes" />
                             </div>
                         </>
                         :

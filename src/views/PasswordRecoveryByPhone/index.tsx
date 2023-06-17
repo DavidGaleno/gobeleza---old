@@ -38,8 +38,8 @@ export const PasswordRecoveryByPhoneScreen = () => {
         <form onSubmit={handleSubmit(enviar)} className={styles.form}>
           <Input error={errors.telefone?.message} registerName='telefone' type='text' placeholder="Digite seu número de telefone" mask="phoneNumber" />
           <div className={styles.buttons}>
-            <ActionButton value="Confirmar →" />
-            <ActionButton value="Voltar ←" path='/recuperar_senha_opcoes' />
+            <ActionButton type="submit" value="Confirmar →" />
+            <ActionButton type="button" value="Voltar ←" path='/recuperar_senha_opcoes' />
           </div>
         </form>
       </FormProvider>

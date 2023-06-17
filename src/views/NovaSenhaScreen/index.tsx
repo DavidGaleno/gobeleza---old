@@ -41,8 +41,8 @@ export const NovaSenhaScreen = () => {
                     <Input error={errors.password?.message} registerName='password' type='password' placeholder="Digite sua nova senha" />
                     <Input error={errors.passwordMatch?.message} registerName='passwordMatch' type='password' placeholder="Digite novamente" />
                     <div className={styles.buttons}>
-                        <ActionButton value="Confirmar →" />
-                        <ActionButton value="Voltar ←" path='/recuperar_senha_opcoes' />
+                        <ActionButton type="submit" value="Confirmar →" />
+                        <ActionButton type="button" value="Voltar ←" path='/recuperar_senha_opcoes' />
                     </div>
                 </form>
             </FormProvider>

@@ -44,8 +44,8 @@ export const PIXPaymentScreen = () => {
         <form onSubmit={handleSubmit(avancar)} className={styles.form}>
           <Input error={errors.pix?.message} registerName='pix'  type='text' placeholder="Digite a chave PIX" />
           <div className={styles.buttons}>
-            <ActionButton value="Confirmar →" />
-            <ActionButton value="Voltar ←" path='/pagamento_opcoes' />
+            <ActionButton type="submit" value="Confirmar →" />
+            <ActionButton type="button" value="Voltar ←" path='/pagamento_opcoes' />
           </div>
         </form>
       </FormProvider>

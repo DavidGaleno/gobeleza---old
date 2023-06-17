@@ -62,8 +62,8 @@ export const CardPaymentScreen = () => {
             <input {...register('parcelas')} type="hidden" name="" value={'1X'} />
           }
           <div className={styles.buttons}>
-            <ActionButton value="Confirmar →" />
-            <ActionButton value="Voltar ←" path='/pagamento_opcoes' />
+            <ActionButton type="submit" value="Confirmar →" />
+            <ActionButton type="button" value="Voltar ←" path='/pagamento_opcoes' />
           </div>
         </form>
       </FormProvider>

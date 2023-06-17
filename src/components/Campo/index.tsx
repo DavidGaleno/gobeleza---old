@@ -30,13 +30,13 @@ export const Campo = ({ label, value, changeValue, fatherClass, shortValue }: Pr
                         {showPassword ? <FontAwesomeIcon className={styles.passwordIcon} size="3x" icon={faEye} onClick={() => setShowPassword(!showPassword)} /> : <FontAwesomeIcon className={styles.passwordIcon} onClick={() => setShowPassword(!showPassword)} size="3x" icon={faEyeSlash} />
 
                         }
-                        {changeValue ? <ActionButton onClick={() => setChangeDataScreenVisible(!changeDataScreenVisible)} fatherClass={styles.button} value={'Alterar →'} /> : ''}
+                        {changeValue ? <ActionButton type="button" onClick={() => setChangeDataScreenVisible(!changeDataScreenVisible)} fatherClass={styles.button} value={'Alterar →'} /> : ''}
                     </div>
 
                     :
                     <div className={styles.valueGroup}>
                         <span className={styles.value}>{shortValue === false ? value : value.length <= 30 ? value : `${value.substring(0, 30)}...`}</span>
-                        {changeValue ? <ActionButton onClick={() => setChangeDataScreenVisible(!changeDataScreenVisible)} fatherClass={styles.button} value={'Alterar →'} /> : ''}
+                        {changeValue ? <ActionButton type="button" onClick={() => setChangeDataScreenVisible(!changeDataScreenVisible)} fatherClass={styles.button} value={'Alterar →'} /> : ''}
                     </div>
                 }
             </div>

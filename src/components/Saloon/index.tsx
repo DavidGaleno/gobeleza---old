@@ -14,7 +14,7 @@ export const Saloon = ({ image, alt, nome }: Props) => {
             <div className={styles.text}>
                 <h2>{nome}</h2>
             </div>
-                <ActionButton value="Visitar →" path="/catalogo_itens" />
+                <ActionButton type="button" value="Visitar →" path="/catalogo_itens" />
 
         </div>
     )

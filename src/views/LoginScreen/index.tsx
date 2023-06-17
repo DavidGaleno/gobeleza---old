@@ -59,7 +59,7 @@ export const LoginScreen = () => {
           <Input error={errors.login?.message} registerName='login' type='text' placeholder="Digite seu Email ou CPF" />
           <Input error={errors.password?.message} registerName='password' type='password' placeholder="Digite sua senha" />
           <SubText path='/recuperar_senha_opcoes' value='Esqueceu a senha?' />
-          <ActionButton value="Confirmar →" />
+          <ActionButton type="submit" value="Confirmar →" />
           <div className={styles.loginIcons}>
             <div className={styles.line}></div>
             <Line />

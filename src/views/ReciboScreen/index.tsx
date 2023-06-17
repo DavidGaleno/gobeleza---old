@@ -58,8 +58,8 @@ export const ReciboScreen = () => {
 
             </div>
             <div className={styles.buttons}>
-                <ActionButton fatherClass={styles.button} onClick={() => restartData()} value="Voltar ←" path='/catalogo_itens' />
-                <ActionButton fatherClass={styles.button} value="Email →" path='/catalogo_itens' />
+                <ActionButton type="button" fatherClass={styles.button} onClick={() => restartData()} value="Voltar ←" path='/catalogo_itens' />
+                <ActionButton type="button" fatherClass={styles.button} value="Email →" path='/catalogo_itens' />
             </div>
         </div>
     )

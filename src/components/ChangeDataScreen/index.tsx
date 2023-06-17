@@ -62,8 +62,8 @@ export const ChangeDataScreen = ({ label, value, visible, setVisible }: Props) =
                     <Input error={errors.novoValor?.message} registerName={'novoValor'} placeholder={`Digite o novo valor do campo ${label}`} type={"text"} fatherClass={styles.value} />
                     <Input error={errors.password?.message} registerName={'password'} type="password" placeholder="Insira sua senha" fatherClass={styles.value} />
                     <div className={styles.buttons}>
-                        <ActionButton value="Voltar ←" onClick={() => setVisible(!visible)} />
-                        <ActionButton value="Confirmar →" />
+                        <ActionButton type="button" value="Voltar ←" onClick={() => setVisible(!visible)} />
+                        <ActionButton type="submit" value="Confirmar →" />
                     </div>
                 </form>
             </FormProvider>

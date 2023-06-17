@@ -56,8 +56,8 @@ export const CadastrarPessoaJuridica = () => {
           </div>
           <File registerName='image' error={errors.image?.message} label='Adicione uma foto do salão' />
           <div className={styles.buttons}>
-            <ActionButton value="Confirmar →" />
-            <ActionButton value="Voltar ←" path='/cadastrar_opcoes' />
+            <ActionButton type="submit" value="Confirmar →" />
+            <ActionButton type="button" value="Voltar ←" path='/cadastrar_opcoes' />
           </div>
         </form>
       </FormProvider>
