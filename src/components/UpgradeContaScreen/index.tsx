@@ -20,7 +20,7 @@ interface Props {
 
 export const UpgradeContaScreen = ({ label, value, visible, setVisible }: Props) => {
 
-    const { loggedAccount, setLoggedAccount, usuarios, specialPasswordUser } = useContext(UsuariosContext)
+    const { loggedAccount, setLoggedAccount, usuarios, setUsuarios, specialPasswordUser } = useContext(UsuariosContext)
     const [showSenhaEspecial, setShowSenhaEspecial] = useState(false)
 
     useEffect(() => {
@@ -43,7 +43,19 @@ export const UpgradeContaScreen = ({ label, value, visible, setVisible }: Props)
         resolver: zodResolver(upgradeContaSchema)
     })
     const upgrade = (data: changeDataUseFormType) => {
-        console.log(data)
+        console.log('i')
+        specialPasswordUser.forEach(cadastro => {
+            if (cadastro.specialPassword === data.senhaEspecial && loggedAccount.id === cadastro.userId) {
+                const updatedUser = loggedAccount
+                updatedUser.tipoConta = 'Funcionário'
+                setUsuarios(prevUsuarios => {
+                    const updatedUsers = [...prevUsuarios]
+                    updatedUsers[prevUsuarios.indexOf(loggedAccount)] = updatedUser
+                    return updatedUsers
+                })
+
+            }
+        })
     }
 
     const { handleSubmit, formState: { errors } } = changeDataUseForm
