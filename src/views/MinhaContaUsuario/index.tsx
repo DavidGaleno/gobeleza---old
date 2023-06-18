@@ -30,7 +30,7 @@ export const MinhaContaUsuario = () => {
                 {loggedAccount.salao && <Campo label='Salão de Beleza' value={loggedAccount.salao} changeValue={false} />}
                 <Campo label='Tipo Conta' value={loggedAccount.tipoConta} changeValue={true} />
             </div>
-            <ActionButton type="button" fatherClass={styles.button} value="Voltar ←" onClick={() => navigate('/catalogo_itens')} />
+            <ActionButton type="button" fatherClass={styles.button} value="Voltar ←" onClick={() => navigate(-1)} />
         </div>
 
     )
