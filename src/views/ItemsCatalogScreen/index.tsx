@@ -23,7 +23,7 @@ export const ItemsCatalogScreen = () => {
 
     const [itensExibidos, setItensExibidos] = useState('Produtos')
     const { itens } = useContext(CatalogoItensContext)
-
+    
 
     return (
         <div className={styles.container}>

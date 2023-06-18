@@ -10,6 +10,7 @@ import { UsuariosContext } from "../../Context/UsuariosContext"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons"
 import { CheckLogin } from "../CheckLogin"
+import { useNavigate } from "react-router-dom"
 interface Props {
     label: string
     value: string
@@ -22,6 +23,7 @@ export const UpgradeContaScreen = ({ label, value, visible, setVisible }: Props)
 
     const { loggedAccount, setLoggedAccount, usuarios, setUsuarios, specialPasswordUser } = useContext(UsuariosContext)
     const [showSenhaEspecial, setShowSenhaEspecial] = useState(false)
+    const navigate = useNavigate()
 
     useEffect(() => {
         const updatedLoggedAccount = usuarios.filter(usuario => usuario.id === loggedAccount.id)
@@ -52,7 +54,7 @@ export const UpgradeContaScreen = ({ label, value, visible, setVisible }: Props)
                     updatedUsers[prevUsuarios.indexOf(loggedAccount)] = updatedUser
                     return updatedUsers
                 })
-
+                navigate('/minha_conta_funcionario')
             }
         })
     }
@@ -64,6 +66,7 @@ export const UpgradeContaScreen = ({ label, value, visible, setVisible }: Props)
             updatedUsers[prevUsuarios.indexOf(loggedAccount)] = updatedUser
             return updatedUsers
         })
+        navigate('/minha_conta_usuario')
     }
 
     const { handleSubmit, formState: { errors } } = changeDataUseForm
