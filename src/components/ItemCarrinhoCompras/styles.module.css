@@ -13,7 +13,9 @@
     justify-content: center;
     align-items: center;
     width: 50%;
+    white-space: nowrap;
 }
+
 
 h2,h3{
     text-align: center;

@@ -20,16 +20,17 @@ import { IUsuario } from '../../interfaces/IUsuario'
 
 interface Props {
     setItensExibidos?: (itensExibidos: string) => void
+    fixed?: boolean
+    setFixed?: (fixed: boolean) => void
 }
 
-export const Header = ({ setItensExibidos }: Props) => {
+export const Header = ({ setItensExibidos, fixed, setFixed }: Props) => {
     const navigate = useNavigate()
-    const [fixed, setFixed] = useState(false)
 
 
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 0) return setFixed(true)
-        return setFixed(false)
+        if (window.scrollY > 0) return setFixed?.(true)
+        return setFixed?.(false)
     })
     const { setLoggedAccount } = useContext(UsuariosContext)
     const [menuVisible, setMenuVisible] = useState(false)
@@ -38,7 +39,7 @@ export const Header = ({ setItensExibidos }: Props) => {
     const { carrinhoCompras } = useContext(CarrinhoComprasContext)
     const location = useLocation()
     return (
-        <header className={fixed ? styles.fixed : ''}>
+        <header className={fixed !==  undefined ? fixed === true ? styles.fixed : styles.hide : ''}>
             <img className={styles.logo} src={logo} alt="Logo" />
             <MobileMenu setItensExibidos={setItensExibidos && setItensExibidos} visible={menuVisible} setVisible={setMenuVisible} />
             <CarrinhoCompras visible={carrinhoComprasVisible} setVisible={setCarrinhoComprasVisible} />

@@ -26,7 +26,7 @@ export const LoginScreen = () => {
   const { usuarios, setLoggedAccount } = useContext(UsuariosContext)
   const navigate = useNavigate()
   const loginScreenSchema = z.object({
-    login: z.string().nonempty('*Obrigatório').email('Formato de Email inválido').trim().refine(login => login.endsWith('@gmail.com') || login.endsWith('@outlook.com') || login.endsWith('@hotmail.com'),{message: 'O Email deve terminar com @outlook.com, @gmail.com ou @hotmail.com'}),
+    login: z.string().trim().nonempty('*Obrigatório').email('Formato de Email inválido').refine(login => login.endsWith('@gmail.com') || login.endsWith('@outlook.com') || login.endsWith('@hotmail.com'), { message: 'O Email deve terminar com @outlook.com, @gmail.com ou @hotmail.com' }),
     password: z.string().nonempty('*Obrigatório').min(8, 'A senha tem no mínimo 8 caracteres').trim()
   }).refine(data => {
     const { ...cliente } = data
