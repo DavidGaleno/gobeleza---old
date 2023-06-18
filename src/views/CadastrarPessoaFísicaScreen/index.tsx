@@ -59,18 +59,18 @@ export const CadastrarPessoaFisica = () => {
       <img className={styles.logo} src={logo} alt="GoBeleza" />
       <FormProvider {...cadastroPessoaJuridicaUseForm} >
         <form onSubmit={handleSubmit(cadastrar)} className={styles.form}>
-          <Input error={errors.email?.message} registerName={'email'} type='text' placeholder="Digite seu Email" mask="email" />
-          <Input error={errors.cpf?.message} registerName={'cpf'} type='text' placeholder="Digite seu CPF" mask='cpf' />
-          <Input error={errors.nome?.message} registerName={'nome'} type='text' placeholder="Digite seu Nome" />
-          <Input error={errors.telefone?.message} registerName={'telefone'} type='text' placeholder="Digite seu Telefone" mask="phoneNumber" />
-          <Select fatherClass={styles.select} registerName={'sexo'} label='Selecione seu Sexo' options={['masculino', 'feminino']} />
+          <Input value='' error={errors.email?.message} registerName={'email'} type='text' placeholder="Digite seu Email" mask="email" />
+          <Input value='' error={errors.cpf?.message} registerName={'cpf'} type='text' placeholder="Digite seu CPF" mask='cpf' />
+          <Input value='' error={errors.nome?.message} registerName={'nome'} type='text' placeholder="Digite seu Nome" />
+          <Input value='' error={errors.telefone?.message} registerName={'telefone'} type='text' placeholder="Digite seu Telefone" mask="phoneNumber" />
+          <Select value='' fatherClass={styles.select} registerName={'sexo'} label='Selecione seu Sexo' options={['masculino', 'feminino']} />
           <div className={styles.endereco}>
-            <Input error={errors.endereco?.message} registerName={'endereco'} type='text' placeholder="Endereço" />
-            <Input error={errors.complemento?.message} registerName={'complemento'} type='text' placeholder="Complemento" />
-            <Input error={errors.numero?.message} registerName={'numero'} type='text' placeholder="Número ou S/N" />
+            <Input value='' error={errors.endereco?.message} registerName={'endereco'} type='text' placeholder="Endereço" />
+            <Input value='' error={errors.complemento?.message} registerName={'complemento'} type='text' placeholder="Complemento" />
+            <Input value='' error={errors.numero?.message} registerName={'numero'} type='text' placeholder="Número ou S/N" />
           </div>
-          <Input error={errors.password?.message} registerName={'password'} type='password' placeholder="Digite sua senha" />
-          <Input error={errors.passwordMatch?.message} registerName={'passwordMatch'} type='password' placeholder="Confirme sua senha" />
+          <Input value='' error={errors.password?.message} registerName={'password'} type='password' placeholder="Digite sua senha" />
+          <Input value='' error={errors.passwordMatch?.message} registerName={'passwordMatch'} type='password' placeholder="Confirme sua senha" />
           <div className={styles.buttons}>
             <ActionButton type="submit" value="Confirmar →" />
             <ActionButton type="button" value="Voltar ←" path='/cadastrar_opcoes' />

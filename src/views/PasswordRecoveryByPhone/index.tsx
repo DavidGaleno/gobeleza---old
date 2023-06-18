@@ -36,7 +36,7 @@ export const PasswordRecoveryByPhoneScreen = () => {
       <img className={styles.logo} src={logo} alt="GoBeleza" />
       <FormProvider {...passwordRecoveryByPhoneUseForm}>
         <form onSubmit={handleSubmit(enviar)} className={styles.form}>
-          <Input error={errors.telefone?.message} registerName='telefone' type='text' placeholder="Digite seu número de telefone" mask="phoneNumber" />
+          <Input value='' error={errors.telefone?.message} registerName='telefone' type='text' placeholder="Digite seu número de telefone" mask="phoneNumber" />
           <div className={styles.buttons}>
             <ActionButton type="submit" value="Confirmar →" />
             <ActionButton type="button" value="Voltar ←" path='/recuperar_senha_opcoes' />

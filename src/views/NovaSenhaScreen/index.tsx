@@ -38,8 +38,8 @@ export const NovaSenhaScreen = () => {
             <img className={styles.logo} src={logo} alt="GoBeleza" />
             <FormProvider {...NovaSenhaUseForm}>
                 <form onSubmit={handleSubmit(enviar)} className={styles.form}>
-                    <Input error={errors.password?.message} registerName='password' type='password' placeholder="Digite sua nova senha" />
-                    <Input error={errors.passwordMatch?.message} registerName='passwordMatch' type='password' placeholder="Digite novamente" />
+                    <Input value='' error={errors.password?.message} registerName='password' type='password' placeholder="Digite sua nova senha" />
+                    <Input value='' error={errors.passwordMatch?.message} registerName='passwordMatch' type='password' placeholder="Digite novamente" />
                     <div className={styles.buttons}>
                         <ActionButton type="submit" value="Confirmar →" />
                         <ActionButton type="button" value="Voltar ←" path='/recuperar_senha_opcoes' />

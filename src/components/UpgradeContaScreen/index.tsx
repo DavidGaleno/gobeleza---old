@@ -75,7 +75,7 @@ export const UpgradeContaScreen = ({ label, value, visible, setVisible }: Props)
                 <form onSubmit={handleSubmit(upgrade)} className={`${styles.container} ${visible ? '' : styles.hide}`} >
                     <Campo shortValue={false} fatherClass={styles.value} label={label} value={value} changeValue={false} />
                     <div className={styles.senhaEspecialContainer}>
-                        <Input error={errors.senhaEspecial?.message} registerName={'senhaEspecial'} type={showSenhaEspecial ? 'text' : 'password'} placeholder="Insira sua senha" fatherClass={styles.value} />
+                        <Input value="" error={errors.senhaEspecial?.message} registerName={'senhaEspecial'} type={showSenhaEspecial ? 'text' : 'password'} placeholder="Insira sua senha" fatherClass={styles.value} />
                         {showSenhaEspecial ? <FontAwesomeIcon className={styles.passwordIcon} size="3x" icon={faEye} onClick={() => setShowSenhaEspecial(!showSenhaEspecial)} /> : <FontAwesomeIcon className={styles.passwordIcon} onClick={() => setShowSenhaEspecial(!showSenhaEspecial)} size="3x" icon={faEyeSlash} />}
                     </div>
                     <div className={styles.buttons}>

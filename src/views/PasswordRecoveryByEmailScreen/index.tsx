@@ -36,7 +36,7 @@ export const PasswordRecoveryByEmailScreen = () => {
       <img className={styles.logo} src={logo} alt="GoBeleza" />
       <FormProvider {...passwordRecoveryByEmailUseForm}>
         <form onSubmit={handleSubmit(enviar)} className={styles.form}>
-          <Input error={errors.email?.message} registerName='email' type='text' placeholder="Digite seu Email" mask="email" />
+          <Input value='' error={errors.email?.message} registerName='email' type='text' placeholder="Digite seu Email" mask="email" />
           <div className={styles.buttons}>
             <ActionButton type="submit" value="Confirmar →" />
             <ActionButton type="button" value="Voltar ←" path='/recuperar_senha_opcoes' />

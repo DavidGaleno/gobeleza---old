@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styles from './styles.module.css'
 interface Props {
     type: string
@@ -6,11 +7,13 @@ interface Props {
     fatherClass?: string
     registerName: string
     error?: string
+    value: string | number
 
 }
 
 import { useFormContext } from 'react-hook-form'
-export const Input = ({ type, placeholder, mask, fatherClass, registerName, error }: Props) => {
+export const Input = ({ type, placeholder, mask, fatherClass, registerName, error, value }: Props) => {
+    const [inputValue, setInputValue] = useState(value)
 
     const { register } = useFormContext()
     const formatPhoneNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -40,7 +43,11 @@ export const Input = ({ type, placeholder, mask, fatherClass, registerName, erro
 
     return (
         <div className={styles.container}>
-            <input {...register(registerName)} type={type} className={`${styles.input} ${fatherClass}`} placeholder={placeholder} onChange={(e) => checkMask(e)} />
+            <input value={inputValue} {...register(registerName)} type={type} className={`${styles.input} ${fatherClass}`} placeholder={placeholder} onChange={(e) => {
+                checkMask(e)
+                setInputValue(e.target.value)
+            }
+            } />
             {error && <span className={styles.errorMessage}>{error}</span>}
         </div>
     )

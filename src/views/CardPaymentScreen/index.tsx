@@ -50,13 +50,13 @@ export const CardPaymentScreen = () => {
       <img className={styles.logo} src={logo} alt="GoBeleza" />
       <FormProvider {...cartaoPagamentoUserForm}>
         <form onSubmit={handleSubmit(pagar)} className={styles.form}>
-          <Input error={errors.numero?.message} registerName='numero' type='text' placeholder="Digite o número do cartão" />
-          <Input error={errors.titular?.message} registerName='titular' type='text' placeholder="Digite o nome do titular do cartão" />
-          <Input error={errors.vencimentoData?.message} registerName='vencimentoData' type='date' placeholder="Digite a data de vencimento do cartão" />
-          <Input error={errors.cvv?.message} registerName='cvv' fatherClass={`${styles.cvv}`} type='number' placeholder="Digite o CVV" />
-          <Select error={errors.modalidade?.message} registerName='modalidade' onChange={(e) => setModalidade(e.target.value)} label="Selecione a modalidade do cartão" options={['Débito', 'Crédito']} />
+          <Input value='' error={errors.numero?.message} registerName='numero' type='text' placeholder="Digite o número do cartão" />
+          <Input value='' error={errors.titular?.message} registerName='titular' type='text' placeholder="Digite o nome do titular do cartão" />
+          <Input value='' error={errors.vencimentoData?.message} registerName='vencimentoData' type='date' placeholder="Digite a data de vencimento do cartão" />
+          <Input value='' error={errors.cvv?.message} registerName='cvv' fatherClass={`${styles.cvv}`} type='number' placeholder="Digite o CVV" />
+          <Select value='' error={errors.modalidade?.message} registerName='modalidade' onChange={(e) => setModalidade(e.target.value)} label="Selecione a modalidade do cartão" options={['Débito', 'Crédito']} />
           {modalidade === 'Crédito' &&
-            <Select registerName={'parcelas'} label="Selecione o número de parcelas" options={['1X', '2X', '4X', '6X', '8X', '10X', '12X']} />
+            <Select value='' registerName={'parcelas'} label="Selecione o número de parcelas" options={['1X', '2X', '4X', '6X', '8X', '10X', '12X']} />
           }
           {modalidade === 'Débito' &&
             <input {...register('parcelas')} type="hidden" name="" value={'1X'} />

@@ -35,7 +35,7 @@ export const RecoveryKeyScreen = () => {
       <img className={styles.logo} src={logo} alt="GoBeleza" />
       <FormProvider {...recoveryKeyUseForm}>
         <form onSubmit={handleSubmit(enviar)} className={styles.form}>
-          <Input error={errors.key?.message} registerName='key' type='number' placeholder="Digite o código recebido" />
+          <Input value='' error={errors.key?.message} registerName='key' type='number' placeholder="Digite o código recebido" />
           <div className={styles.buttons}>
             <ActionButton type="submit" value="Confirmar →" />
             <ActionButton type="button" value="Voltar ←" path='/recuperar_senha_opcoes' />

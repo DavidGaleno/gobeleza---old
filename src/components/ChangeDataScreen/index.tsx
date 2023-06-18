@@ -59,8 +59,8 @@ export const ChangeDataScreen = ({ label, value, visible, setVisible }: Props) =
             <FormProvider {...changeDataUseForm}>
                 <form onSubmit={handleSubmit(mudar)} className={`${styles.container} ${visible ? '' : styles.hide}`} >
                     <Campo shortValue={false} fatherClass={styles.value} label={label} value={value} changeValue={false} />
-                    <Input error={errors.novoValor?.message} registerName={'novoValor'} placeholder={`Digite o novo valor do campo ${label}`} type={"text"} fatherClass={styles.value} />
-                    <Input error={errors.password?.message} registerName={'password'} type="password" placeholder="Insira sua senha" fatherClass={styles.value} />
+                    <Input value="" error={errors.novoValor?.message} registerName={'novoValor'} placeholder={`Digite o novo valor do campo ${label}`} type={"text"} fatherClass={styles.value} />
+                    <Input value="" error={errors.password?.message} registerName={'password'} type="password" placeholder="Insira sua senha" fatherClass={styles.value} />
                     <div className={styles.buttons}>
                         <ActionButton type="button" value="Voltar ←" onClick={() => setVisible(!visible)} />
                         <ActionButton type="submit" value="Confirmar →" />

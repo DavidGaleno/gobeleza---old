@@ -11,15 +11,17 @@ import { useContext, useState } from 'react'
 import { CatalogoItensContext } from '../../Context/CatalogoItensContext'
 import { tipoItemEnum } from '../../Enuns/tipoItemEnum'
 import { File } from '../File'
+import { Iitem } from '../../interfaces/Iitem'
 
 interface Props {
+  item?: Iitem
   visible: boolean
   setVisible: (visible: boolean) => void
 }
 
-export const CadastroProdutoScreen = ({ visible, setVisible }: Props) => {
+export const CadastroProdutoScreen = ({ visible, setVisible, item }: Props) => {
 
-  const { setItens } = useContext(CatalogoItensContext)
+  const { itens, setItens } = useContext(CatalogoItensContext)
 
 
   const cadastroProdutoSchema = z.object({
@@ -42,11 +44,25 @@ export const CadastroProdutoScreen = ({ visible, setVisible }: Props) => {
 
   const { handleSubmit, register, formState: { errors } } = cadastroProdutoUseForm
   const cadastrar = (data: CadastroProdutoType) => {
-    setItens(prevItens => [...prevItens, { ...data, id: prevItens.length + 1, listaDesejos: false, carrinhoCompras: false, quantidadeCarrinho: 0, imagem: data.imagem!.name }])
-    setVisible(!visible)
+    if (item) {
+      console.log('oi')
+      setItens(prevItens => {
+        return prevItens.map(itemCadastrado => {
+          if (itemCadastrado.id === item.id) {
+            return { ...itemCadastrado, ...data, imagem: data.imagem!.name };
+          }
+          return itemCadastrado;
+        });
+      });
+    }
+    else {
+      console.log('123')
+      setItens(prevItens => [...prevItens, { ...data, id: prevItens.length + 1, listaDesejos: false, carrinhoCompras: false, quantidadeCarrinho: 0, imagem: data.imagem!.name }])
+      setVisible(!visible)
+    }
   }
 
-  const [categoria, setCategoria] = useState('')
+  const [categoria, setCategoria] = useState(item ? item.categoria ? item.categoria : '' : '')
 
 
 
@@ -57,12 +73,12 @@ export const CadastroProdutoScreen = ({ visible, setVisible }: Props) => {
         <img className={styles.logo} src={logo} alt="GoBeleza" />
         <FormProvider {...cadastroProdutoUseForm} >
           <form onSubmit={handleSubmit(cadastrar)} className={styles.form}>
-            <Input error={errors.nome?.message} registerName={'nome'} type='text' placeholder="Digite o nome do produto" />
-            <Input error={errors.preco?.message} registerName={'preco'} type='text' placeholder="Digite o preço do produto" />
+            <Input value={item ? item.nome : ''} error={errors.nome?.message} registerName={'nome'} type='text' placeholder="Digite o nome do produto" />
+            <Input value={item ? item.preco.toFixed(2) : ''} error={errors.preco?.message} registerName={'preco'} type='text' placeholder="Digite o preço do produto" />
             <File label={'Selecione a imagem do produto'} registerName={'imagem'} />
-            <Select error={errors.categoria?.message} onChange={(e) => setCategoria(e.target.value)} fatherClass={styles.select} registerName={'categoria'} label='Selecione seu Sexo' options={[tipoItemEnum.produto, tipoItemEnum.servico]} />
+            <Select value={item ? item.categoria : ''} error={errors.categoria?.message} onChange={(e) => setCategoria(e.target.value)} fatherClass={styles.select} registerName={'categoria'} label='Selecione seu Sexo' options={[tipoItemEnum.produto, tipoItemEnum.servico]} />
             {categoria === 'produto' &&
-              <Input error={errors.quantidadeEstoque?.message} registerName={'quantidadeEstoque'} type='number' placeholder="Digite a quantidade do produto em seu estoque" />
+              <Input value={item ? item.quantidadeEstoque! : 0} error={errors.quantidadeEstoque?.message} registerName={'quantidadeEstoque'} type='number' placeholder="Digite a quantidade do produto em seu estoque" />
             }
             {categoria === 'servico' &&
               <input {...register('quantidadeEstoque')} type="hidden" name="" value={1} />

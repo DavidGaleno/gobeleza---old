@@ -18,6 +18,7 @@ import { CheckLogin } from '../../components/CheckLogin'
 import { CadastroProdutoButton } from '../../components/CadastroProdutoButton'
 import { UsuariosContext } from '../../Context/UsuariosContext'
 import { CadastroProdutoScreen } from '../../components/CadastroProdutoScreen'
+import { ItemFuncionario } from '../../components/ItemFuncionario'
 
 
 export const ItemsCatalogScreen = () => {
@@ -40,15 +41,31 @@ export const ItemsCatalogScreen = () => {
                 <div className={styles.itens}>
                     <CadastroProdutoScreen visible={visible} setVisible={setVisible} />
                     {loggedAccount.tipoConta === 'Funcionário' && <CadastroProdutoButton onClick={() => setVisible(!visible)} />}
-                    {itensExibidos === 'Produtos' ?
+                    {loggedAccount.tipoConta === 'Cliente' &&
+                        itensExibidos === 'Produtos' &&
                         itens.filter(item => item.categoria === 'produto').map((item: Iitem) => (
                             <Item item={item} key={item.id} image={item.imagem} alt={item.nome} nome={item.nome} preco={item.preco} />
                         ))
-                        :
+                    }
+                    {loggedAccount.tipoConta === 'Cliente' && itensExibidos === 'Serviços' &&
                         itens.filter(item => item.categoria === 'servico').map((item: Iitem) => (
                             <Item item={item} key={item.id} image={item.imagem} alt={item.nome} nome={item.nome} preco={item.preco} />
                         ))
                     }
+
+
+                    {loggedAccount.tipoConta === 'Funcionário' &&
+                        itensExibidos === 'Produtos' &&
+                        itens.filter(item => item.categoria === 'produto').map((item: Iitem) => (
+                            <ItemFuncionario item={item} key={item.id} image={item.imagem} alt={item.nome} nome={item.nome} preco={item.preco} />
+                        ))
+                    }
+                    {loggedAccount.tipoConta === 'Funcionário' && itensExibidos === 'Serviços' &&
+                        itens.filter(item => item.categoria === 'servico').map((item: Iitem) => (
+                            <ItemFuncionario item={item} key={item.id} image={item.imagem} alt={item.nome} nome={item.nome} preco={item.preco} />
+                        ))
+                    }
+
                 </div>
             </main>
         </div>

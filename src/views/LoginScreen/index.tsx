@@ -56,8 +56,8 @@ export const LoginScreen = () => {
       <img className={styles.logo} src={logo} alt="GoBeleza" />
       <FormProvider {...loginScreenUseForm}>
         <form onSubmit={handleSubmit(enviar)} className={styles.form}>
-          <Input error={errors.login?.message} registerName='login' type='text' placeholder="Digite seu Email ou CPF" />
-          <Input error={errors.password?.message} registerName='password' type='password' placeholder="Digite sua senha" />
+          <Input value='' error={errors.login?.message} registerName='login' type='text' placeholder="Digite seu Email ou CPF" />
+          <Input value='' error={errors.password?.message} registerName='password' type='password' placeholder="Digite sua senha" />
           <SubText path='/recuperar_senha_opcoes' value='Esqueceu a senha?' />
           <ActionButton type="submit" value="Confirmar →" />
           <div className={styles.loginIcons}>

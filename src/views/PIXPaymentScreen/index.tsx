@@ -42,7 +42,7 @@ export const PIXPaymentScreen = () => {
       <img className={styles.logo} src={logo} alt="GoBeleza" />
       <FormProvider {...pixPaymentUseForm}>
         <form onSubmit={handleSubmit(avancar)} className={styles.form}>
-          <Input error={errors.pix?.message} registerName='pix'  type='text' placeholder="Digite a chave PIX" />
+          <Input value='' error={errors.pix?.message} registerName='pix'  type='text' placeholder="Digite a chave PIX" />
           <div className={styles.buttons}>
             <ActionButton type="submit" value="Confirmar →" />
             <ActionButton type="button" value="Voltar ←" path='/pagamento_opcoes' />

@@ -45,14 +45,14 @@ export const CadastrarPessoaJuridica = () => {
       <img className={styles.logo} src={logo} alt="GoBeleza" />
       <FormProvider {...cadastroPessoaJuridicaUseForm}>
         <form className={styles.form} onSubmit={handleSubmit(cadastrar)}>
-          <Input error={errors.email?.message} registerName='email' type='text' placeholder="Digite seu Email" mask='mail' />
-          <Input error={errors.cnpj?.message} registerName='cnpj' type='text' placeholder="Digite seu CNPJ" mask='cpf' />
-          <Input error={errors.nome?.message} registerName='nome' type='text' placeholder="Digite seu Nome" />
-          <Input error={errors.telefone?.message} registerName='telefone' type='text' placeholder="Digite seu Telefone" mask="phoneNumber" />
+          <Input value='' error={errors.email?.message} registerName='email' type='text' placeholder="Digite seu Email" mask='mail' />
+          <Input value='' error={errors.cnpj?.message} registerName='cnpj' type='text' placeholder="Digite seu CNPJ" mask='cpf' />
+          <Input value='' error={errors.nome?.message} registerName='nome' type='text' placeholder="Digite seu Nome" />
+          <Input value='' error={errors.telefone?.message} registerName='telefone' type='text' placeholder="Digite seu Telefone" mask="phoneNumber" />
           <div className={styles.endereco}>
-            <Input error={errors.endereco?.message} registerName='endereco' type='text' placeholder="Endereço" />
-            <Input error={errors.complemento?.message} registerName='complemento' type='text' placeholder="Complemento" />
-            <Input error={errors.numero?.message} registerName='numero' type='text' placeholder="Número ou S/N" />
+            <Input value='' error={errors.endereco?.message} registerName='endereco' type='text' placeholder="Endereço" />
+            <Input value='' error={errors.complemento?.message} registerName='complemento' type='text' placeholder="Complemento" />
+            <Input value='' error={errors.numero?.message} registerName='numero' type='text' placeholder="Número ou S/N" />
           </div>
           <File registerName='image' error={errors.image?.message} label='Adicione uma foto do salão' />
           <div className={styles.buttons}>

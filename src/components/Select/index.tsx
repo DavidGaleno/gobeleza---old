@@ -8,17 +8,20 @@ interface Props {
     error?: string
     registerName: string
     fatherClass?: string
+    value: string
 }
 
-export const Select = ({ onChange, label, options, registerName, fatherClass, error}: Props) => {
+export const Select = ({ onChange, label, options, registerName, fatherClass, error, value }: Props) => {
     const [clickedButHasNoValue, setClickedButHasNoValue] = useState(false)
-    const [selectHasValue, setSelectHasValue] = useState(false)
+    const [selectHasValue, setSelectHasValue] = useState(value ? true : false)
+    const [inputValue, setInputValue] = useState(value)
     const { register } = useFormContext()
     return (
         <div className={styles.container}>
-            <select className={`${fatherClass} ${styles.select}`} {...register(registerName, {
+            <select defaultValue={inputValue ? inputValue : ''} className={`${fatherClass} ${styles.select}`} {...register(registerName, {
                 onChange: (e) => {
                     setSelectHasValue(true)
+                    setInputValue(e.target.value)
                     { onChange && onChange(e) }
                 }
             })} style={{ color: selectHasValue || clickedButHasNoValue ? 'black' : 'gray' }
