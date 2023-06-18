@@ -12,7 +12,6 @@ import { RecoveryKeyScreen } from "../views/RecoveryKeyScreen";
 import { SelectPasswordRecoveryOptionsScreen } from "../views/SelectPasswordRecoveryOptionsScreen";
 import { SelectSubscribeOption } from "../views/SelectSubscribeOptionScreen";
 import { SelectPaymentMethodOption } from "../views/SelectPaymentMethodOptions";
-import { MinhaContaFuncionario } from "../views/MinhaContaFuncionario";
 import { MinhaContaUsuario } from "../views/MinhaContaUsuario";
 import { SaloonCatalogScreen } from "../views/SaloonCatalogScreen";
 import { LoginScreen } from "../views/LoginScreen/index";
@@ -87,10 +86,6 @@ export const router = createBrowserRouter([
             {
                 path: 'recibo_compra',
                 element: <ReciboScreen />
-            },
-            {
-                path: '/minha_conta_funcionario',
-                element: <MinhaContaFuncionario />
             },
             {
                 path: '/minha_conta_usuario',
