@@ -56,24 +56,24 @@ export const Header = ({ setItensExibidos, fixed, setFixed }: Props) => {
                     <Link color='gray' onClick={() => setLoggedAccount({} as IUsuario)} to={'/'}>Sair</Link>
 
                 </div>
+                <LoginIcon fatherClass={`${styles.mobileMenu}`} image={menuHamburguer} alt='Menu' onClick={() => setMenuVisible(!menuVisible)} />
                 {location.pathname === '/catalogo_itens' &&
                     <>
-                        <LoginIcon fatherClass={`${styles.mobileMenu}`} image={menuHamburguer} alt='Menu' onClick={() => setMenuVisible(!menuVisible)} />
                         <div className={styles.carrinhoContainer}>
                             {carrinhoCompras.length > 0 &&
                                 <div className={styles.counter} onClick={() => setCarrinhoComprasVisible(!carrinhoComprasVisible)}>
                                     <span className={styles.counterText}>{carrinhoCompras.length}X</span>
                                 </div>
                             }
-                            <LoginIcon fatherClass={`${styles.desktopIcon}`} image={carrinhoComprasIcon} alt='Carrinho de Compras' onClick={() => setCarrinhoComprasVisible(!carrinhoComprasVisible)} />
+                            <LoginIcon fatherClass={`${styles.desktopIcon} ${styles.mobileIcon}`} image={carrinhoComprasIcon} alt='Carrinho de Compras' onClick={() => setCarrinhoComprasVisible(!carrinhoComprasVisible)} />
                         </div>
-                        <LoginIcon fatherClass={`${styles.desktopIcon}`} image={listaDesejosIcon} alt='Lista de Desejos' onClick={() => setListaDesejosVisible(!listaDesejosVisible)} />
+                        <LoginIcon fatherClass={`${styles.desktopIcon} ${styles.mobileIcon}`} image={listaDesejosIcon} alt='Lista de Desejos' onClick={() => setListaDesejosVisible(!listaDesejosVisible)} />
                     </>
                 }
                 {location.pathname === '/dashboard' &&
                     <>
-                        <LoginIcon onClick={() => navigate('/dashboard')} fatherClass={`${styles.desktopIcon} `} image={dashboard} alt='Dashboard' />
-                        <LoginIcon fatherClass={`${styles.desktopIcon} `} image={specialPassword} alt='Senha Acesso Especial' />
+                        <LoginIcon onClick={() => navigate('/dashboard')} fatherClass={`${styles.desktopIcon} ${styles.mobileIcon} `} image={dashboard} alt='Dashboard' />
+                        <LoginIcon fatherClass={`${styles.desktopIcon} ${styles.mobileIcon} `} image={specialPassword} alt='Senha Acesso Especial' />
                     </>}
 
             </nav>

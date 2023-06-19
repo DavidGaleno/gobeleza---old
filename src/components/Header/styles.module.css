@@ -31,6 +31,10 @@ nav {
     display: none;
 }
 
+.desktopIcon {
+    width: 3rem;
+}
+
 .desktopMenu {
     display: flex;
     gap: 2rem;
@@ -102,9 +106,7 @@ nav {
 }
 
 @media screen and (min-width:1024px) {
-    .desktopIcon {
-        width: 3rem;
-    }
+   
 }
 
 @media screen and (min-width:768px) {
