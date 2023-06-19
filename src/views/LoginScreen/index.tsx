@@ -29,15 +29,14 @@ export const LoginScreen = () => {
     login: z.string().trim().nonempty('*Obrigatório').email('Formato de Email inválido').refine(login => login.endsWith('@gmail.com') || login.endsWith('@outlook.com') || login.endsWith('@hotmail.com'), { message: 'O Email deve terminar com @outlook.com, @gmail.com ou @hotmail.com' }),
     password: z.string().nonempty('*Obrigatório').min(8, 'A senha tem no mínimo 8 caracteres').trim()
   }).refine(data => {
-    const { ...cliente } = data
     let cadastrado = false
-    usuarios.forEach(usuarioCadastrado => {
-      if (usuarioCadastrado.email === cliente.login && usuarioCadastrado.password === cliente.password) {
-        cadastrado = true
-      }
-      setLoggedAccount(usuarioCadastrado)
-    })
+    const usuario = usuarios.find(usuario => usuario.email === data.login && usuario.password === data.password)
+    if (usuario) {
+      setLoggedAccount(usuario)
+      cadastrado = true
+    }
     return cadastrado
+
   }, {
     path: ['password'],
     message: 'Os dados não correspondem a nenhum usuário'
@@ -47,8 +46,16 @@ export const LoginScreen = () => {
   const loginScreenUseForm = useForm<loginScreenType>({
     resolver: zodResolver(loginScreenSchema)
   })
-  const enviar = () => {
-    navigate('/catalogo_saloes')
+  const enviar = (data: loginScreenType) => {
+    const usuario = usuarios.find(usuario => usuario.email === data.login)
+    if (usuario) {
+      if (usuario.tipoConta === 'Cliente') return navigate('/catalogo_saloes')
+      if (usuario.tipoConta === 'Lojista') return navigate('/catalogo_itens')
+      if (usuario.tipoConta === 'Gerente') return navigate('/dashboard')
+
+    }
+
+
   }
   const { handleSubmit, formState: { errors } } = loginScreenUseForm
   return (

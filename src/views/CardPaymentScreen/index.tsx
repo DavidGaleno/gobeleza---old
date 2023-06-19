@@ -36,8 +36,7 @@ export const CardPaymentScreen = () => {
 
   const { register, handleSubmit, formState: { errors } } = cartaoPagamentoUserForm
 
-  const pagar = (data: cartaoPagamentoType) => {
-    console.log(data)
+  const pagar = () => {
     navigate('/recibo_compra')
   }
 

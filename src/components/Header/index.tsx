@@ -39,7 +39,7 @@ export const Header = ({ setItensExibidos, fixed, setFixed }: Props) => {
     const { carrinhoCompras } = useContext(CarrinhoComprasContext)
     const location = useLocation()
     return (
-        <header className={fixed !==  undefined ? fixed === true ? styles.fixed : styles.hide : ''}>
+        <header className={fixed !== undefined ? fixed === true ? styles.fixed : styles.hide : ''}>
             <img className={styles.logo} src={logo} alt="Logo" />
             <MobileMenu setItensExibidos={setItensExibidos && setItensExibidos} visible={menuVisible} setVisible={setMenuVisible} />
             <CarrinhoCompras visible={carrinhoComprasVisible} setVisible={setCarrinhoComprasVisible} />

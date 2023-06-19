@@ -26,8 +26,7 @@ export const PasswordRecoveryByPhoneScreen = () => {
 
   const { handleSubmit, formState: { errors } } = passwordRecoveryByPhoneUseForm
 
-  const enviar = (data: passwordRecoveryByPhoneType) => {
-    console.log(data)
+  const enviar = () => {
     navigate('/recuperar_senha_chave')
   }
 

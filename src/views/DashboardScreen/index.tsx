@@ -10,6 +10,7 @@ import { Title } from '../../components/Title'
 import { IComprador } from '../../interfaces/IComprador'
 import { ICompra } from '../../interfaces/ICompra'
 import { Header } from '../../components/Header'
+import { CheckLogin } from '../../components/CheckLogin'
 export const DashboardScreen = () => {
     const { compras } = useContext(UsuariosContext)
     const produtosVendidos: IitemCompra[] = []
@@ -74,7 +75,6 @@ export const DashboardScreen = () => {
         if (!compradorJaExiste) compradores.push(comprador)
 
     })
-    console.log(compradores)
 
     compradores.forEach(comprador => {
         compras.forEach((compra: ICompra) => {
@@ -111,13 +111,12 @@ export const DashboardScreen = () => {
     return (
         <div className={styles.container}>
             <Header />
+            <CheckLogin />
             <main>
-                <div className={styles.filters}>
-                    <div className={styles.categories}>
-                        <span onClick={() => setFiltro('produtos')} className={`${styles.category} ${styles.filter}`}>Produtos</span>
-                        <span onClick={() => setFiltro('servicos')} className={`${styles.category} ${styles.filter}`}>Serviços</span>
-                        <span onClick={() => setFiltro('usuarios')} className={`${styles.category} ${styles.filter}`}>Usuários</span>
-                    </div>
+                <div className={styles.categories}>
+                    <span onClick={() => setFiltro('produtos')} className={styles.category}>Produtos</span>
+                    <span onClick={() => setFiltro('servicos')} className={styles.category}>Serviços</span>
+                    <span onClick={() => setFiltro('usuarios')} className={styles.category}>Usuários</span>
                 </div>
                 {filtro === 'produtos' &&
                     <>
@@ -127,9 +126,9 @@ export const DashboardScreen = () => {
                             <div className={styles.cards}>
                                 <div className={styles.cardGroup}>
                                     <Card label='Produto' value={produtoMaisVendido.nome} />
-                                    <Card label='Quantidade' value={produtoMaisVendido.quantidade} />
+                                    <Card label='Quantidade' value={Math.round(produtoMaisVendido.quantidade)} />
                                 </div>
-                                <Card fatherClass={styles.card} label='Valor' value={produtoMaisVendido.valor} />
+                                <Card fatherClass={styles.card} label='Valor' value={produtoMaisVendido.valor.toFixed(2)} />
                             </div>
                             <LoginIcon fatherClass={styles.desktopDashboardIcon} image={excel} alt='Excel' />
                             <div className={`${styles.dashboardIcons} ${styles.mobileDashboardIcons}`}>
@@ -146,9 +145,9 @@ export const DashboardScreen = () => {
                             <div className={styles.cards}>
                                 <div className={styles.cardGroup}>
                                     <Card label='Serviço' value={servicoMaisVendido.nome} />
-                                    <Card label='Quantidade' value={servicoMaisVendido.quantidade} />
+                                    <Card label='Quantidade' value={Math.round(servicoMaisVendido.quantidade)} />
                                 </div>
-                                <Card fatherClass={styles.card} label='Valor' value={servicoMaisVendido.valor} />
+                                <Card fatherClass={styles.card} label='Valor' value={servicoMaisVendido.valor.toFixed(2)} />
                             </div>
                             <LoginIcon fatherClass={styles.desktopDashboardIcon} image={excel} alt='Excel' />
                             <div className={`${styles.dashboardIcons} ${styles.mobileDashboardIcons}`}>
@@ -165,9 +164,9 @@ export const DashboardScreen = () => {
                             <div className={styles.cards}>
                                 <div className={styles.cardGroup}>
                                     <Card label='Nome' value={maiorCompradorQuantidade.nome} />
-                                    <Card label='Quantidade' value={maiorCompradorQuantidade.quantidade} />
+                                    <Card label='Quantidade' value={Math.round(maiorCompradorQuantidade.quantidade)} />
                                 </div>
-                                <Card fatherClass={styles.card} label='Valor' value={maiorCompradorQuantidade.valor} />
+                                <Card fatherClass={styles.card} label='Valor' value={maiorCompradorQuantidade.valor.toFixed(2)} />
                             </div>
                             <LoginIcon fatherClass={styles.desktopDashboardIcon} image={excel} alt='Excel' />
                             <div className={`${styles.dashboardIcons} ${styles.mobileDashboardIcons}`}>
@@ -181,9 +180,9 @@ export const DashboardScreen = () => {
                             <div className={styles.cards}>
                                 <div className={styles.cardGroup}>
                                     <Card label='Nome' value={maiorCompradorValor.nome} />
-                                    <Card label='Quantidade' value={maiorCompradorValor.quantidade} />
+                                    <Card label='Quantidade' value={Math.round(maiorCompradorValor.quantidade)} />
                                 </div>
-                                <Card fatherClass={styles.card} label='Valor' value={maiorCompradorValor.valor} />
+                                <Card fatherClass={styles.card} label='Valor' value={maiorCompradorValor.valor.toFixed(2)} />
                             </div>
                             <LoginIcon fatherClass={styles.desktopDashboardIcon} image={excel} alt='Excel' />
                             <div className={`${styles.dashboardIcons} ${styles.mobileDashboardIcons}`}>

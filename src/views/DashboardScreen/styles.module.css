@@ -1,24 +1,5 @@
-header {
-    padding: 1.5rem;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    overflow-x: hidden;
-}
 
-.logo {
-    width: 6rem;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-}
-
-.dashboardIcons{
+.dashboardIcons {
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -63,10 +44,6 @@ h1 {
     width: 2.5rem;
 }
 
-.desktopMenu {
-    display: flex;
-    gap: 2rem;
-}
 
 .desktopMenu>a {
     font-size: 2rem;
@@ -78,28 +55,25 @@ h1 {
     transform: scale(1.1);
 }
 
-.filters {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex: 0;
-    justify-content: space-between;
-    align-items: center;
-}
 
 .categories {
     display: flex;
+    justify-content: center;
     gap: 1rem;
 }
 
 
-.filter {
+.category {
     display: flex;
     font-size: 3rem;
     color: var(--black);
     transition: .2s;
     cursor: pointer;
+}
 
+.category:hover {
+    transform: scale(1.1);
+    color: var(--gray);
 }
 
 
@@ -112,18 +86,23 @@ h1 {
     gap: 7rem;
 }
 
-.itens{
+.itens {
     display: flex;
     flex-direction: column;
-
     gap: 3rem;
 }
 
-.cards{
+.cards {
     display: flex;
     flex-direction: column;
     gap: 3rem;
     flex: 1;
+}
+
+.cardGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem !important;
 }
 
 
@@ -132,16 +111,9 @@ h1 {
     transform: scale(1.1);
 }
 
-.desktopDashboardIcon{
+.desktopDashboardIcon {
     display: none;
 }
-
-@media screen and (max-width:767px) {
-    .desktopMenu {
-        display: none;
-    }
-}
-
 
 @media screen and (min-width:768px) {
     .itens {
@@ -150,75 +122,37 @@ h1 {
         align-content: center;
         grid-template-columns: repeat(2, 1fr);
     }
-    .mobileDashboardIcons{
+
+    .mobileDashboardIcons {
         display: none;
     }
-    .desktopDashboardIcon{
+
+    .desktopDashboardIcon {
         display: block;
     }
-    
-    .itemData{
+
+    .itemData {
         flex-direction: row;
-        
+
     }
-  
-   
+
+
 }
 
 @media screen and (min-width:1024px) {
     .itens {
         grid-template-columns: repeat(3, 1fr);
     }
-}
 
-
-@media screen and (min-width:1440px) {
-    .logo {
-        width: 9rem;
-    }
-    .cardGroup{
-        display: flex; 
+    .cardGroup {
+        display: flex;
         gap: 5rem;
         flex-direction: row;
         justify-content: center;
         align-items: center;
     }
- 
-    .container{
-        height:100%;
-    }
-    .itens {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .desktopMenu>a {
-        font-size: 3rem;
-    }
 }
 
-
-
-@media screen and (min-width:1920px) {
-    .logo {
-        width: 9rem;
-    }
-
-    .itens {
-        grid-template-columns: repeat(5, 1fr);
-    }
-
-    .desktopMenu>a {
-        font-size: 3rem;
-    }
-}
-
-
-@media screen and (max-width:1920px) {
-    .logo {
-        width: 9rem;
-    }
-
-}
 
 @media screen and (min-width:1024px) {
     .desktopIcon {
@@ -226,24 +160,9 @@ h1 {
     }
 }
 
-@media screen and (min-width:768px) {
-    .itens {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    header {
-        justify-content: space-around;
-    }
-
-    .mobileMenu {
-        display: none;
-    }
-}
-
 
 @media screen and (max-width:425px) {
-  .filters{
-    flex-direction: column;
-  }
+    .filters {
+        flex-direction: column;
+    }
 }

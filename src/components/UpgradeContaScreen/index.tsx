@@ -43,10 +43,10 @@ export const UpgradeContaScreen = ({ label, value, visible, setVisible }: Props)
         resolver: zodResolver(upgradeContaSchema)
     })
     const upgrade = (data: changeDataUseFormType) => {
-        specialPasswordUser.forEach(cadastro => {
-            if (cadastro.specialPassword === data.senhaEspecial && loggedAccount.id === cadastro.userId) {
+        specialPasswordUser.forEach(cadastro => {     
+                  if (cadastro.specialPassword === data.senhaEspecial && loggedAccount.id === cadastro.userId) {
                 const updatedUser = loggedAccount
-                updatedUser.tipoConta = 'Funcionário'
+                updatedUser.tipoConta = cadastro.tipoConta
                 setUsuarios(prevUsuarios => {
                     const updatedUsers = [...prevUsuarios]
                     updatedUsers[prevUsuarios.indexOf(loggedAccount)] = updatedUser

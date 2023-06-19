@@ -12,9 +12,19 @@ interface Props {
 export const UsuariosContextProvider: React.FC<Props> = ({ children }: Props) => {
     const [specialPasswordUser, setSpecialPasswordUser] = useState<ISpecialPasswordUser[]>([{
         userId: 1,
-        specialPassword: 'dhu12hu21hr4t@#!',
-        tipoConta: 'Lojista'
-    }])
+        userEmail: 'davidgaleno@gmail.com',
+        specialPassword: '1111111111111111',
+        tipoConta: 'Lojista',
+        salao: 'corEUnha'
+    },
+    {
+        userId: 2,
+        userEmail: 'gerente@gmail.com',
+        specialPassword: '2222222222222222',
+        tipoConta: 'Gerente',
+        salao: 'corEUnha'
+    }
+    ])
     const [usuarios, setUsuarios] = useState<IUsuario[]>([
         {
             id: 1,
@@ -28,6 +38,19 @@ export const UsuariosContextProvider: React.FC<Props> = ({ children }: Props) =>
             sexo: 'Masculino',
             telefone: '(42)94002-8922',
             tipoConta: 'Cliente'
+        },
+        {
+            id: 2,
+            email: 'gerente@gmail.com',
+            nome: 'David Galeno',
+            cpf: '086.477.891-05',
+            endereco: 'QNJ 35 Lote 2',
+            complemento: 'Casa 1',
+            numero: 'S/N',
+            password: '123123123',
+            sexo: 'Masculino',
+            telefone: '(42)94002-8922',
+            tipoConta: 'Gerente'
         }
     ])
     const [loggedAccount, setLoggedAccount] = useState<IUsuario>({} as IUsuario)

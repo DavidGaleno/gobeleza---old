@@ -26,8 +26,7 @@ export const NovaSenhaScreen = () => {
         resolver: zodResolver(novaSenhaSchema)
     })
 
-    const enviar = (data: NovaSenhaType) => {
-        console.log(data)
+    const enviar = () => {
         navigate('/recibo_compra')
     }
 

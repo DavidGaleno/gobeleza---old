@@ -26,7 +26,7 @@ export const SaloonCatalogScreen = () => {
                 <Title value="Salões" />
                 <div className={styles.itens}>
                     {saloesBeleza.map(salaoBeleza => (
-                        <Saloon image={salaoBeleza.imagem} alt={salaoBeleza.nome} nome={salaoBeleza.nome} />
+                        <Saloon key={salaoBeleza.cnpj} image={salaoBeleza.imagem} alt={salaoBeleza.nome} nome={salaoBeleza.nome} />
                     ))}
                 </div>
             </main>

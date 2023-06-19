@@ -21,7 +21,7 @@ interface Props {
 
 export const CadastroProdutoScreen = ({ visible, setVisible, item }: Props) => {
 
-  const { itens, setItens } = useContext(CatalogoItensContext)
+  const { setItens } = useContext(CatalogoItensContext)
 
 
   const cadastroProdutoSchema = z.object({
@@ -45,7 +45,6 @@ export const CadastroProdutoScreen = ({ visible, setVisible, item }: Props) => {
   const { handleSubmit, register, formState: { errors } } = cadastroProdutoUseForm
   const cadastrar = (data: CadastroProdutoType) => {
     if (item) {
-      console.log('oi')
       setItens(prevItens => {
         return prevItens.map(itemCadastrado => {
           if (itemCadastrado.id === item.id) {
@@ -56,7 +55,6 @@ export const CadastroProdutoScreen = ({ visible, setVisible, item }: Props) => {
       });
     }
     else {
-      console.log('123')
       setItens(prevItens => [...prevItens, { ...data, id: prevItens.length + 1, listaDesejos: false, carrinhoCompras: false, quantidadeCarrinho: 0, imagem: data.imagem!.name }])
       setVisible(!visible)
     }

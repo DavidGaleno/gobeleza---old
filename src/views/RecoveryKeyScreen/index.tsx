@@ -26,8 +26,7 @@ export const RecoveryKeyScreen = () => {
 
   const { handleSubmit, formState: { errors } } = recoveryKeyUseForm
 
-  const enviar = (data: recoveryKeyType) => {
-    console.log(data)
+  const enviar = () => {
     navigate('/nova_senha')
   }
   return (

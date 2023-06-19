@@ -35,8 +35,7 @@ export const CadastrarPessoaJuridica = () => {
 
 
   const { handleSubmit, formState: { errors } } = cadastroPessoaJuridicaUseForm
-  const cadastrar = (data: CadastroUsuarioType) => {
-    console.log(data)
+  const cadastrar = () => {
     navigate('/')
   }
 

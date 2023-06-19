@@ -27,9 +27,8 @@ export const PasswordRecoveryByEmailScreen = () => {
   })
 
   const { handleSubmit, formState: { errors } } = passwordRecoveryByEmailUseForm
-  const enviar = (data: passwordRecoveryByEmailType) => {
+  const enviar = () => {
     navigate('/recuperar_senha_chave')
-    console.log(data)
   }
   return (
     <div className={styles.container}>

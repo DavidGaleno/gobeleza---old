@@ -29,8 +29,7 @@ export const PIXPaymentScreen = () => {
     resolver: zodResolver(pixPaymentSchema)
   })
 
-  const avancar = (data: pixPaymentType) => {
-    console.log(data)
+  const avancar = () => {
     navigate('/recibo_compra')
   }
 
