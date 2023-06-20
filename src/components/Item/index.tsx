@@ -6,6 +6,8 @@ import styles from './styles.module.css'
 import { CarrinhoComprasContext } from "../../Context/CarrinhoComprasContext"
 import { CatalogoItensContext } from "../../Context/CatalogoItensContext"
 import { DataHorarioAgendamentoScreen } from "../DataHorarioAgendamento"
+import { LoginIcon } from "../LoginIcon"
+import unavailableSymbol from '../../assets/unavaiableSymbol.png'
 
 interface Props {
     item: Iitem
@@ -21,7 +23,7 @@ export const Item = ({ item, image, alt, nome, preco }: Props) => {
     const { valorTotal, setValorTotal } = useContext(CarrinhoComprasContext)
     const [dataHorarioAgendamentoVisible, setDataHorarioAgendamentoVisible] = useState(false)
     return (
-        <div className={`${styles.container}`}>
+        <div className={`${item.categoria === 'produto' && item.quantidadeEstoque! <=0 && styles.unavailable} ${styles.container}`}>
             {item.dataHorarioAgendamento && <DataHorarioAgendamentoScreen item={item} visible={dataHorarioAgendamentoVisible} setVisible={setDataHorarioAgendamentoVisible} />}
             <img className={styles.image} src={image} alt={alt} />
             <div className={styles.text}>
@@ -37,12 +39,13 @@ export const Item = ({ item, image, alt, nome, preco }: Props) => {
                         if (item.quantidadeCarrinho >= 0) {
                             const updatedCarrinhoCompras = [...itens]
                             updatedCarrinhoCompras[itens.indexOf(item)].quantidadeCarrinho += 1
+                            if (item.categoria === 'produto') updatedCarrinhoCompras[itens.indexOf(item)].quantidadeEstoque! -= 1
                             setItens(updatedCarrinhoCompras)
                         }
                         setValorTotal(valorTotal + item.preco)
                     }
-                }} value="Comprar →" />
-                <DesireListButton item={item} />
+                }} value={item.categoria === 'produto' ? item.quantidadeEstoque! > 0 ? 'Comprar →' : 'Agendar →' : 'Comprar →'} />
+                {item.categoria === 'produto' ? item.quantidadeEstoque! > 0 ? <DesireListButton item={item} /> : <LoginIcon image={unavailableSymbol} alt={'Indisponível'} /> : <DesireListButton item={item} />}
             </div>
 
         </div>

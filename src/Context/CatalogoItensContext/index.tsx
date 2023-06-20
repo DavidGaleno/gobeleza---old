@@ -71,7 +71,7 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             imagem: batom,
             listaDesejos: false,
             carrinhoCompras: false,
-            quantidadeEstoque: 500,
+            quantidadeEstoque: 5,
             categoria: tipoItemEnum['produto'],
             quantidadeCarrinho: 0
         },

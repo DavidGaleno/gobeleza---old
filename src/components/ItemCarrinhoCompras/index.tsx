@@ -30,6 +30,7 @@ export const ItemCarrinhoCompras = ({ item, image, alt, nome, preco }: Props) =>
                 if (item.quantidadeCarrinho > 0) {
                     const updatedItens = [...itens]
                     updatedItens[itens.indexOf(item)].quantidadeCarrinho -= 1
+                    if (item.categoria === 'produto') updatedItens[itens.indexOf(item)].quantidadeEstoque! += 1
                     const dataHorarioRemovido = updatedItens[itens.indexOf(item)].dataHorarioEscolhidos?.pop()
                     updatedItens[itens.indexOf(item)].dataHorarioAgendamento?.push(dataHorarioRemovido!)
                     updatedItens[itens.indexOf(item)].dataHorarioAgendamento?.sort()

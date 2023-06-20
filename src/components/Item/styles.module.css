@@ -9,6 +9,10 @@
     gap: 1rem;
 }
 
+.unavailable {
+    filter: grayscale(100%);
+}
+
 .image {
     width: 21rem;
     height: 15.8rem;
