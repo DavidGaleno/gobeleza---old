@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useFormContext } from 'react-hook-form'
 import styles from './styles.module.css'
+import { CatalogoItensContext } from "../../Context/CatalogoItensContext"
 interface Props {
     onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void
     label: string
@@ -12,13 +13,19 @@ interface Props {
 }
 
 export const Select = ({ onChange, label, options, registerName, fatherClass, error, value }: Props) => {
+    const { itens } = useContext(CatalogoItensContext)
     const [clickedButHasNoValue, setClickedButHasNoValue] = useState(false)
     const [selectHasValue, setSelectHasValue] = useState(value ? true : false)
     const [inputValue, setInputValue] = useState(value)
     const { register } = useFormContext()
+
+    useEffect(() => {
+        setInputValue('')
+    }, [itens])
+
     return (
         <div className={styles.container}>
-            <select defaultValue={inputValue ? inputValue : ''} className={`${fatherClass} ${styles.select}`} {...register(registerName, {
+            <select value={inputValue ? inputValue : ''} className={`${fatherClass} ${styles.select}`} {...register(registerName, {
                 onChange: (e) => {
                     setSelectHasValue(true)
                     setInputValue(e.target.value)

@@ -32,31 +32,31 @@ export const CatalogoItensContext = createContext<ICatalogoItens>({} as ICatalog
 CatalogoItensContext.displayName = 'Catalogo Produtos Context'
 
 
-const datasHorariosAgendamento = ["Sun Jun 11 2023 08:00:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 08:30:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 09:00:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 09:30:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 10:00:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 10:30:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 11:00:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 11:30:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 12:00:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 12:30:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 13:00:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 13:30:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 14:00:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 14:30:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 15:00:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 15:30:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 16:00:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 16:30:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 17:00:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 17:30:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 18:00:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 18:30:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 19:00:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 19:30:00 GMT-0300 (Horário Padrão de Brasília)",
-    "Sun Jun 11 2023 20:00:00 GMT-0300 (Horário Padrão de Brasília)",
+export const datasHorariosAgendamento = ["Dom Jun 11 2023 08:00:00 ",
+    "Dom Jun 11 2023 08:30:00",
+    "Dom Jun 11 2023 09:00:00",
+    "Dom Jun 11 2023 09:30:00",
+    "Dom Jun 11 2023 10:00:00",
+    "Dom Jun 11 2023 10:30:00",
+    "Dom Jun 11 2023 11:00:00",
+    "Dom Jun 11 2023 11:30:00",
+    "Dom Jun 11 2023 12:00:00",
+    "Dom Jun 11 2023 12:30:00",
+    "Dom Jun 11 2023 13:00:00",
+    "Dom Jun 11 2023 13:30:00",
+    "Dom Jun 11 2023 14:00:00",
+    "Dom Jun 11 2023 14:30:00",
+    "Dom Jun 11 2023 15:00:00",
+    "Dom Jun 11 2023 15:30:00",
+    "Dom Jun 11 2023 16:00:00",
+    "Dom Jun 11 2023 16:30:00",
+    "Dom Jun 11 2023 17:00:00",
+    "Dom Jun 11 2023 17:30:00",
+    "Dom Jun 11 2023 18:00:00",
+    "Dom Jun 11 2023 18:30:00",
+    "Dom Jun 11 2023 19:00:00",
+    "Dom Jun 11 2023 19:30:00",
+    "Dom Jun 11 2023 20:00:00",
 ]
 interface Props {
     children: ReactNode
@@ -214,9 +214,10 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             imagem: lavarCabelo,
             listaDesejos: false,
             carrinhoCompras: false,
-            dataHorarioAgendamento: datasHorariosAgendamento,
+            dataHorarioAgendamento: [...datasHorariosAgendamento],
+            dataHorarioEscolhidos: [],
             categoria: tipoItemEnum['servico'],
-            quantidadeCarrinho: 0
+            quantidadeCarrinho: 0,
         },
         {
             id: 15,
@@ -225,7 +226,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             imagem: cortarCabeloMulher,
             listaDesejos: false,
             carrinhoCompras: false,
-            dataHorarioAgendamento: datasHorariosAgendamento,
+            dataHorarioAgendamento: [...datasHorariosAgendamento],
+            dataHorarioEscolhidos: [],
             categoria: tipoItemEnum['servico'],
             quantidadeCarrinho: 0
 
@@ -237,7 +239,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             imagem: manicure,
             listaDesejos: false,
             carrinhoCompras: false,
-            dataHorarioAgendamento: datasHorariosAgendamento,
+            dataHorarioAgendamento: [...datasHorariosAgendamento],
+            dataHorarioEscolhidos: [],
             categoria: tipoItemEnum['servico'],
             quantidadeCarrinho: 0
 
@@ -249,7 +252,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             imagem: pintarCabeloMulher,
             listaDesejos: false,
             carrinhoCompras: false,
-            dataHorarioAgendamento: datasHorariosAgendamento,
+            dataHorarioAgendamento: [...datasHorariosAgendamento],
+            dataHorarioEscolhidos: [],
             categoria: tipoItemEnum['servico'],
             quantidadeCarrinho: 0
 
@@ -261,7 +265,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             imagem: cortarCabeloHomem,
             carrinhoCompras: false,
             listaDesejos: false,
-            dataHorarioAgendamento: datasHorariosAgendamento,
+            dataHorarioAgendamento: [...datasHorariosAgendamento],
+            dataHorarioEscolhidos: [],
             categoria: tipoItemEnum['servico'],
             quantidadeCarrinho: 0
 
@@ -273,7 +278,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             imagem: progressiva,
             carrinhoCompras: false,
             listaDesejos: false,
-            dataHorarioAgendamento: datasHorariosAgendamento,
+            dataHorarioAgendamento: [...datasHorariosAgendamento],
+            dataHorarioEscolhidos: [],
             categoria: tipoItemEnum['servico'],
             quantidadeCarrinho: 0
 
@@ -285,7 +291,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             imagem: luzes,
             carrinhoCompras: false,
             listaDesejos: false,
-            dataHorarioAgendamento: datasHorariosAgendamento,
+            dataHorarioAgendamento: [...datasHorariosAgendamento],
+            dataHorarioEscolhidos: [],
             categoria: tipoItemEnum['servico'],
             quantidadeCarrinho: 0
 
@@ -298,7 +305,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             imagem: sobrancelha,
             carrinhoCompras: false,
             listaDesejos: false,
-            dataHorarioAgendamento: datasHorariosAgendamento,
+            dataHorarioAgendamento: [...datasHorariosAgendamento],
+            dataHorarioEscolhidos: [],
             categoria: tipoItemEnum['servico'],
             quantidadeCarrinho: 0
 

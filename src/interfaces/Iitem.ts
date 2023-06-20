@@ -9,6 +9,7 @@ export interface Iitem {
     carrinhoCompras: boolean
     quantidadeEstoque?: number
     dataHorarioAgendamento?: string[]
+    dataHorarioEscolhidos?: string[]
     categoria: tipoItemEnum
     quantidadeCarrinho: number
 }

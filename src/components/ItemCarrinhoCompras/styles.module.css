@@ -16,7 +16,13 @@
     white-space: nowrap;
 }
 
-
+.agendamentos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 h2,h3{
     text-align: center;
 }

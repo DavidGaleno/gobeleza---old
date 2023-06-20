@@ -12,7 +12,7 @@ import { CatalogoItensContext } from '../../Context/CatalogoItensContext'
 import { tipoItemEnum } from '../../Enuns/tipoItemEnum'
 import { File } from '../File'
 import { Iitem } from '../../interfaces/Iitem'
-
+import { datasHorariosAgendamento } from '../../Context/CatalogoItensContext'
 interface Props {
   item?: Iitem
   visible: boolean
@@ -42,12 +42,15 @@ export const CadastroProdutoScreen = ({ visible, setVisible, item }: Props) => {
 
 
 
-  const { handleSubmit, register, formState: { errors } } = cadastroProdutoUseForm
+  const { handleSubmit, register, formState: { errors }, reset } = cadastroProdutoUseForm
   const cadastrar = (data: CadastroProdutoType) => {
     if (item) {
       setItens(prevItens => {
         return prevItens.map(itemCadastrado => {
           if (itemCadastrado.id === item.id) {
+            if (item.categoria === tipoItemEnum.servico) return {
+              ...itemCadastrado, ...data, imagem: data.imagem!.name
+            };
             return { ...itemCadastrado, ...data, imagem: data.imagem!.name };
           }
           return itemCadastrado;
@@ -55,9 +58,15 @@ export const CadastroProdutoScreen = ({ visible, setVisible, item }: Props) => {
       });
     }
     else {
-      setItens(prevItens => [...prevItens, { ...data, id: prevItens.length + 1, listaDesejos: false, carrinhoCompras: false, quantidadeCarrinho: 0, imagem: data.imagem!.name }])
-      setVisible(!visible)
+      if (data.categoria === tipoItemEnum.servico) {
+        return setItens(prevItens => [...prevItens, { ...data, id: prevItens.length + 1, listaDesejos: false, carrinhoCompras: false, quantidadeCarrinho: 0, imagem: data.imagem!.name, dataHorarioAgendamento: datasHorariosAgendamento, dataHorarioEscolhidos: [] }])
+      }
+      else {
+        return setItens(prevItens => [...prevItens, { ...data, id: prevItens.length + 1, listaDesejos: false, carrinhoCompras: false, quantidadeCarrinho: 0, imagem: data.imagem!.name }])
+      }
+
     }
+    reset()
   }
 
   const [categoria, setCategoria] = useState(item ? item.categoria ? item.categoria : '' : '')
@@ -74,7 +83,7 @@ export const CadastroProdutoScreen = ({ visible, setVisible, item }: Props) => {
             <Input value={item ? item.nome : ''} error={errors.nome?.message} registerName={'nome'} type='text' placeholder="Digite o nome do produto" />
             <Input value={item ? item.preco.toFixed(2) : ''} error={errors.preco?.message} registerName={'preco'} type='text' placeholder="Digite o preço do produto" />
             <File label={'Selecione a imagem do produto'} registerName={'imagem'} />
-            <Select value={item ? item.categoria : ''} error={errors.categoria?.message} onChange={(e) => setCategoria(e.target.value)} fatherClass={styles.select} registerName={'categoria'} label='Selecione seu Sexo' options={[tipoItemEnum.produto, tipoItemEnum.servico]} />
+            <Select value={item ? item.categoria : ''} error={errors.categoria?.message} onChange={(e) => setCategoria(e.target.value)} fatherClass={styles.select} registerName={'categoria'} label='Selecione a categoria do item' options={[tipoItemEnum.produto, tipoItemEnum.servico]} />
             {categoria === 'produto' &&
               <Input value={item ? item.quantidadeEstoque! : 0} error={errors.quantidadeEstoque?.message} registerName={'quantidadeEstoque'} type='number' placeholder="Digite a quantidade do produto em seu estoque" />
             }
