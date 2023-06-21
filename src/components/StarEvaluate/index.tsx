@@ -27,6 +27,7 @@ export const StarEvaluate = ({ item }: Props): JSX.Element => {
             } onClick={() => {
                 setChangeHover(!changeHover)
                 setHover(i)
+
                 if (avaliacao.userId) {
                     const avaliacaoCadastrada = avaliacoes.find(avaliacaoAtual => {
                         return avaliacaoAtual.userId === avaliacao.userId && avaliacaoAtual.itemId === avaliacao.itemId
@@ -58,6 +59,13 @@ export const StarEvaluate = ({ item }: Props): JSX.Element => {
                 if (changeHover) setHover(i)
             }} onClick={() => {
                 setChangeHover(!changeHover)
+                const pastEvaluation = avaliacoes.find(avaliacao => avaliacao.userId === loggedAccount.id && item.id === avaliacao.itemId)
+                if (pastEvaluation) {
+                    const newAvaliacoes = [...avaliacoes]
+                    newAvaliacoes.splice(avaliacoes.indexOf(pastEvaluation), 1)
+                    setAvaliacoes(newAvaliacoes)
+                    setAvaliacao({} as IAvaliacao)
+                }
                 if (avaliacao.userId) {
                     const avaliacaoCadastrada = avaliacoes.find(avaliacaoAtual => {
                         return avaliacaoAtual.userId === avaliacao.userId && avaliacaoAtual.itemId === avaliacao.itemId
