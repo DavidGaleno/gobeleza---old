@@ -48,6 +48,7 @@ export const LoginScreen = () => {
   })
   const enviar = (data: loginScreenType) => {
     const usuario = usuarios.find(usuario => usuario.email === data.login)
+    console.log(usuario?.tipoConta)
     if (usuario) {
       if (usuario.tipoConta === 'Cliente') return navigate('/catalogo_saloes')
       if (usuario.tipoConta === 'Lojista') return navigate('/catalogo_itens')

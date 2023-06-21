@@ -16,6 +16,10 @@ interface Props {
 export const Campo = ({ label, value, changeValue, fatherClass, shortValue }: Props) => {
     const [changeDataScreenVisible, setChangeDataScreenVisible] = useState(false)
     const [showPassword, setShowPassword] = useState(false)
+    const [windowWidth, setWindowWidth] = useState(0)
+    window.addEventListener('resize', () => {
+        setWindowWidth(window.outerWidth)
+    })
 
     return (
         <>
@@ -26,7 +30,6 @@ export const Campo = ({ label, value, changeValue, fatherClass, shortValue }: Pr
                 {label.toLocaleLowerCase() === 'senha' ?
 
                     <div className={styles.valueGroup}>
-                        <span className={styles.value}>{showPassword ? !shortValue ? value : value.length >= 12 ? value : `${value.substring(0, 12)}...` : '.'.repeat(value.length)}</span>
                         {showPassword ? <FontAwesomeIcon className={styles.passwordIcon} size="3x" icon={faEye} onClick={() => setShowPassword(!showPassword)} /> : <FontAwesomeIcon className={styles.passwordIcon} onClick={() => setShowPassword(!showPassword)} size="3x" icon={faEyeSlash} />
 
                         }
@@ -35,7 +38,11 @@ export const Campo = ({ label, value, changeValue, fatherClass, shortValue }: Pr
 
                     :
                     <div className={styles.valueGroup}>
-                        <span className={styles.value}>{shortValue === false ? value : value.length <= 30 ? value : `${value.substring(0, 30)}...`}</span>
+                        {windowWidth <= 425 ? <span className={styles.value}>{shortValue === false ? value : value.length <= 10 ? value : `${value.substring(0, 10)}...`}</span>
+                            :
+                            <span className={styles.value}>{value}</span>
+                        }
+
                         {changeValue ? <ActionButton type="button" onClick={() => setChangeDataScreenVisible(!changeDataScreenVisible)} fatherClass={styles.button} value={'Alterar →'} /> : ''}
                     </div>
                 }

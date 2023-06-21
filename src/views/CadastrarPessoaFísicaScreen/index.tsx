@@ -48,7 +48,7 @@ export const CadastrarPessoaFisica = () => {
   const { handleSubmit, formState: { errors } } = cadastroPessoaJuridicaUseForm
   const cadastrar = (data: CadastroPessoaFisicaType) => {
     const { passwordMatch, ...usuario } = data
-    setUsuarios((prevUsuarios: IUsuario[]) => [...prevUsuarios, { ...usuario, id: prevUsuarios.length + 1, tipoConta: 'cliente' }])
+    setUsuarios((prevUsuarios: IUsuario[]) => [...prevUsuarios, { ...usuario, id: prevUsuarios.length + 1, tipoConta: 'Cliente' }])
     navigate('/')
   }
 
