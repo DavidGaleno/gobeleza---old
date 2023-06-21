@@ -10,7 +10,7 @@ interface Props {
 export const Saloon = ({ image, alt, nome }: Props) => {
     return (
         <div className={`${styles.container}`}>
-            <img src={image} alt={alt} />
+            <img className={styles.image} src={image} alt={alt} />
             <div className={styles.text}>
                 <h2>{nome}</h2>
             </div>

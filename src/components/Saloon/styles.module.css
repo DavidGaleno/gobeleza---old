@@ -9,6 +9,11 @@
     gap: 1rem;
 }
 
+.image{
+    width: 210px;
+    height: 158px;
+}
+
 .text {
     display: flex;
     flex-direction: column;

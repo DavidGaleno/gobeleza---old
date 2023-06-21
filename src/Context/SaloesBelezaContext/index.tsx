@@ -6,6 +6,9 @@ import { ISalaoBelezaContext } from "../../interfaces/ISalaoBelezaContext";
 //Imagens
 import corEUnha from '../../assets/cor&unha.svg'
 import fulanetto from '../../assets/fulanetto.svg'
+import bellaDonna from '../../assets/bella_donna.jpg'
+import espacoChrome from '../../assets/espaço_chrome.jpg'
+import salaoDiva from '../../assets/salaoDiva.jpg'
 
 export const SalaoBelezaContext = createContext<ISalaoBelezaContext>({} as ISalaoBelezaContext)
 SalaoBelezaContext.displayName = "Salão Beleza Context"
@@ -37,7 +40,7 @@ export const SalaoBelezaProvider: React.FC<Props> = ({ children }: Props) => {
         endereco: "Rua C",
         complemento: "Sala 303",
         numero: "30",
-        imagem: "salao3.jpg"
+        imagem: bellaDonna
     },
     {
         nome: "Espaço Charme",
@@ -45,7 +48,7 @@ export const SalaoBelezaProvider: React.FC<Props> = ({ children }: Props) => {
         endereco: "Rua D",
         complemento: "Sala 404",
         numero: "40",
-        imagem: "salao4.jpg"
+        imagem: espacoChrome
     },
     {
         nome: "Salão Diva",
@@ -53,47 +56,7 @@ export const SalaoBelezaProvider: React.FC<Props> = ({ children }: Props) => {
         endereco: "Rua E",
         complemento: "Sala 505",
         numero: "50",
-        imagem: "salao5.jpg"
-    },
-    {
-        nome: "Elegância Hair",
-        cnpj: "54.321.098/0001-76",
-        endereco: "Rua F",
-        complemento: "Sala 606",
-        numero: "60",
-        imagem: "salao6.jpg"
-    },
-    {
-        nome: "Luxo e Beleza",
-        cnpj: "43.210.987/0001-98",
-        endereco: "Rua G",
-        complemento: "Sala 707",
-        numero: "70",
-        imagem: "salao7.jpg"
-    },
-    {
-        nome: "Salão Fashion",
-        cnpj: "32.109.876/0001-21",
-        endereco: "Rua H",
-        complemento: "Sala 808",
-        numero: "80",
-        imagem: "salao8.jpg"
-    },
-    {
-        nome: "Hair Studio",
-        cnpj: "21.098.765/0001-67",
-        endereco: "Rua I",
-        complemento: "Sala 909",
-        numero: "90",
-        imagem: "salao9.jpg"
-    },
-    {
-        nome: "Bela Vista Beauty",
-        cnpj: "10.987.654/0001-34",
-        endereco: "Rua J",
-        complemento: "Sala 1010",
-        numero: "100",
-        imagem: "salao10.jpg"
+        imagem: salaoDiva
     }
     ])
     return (
