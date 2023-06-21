@@ -27,7 +27,7 @@ export const NovaSenhaScreen = () => {
     })
 
     const enviar = () => {
-        navigate('/recibo_compra')
+        navigate('/')
     }
 
     const { handleSubmit, formState: { errors } } = NovaSenhaUseForm
