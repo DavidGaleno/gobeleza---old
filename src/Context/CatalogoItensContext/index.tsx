@@ -73,7 +73,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             carrinhoCompras: false,
             quantidadeEstoque: 5,
             categoria: tipoItemEnum['produto'],
-            quantidadeCarrinho: 0
+            quantidadeCarrinho: 0,
+            avaliacaoMedia: 0
         },
         {
             id: 2,
@@ -84,7 +85,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             carrinhoCompras: false,
             quantidadeEstoque: 50,
             categoria: tipoItemEnum['produto'],
-            quantidadeCarrinho: 0
+            quantidadeCarrinho: 0,
+            avaliacaoMedia: 0
         },
         {
             id: 3,
@@ -95,7 +97,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             carrinhoCompras: false,
             quantidadeEstoque: 146,
             categoria: tipoItemEnum['produto'],
-            quantidadeCarrinho: 0
+            quantidadeCarrinho: 0,
+            avaliacaoMedia: 0
         },
         {
             id: 4,
@@ -106,7 +109,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             carrinhoCompras: false,
             quantidadeEstoque: 94,
             categoria: tipoItemEnum['produto'],
-            quantidadeCarrinho: 0
+            quantidadeCarrinho: 0,
+            avaliacaoMedia: 0
         },
         {
             id: 5,
@@ -117,7 +121,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             listaDesejos: false,
             quantidadeEstoque: 32,
             categoria: tipoItemEnum['produto'],
-            quantidadeCarrinho: 0
+            quantidadeCarrinho: 0,
+            avaliacaoMedia: 0
         },
         {
             id: 6,
@@ -128,7 +133,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             listaDesejos: false,
             quantidadeEstoque: 25,
             categoria: tipoItemEnum['produto'],
-            quantidadeCarrinho: 0
+            quantidadeCarrinho: 0,
+            avaliacaoMedia: 0
         },
         {
             id: 7,
@@ -139,7 +145,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             listaDesejos: false,
             quantidadeEstoque: 10,
             categoria: tipoItemEnum['produto'],
-            quantidadeCarrinho: 0
+            quantidadeCarrinho: 0,
+            avaliacaoMedia: 0
         },
         {
             id: 8,
@@ -150,7 +157,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             listaDesejos: false,
             quantidadeEstoque: 34,
             categoria: tipoItemEnum['produto'],
-            quantidadeCarrinho: 0
+            quantidadeCarrinho: 0,
+            avaliacaoMedia: 0
         },
         {
             id: 9,
@@ -161,7 +169,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             listaDesejos: false,
             quantidadeEstoque: 48,
             categoria: tipoItemEnum['produto'],
-            quantidadeCarrinho: 0
+            quantidadeCarrinho: 0,
+            avaliacaoMedia: 0
         },
         {
             id: 10,
@@ -172,7 +181,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             listaDesejos: false,
             quantidadeEstoque: 48,
             categoria: tipoItemEnum['produto'],
-            quantidadeCarrinho: 0
+            quantidadeCarrinho: 0,
+            avaliacaoMedia: 0
         },
         {
             id: 11,
@@ -183,7 +193,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             listaDesejos: false,
             quantidadeEstoque: 23,
             categoria: tipoItemEnum['produto'],
-            quantidadeCarrinho: 0
+            quantidadeCarrinho: 0,
+            avaliacaoMedia: 0
         },
         {
             id: 12,
@@ -194,7 +205,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             listaDesejos: false,
             quantidadeEstoque: 102,
             categoria: tipoItemEnum['produto'],
-            quantidadeCarrinho: 0
+            quantidadeCarrinho: 0,
+            avaliacaoMedia: 0
         },
         {
             id: 13,
@@ -205,7 +217,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             listaDesejos: false,
             quantidadeEstoque: 48,
             categoria: tipoItemEnum['produto'],
-            quantidadeCarrinho: 0
+            quantidadeCarrinho: 0,
+            avaliacaoMedia: 0
         },
         {
             id: 14,
@@ -218,6 +231,7 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             dataHorarioEscolhidos: [],
             categoria: tipoItemEnum['servico'],
             quantidadeCarrinho: 0,
+            avaliacaoMedia: 0
         },
         {
             id: 15,
@@ -229,7 +243,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             dataHorarioAgendamento: [...datasHorariosAgendamento],
             dataHorarioEscolhidos: [],
             categoria: tipoItemEnum['servico'],
-            quantidadeCarrinho: 0
+            quantidadeCarrinho: 0,
+            avaliacaoMedia: 0
 
         },
         {
@@ -242,7 +257,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             dataHorarioAgendamento: [...datasHorariosAgendamento],
             dataHorarioEscolhidos: [],
             categoria: tipoItemEnum['servico'],
-            quantidadeCarrinho: 0
+            quantidadeCarrinho: 0,
+            avaliacaoMedia: 0
 
         },
         {
@@ -255,8 +271,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             dataHorarioAgendamento: [...datasHorariosAgendamento],
             dataHorarioEscolhidos: [],
             categoria: tipoItemEnum['servico'],
-            quantidadeCarrinho: 0
-
+            quantidadeCarrinho: 0,
+            avaliacaoMedia: 0
         },
         {
             id: 18,
@@ -268,8 +284,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             dataHorarioAgendamento: [...datasHorariosAgendamento],
             dataHorarioEscolhidos: [],
             categoria: tipoItemEnum['servico'],
-            quantidadeCarrinho: 0
-
+            quantidadeCarrinho: 0,
+            avaliacaoMedia: 0
         },
         {
             id: 19,
@@ -281,8 +297,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             dataHorarioAgendamento: [...datasHorariosAgendamento],
             dataHorarioEscolhidos: [],
             categoria: tipoItemEnum['servico'],
-            quantidadeCarrinho: 0
-
+            quantidadeCarrinho: 0,
+            avaliacaoMedia: 0
         },
         {
             id: 20,
@@ -294,8 +310,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             dataHorarioAgendamento: [...datasHorariosAgendamento],
             dataHorarioEscolhidos: [],
             categoria: tipoItemEnum['servico'],
-            quantidadeCarrinho: 0
-
+            quantidadeCarrinho: 0,
+            avaliacaoMedia: 0
 
         },
         {
@@ -308,7 +324,8 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
             dataHorarioAgendamento: [...datasHorariosAgendamento],
             dataHorarioEscolhidos: [],
             categoria: tipoItemEnum['servico'],
-            quantidadeCarrinho: 0
+            quantidadeCarrinho: 0,
+            avaliacaoMedia: 0
 
         }
 

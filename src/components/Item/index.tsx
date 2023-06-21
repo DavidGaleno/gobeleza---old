@@ -8,6 +8,7 @@ import { CatalogoItensContext } from "../../Context/CatalogoItensContext"
 import { DataHorarioAgendamentoScreen } from "../DataHorarioAgendamento"
 import { LoginIcon } from "../LoginIcon"
 import unavailableSymbol from '../../assets/unavaiableSymbol.png'
+import { StarCount } from "../StarCount"
 
 interface Props {
     item: Iitem
@@ -22,8 +23,9 @@ export const Item = ({ item, image, alt, nome, preco }: Props) => {
     const { itens, setItens } = useContext(CatalogoItensContext)
     const { valorTotal, setValorTotal } = useContext(CarrinhoComprasContext)
     const [dataHorarioAgendamentoVisible, setDataHorarioAgendamentoVisible] = useState(false)
+    const [avaliacaoScreenVisible, setAvaliacaoScreenVisible] = useState(false)
     return (
-        <div className={`${item.categoria === 'produto' && item.quantidadeEstoque! <=0 && styles.unavailable} ${styles.container}`}>
+        <div className={`${item.categoria === 'produto' && item.quantidadeEstoque! <= 0 && styles.unavailable} ${styles.container}`}>
             {item.dataHorarioAgendamento && <DataHorarioAgendamentoScreen item={item} visible={dataHorarioAgendamentoVisible} setVisible={setDataHorarioAgendamentoVisible} />}
             <img className={styles.image} src={image} alt={alt} />
             <div className={styles.text}>
@@ -47,7 +49,7 @@ export const Item = ({ item, image, alt, nome, preco }: Props) => {
                 }} value={item.categoria === 'produto' ? item.quantidadeEstoque! > 0 ? 'Comprar →' : 'Agendar →' : 'Comprar →'} />
                 {item.categoria === 'produto' ? item.quantidadeEstoque! > 0 ? <DesireListButton item={item} /> : <LoginIcon image={unavailableSymbol} alt={'Indisponível'} /> : <DesireListButton item={item} />}
             </div>
-
+            <StarCount avaliacaoMedia={3.4} />
         </div>
     )
 }

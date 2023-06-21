@@ -59,10 +59,14 @@ export const CadastroProdutoScreen = ({ visible, setVisible, item }: Props) => {
     }
     else {
       if (data.categoria === tipoItemEnum.servico) {
-        return setItens(prevItens => [...prevItens, { ...data, id: prevItens.length + 1, listaDesejos: false, carrinhoCompras: false, quantidadeCarrinho: 0, imagem: data.imagem!.name, dataHorarioAgendamento: datasHorariosAgendamento, dataHorarioEscolhidos: [] }])
+        return setItens(prevItens => [...prevItens, {
+          ...data, id: prevItens.length + 1, listaDesejos: false, carrinhoCompras: false, quantidadeCarrinho: 0, imagem: data.imagem!.name, dataHorarioAgendamento: datasHorariosAgendamento, dataHorarioEscolhidos: [], avaliacaoMedia: 0
+        }])
       }
       else {
-        return setItens(prevItens => [...prevItens, { ...data, id: prevItens.length + 1, listaDesejos: false, carrinhoCompras: false, quantidadeCarrinho: 0, imagem: data.imagem!.name }])
+        return setItens(prevItens => [...prevItens, {
+          ...data, id: prevItens.length + 1, listaDesejos: false, carrinhoCompras: false, quantidadeCarrinho: 0, imagem: data.imagem!.name, avaliacaoMedia: 0
+        }])
       }
 
     }
