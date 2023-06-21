@@ -23,7 +23,6 @@ export const Item = ({ item, image, alt, nome, preco }: Props) => {
     const { itens, setItens } = useContext(CatalogoItensContext)
     const { valorTotal, setValorTotal } = useContext(CarrinhoComprasContext)
     const [dataHorarioAgendamentoVisible, setDataHorarioAgendamentoVisible] = useState(false)
-    const [avaliacaoScreenVisible, setAvaliacaoScreenVisible] = useState(false)
     return (
         <div className={`${item.categoria === 'produto' && item.quantidadeEstoque! <= 0 && styles.unavailable} ${styles.container}`}>
             {item.dataHorarioAgendamento && <DataHorarioAgendamentoScreen item={item} visible={dataHorarioAgendamentoVisible} setVisible={setDataHorarioAgendamentoVisible} />}
