@@ -5,6 +5,7 @@ import { ListaDesejosProvider } from './Context/ListaDesejosContext'
 import { CarrinhoComprasProvider } from './Context/CarrinhoComprasContext'
 import { UsuariosContextProvider } from './Context/UsuariosContext'
 import { SalaoBelezaProvider } from './Context/SaloesBelezaContext'
+import { AvaliacaoContextProvider } from './Context/AvaliacaoContext'
 
 
 
@@ -14,9 +15,11 @@ function App() {
       <CarrinhoComprasProvider>
         <ListaDesejosProvider>
           <SalaoBelezaProvider>
-            <CatalogoItensProvider>
-              <Outlet />
-            </CatalogoItensProvider>
+            <AvaliacaoContextProvider>
+              <CatalogoItensProvider>
+                <Outlet />
+              </CatalogoItensProvider>
+            </AvaliacaoContextProvider>
           </SalaoBelezaProvider>
         </ListaDesejosProvider>
       </CarrinhoComprasProvider>

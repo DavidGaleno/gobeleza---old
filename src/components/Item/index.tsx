@@ -49,9 +49,9 @@ export const Item = ({ item, image, alt, nome, preco }: Props) => {
                     }
                 }} value={item.categoria === 'produto' ? item.quantidadeEstoque! > 0 ? 'Comprar →' : 'Agendar →' : 'Comprar →'} />
                 {item.categoria === 'produto' ? item.quantidadeEstoque! > 0 ? <DesireListButton item={item} /> : <LoginIcon image={unavailableSymbol} alt={'Indisponível'} /> : <DesireListButton item={item} />}
-                <AvaliacaoScreen visible={avaliacaoScreenVisible} setVisible={setAvaliacaoScreenVisible} />
+                <AvaliacaoScreen item={item} visible={avaliacaoScreenVisible} setVisible={setAvaliacaoScreenVisible} />
             </div>
-            <StarCount visible={avaliacaoScreenVisible} setVisible={setAvaliacaoScreenVisible} avaliacaoMedia={3.4} />
+            <StarCount item={item} visible={avaliacaoScreenVisible} setVisible={setAvaliacaoScreenVisible} />
         </div>
     )
 }
