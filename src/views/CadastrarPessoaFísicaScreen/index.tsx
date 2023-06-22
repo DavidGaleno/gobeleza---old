@@ -12,29 +12,37 @@ import { useContext } from 'react'
 import { UsuariosContext } from '../../Context/UsuariosContext'
 import { IUsuario } from '../../interfaces/IUsuario'
 
-const cadastroPessoaFisicaSchema = z.object({
-  email: z.string().nonempty('*Obrigatório').email('Formato de Email inválido').transform(email => email.toLocaleLowerCase()).refine(email => email.endsWith('@gmail.com') || email.endsWith('@hotmail.com') || email.endsWith('@outlook.com'), {
-    message: 'O Email deve terminar com @outlook.com, @gmail.com ou @hotmail.com'
-  }),
-  cpf: z.string().nonempty('*Obrigatório').transform(cpf => cpf.toLocaleLowerCase().trim()),
-  nome: z.string().nonempty('*Obrigatório').transform(nome => nome.toLocaleLowerCase().trim()),
-  telefone: z.string().nonempty('*Obrigatório').transform(telefone => telefone.toLocaleLowerCase().trim()),
-  sexo: z.string().nonempty('*Obrigatório'),
-  endereco: z.string().nonempty('*Obrigatório').transform(endereco => endereco.toLocaleLowerCase().trim()),
-  complemento: z.string().nonempty('*Obrigatório').transform(complemento => complemento.toLocaleLowerCase().trim()),
-  numero: z.string().nonempty('*Obrigatório').transform(numero => numero.trim()),
-  password: z.string().nonempty('*Obrigatório').min(8, 'A senha precisa ter no mínimo 8 caracteres').transform(password => password.trim()),
-  passwordMatch: z.string().nonempty('*Obrigatório').min(8, 'A senha precisa ter no mínimo 8 caracteres').transform(password => password.trim()),
-}).refine(data => data.password === data.passwordMatch, {
-  path: ['passwordMatch'],
-  message: 'As duas senhas não correspondem'
-})
 
 export const CadastrarPessoaFisica = () => {
 
-  const { setUsuarios } = useContext(UsuariosContext)
+  const { setUsuarios, usuarios } = useContext(UsuariosContext)
 
   const navigate = useNavigate()
+
+  const cadastroPessoaFisicaSchema = z.object({
+    email: z.string().trim().nonempty('*Obrigatório').email('Formato de Email inválido').transform(email => email.toLocaleLowerCase()).refine(email => email.endsWith('@gmail.com') || email.endsWith('@hotmail.com') || email.endsWith('@outlook.com'), {
+      message: 'O Email deve terminar com @outlook.com, @gmail.com ou @hotmail.com'
+    }).refine(email => {
+      const usuario = usuarios.find(usuario => usuario.email === email)
+      if (usuario) return false
+      return true
+    }, {
+      message: 'Email Já Cadastrado'
+    }),
+    cpf: z.string().nonempty('*Obrigatório').transform(cpf => cpf.toLocaleLowerCase().trim()),
+    nome: z.string().nonempty('*Obrigatório').transform(nome => nome.toLocaleLowerCase().trim()),
+    telefone: z.string().nonempty('*Obrigatório').transform(telefone => telefone.toLocaleLowerCase().trim()),
+    sexo: z.string().nonempty('*Obrigatório'),
+    endereco: z.string().nonempty('*Obrigatório').transform(endereco => endereco.toLocaleLowerCase().trim()),
+    complemento: z.string().nonempty('*Obrigatório').transform(complemento => complemento.toLocaleLowerCase().trim()),
+    numero: z.string().nonempty('*Obrigatório').transform(numero => numero.trim()),
+    password: z.string().nonempty('*Obrigatório').min(8, 'A senha precisa ter no mínimo 8 caracteres').transform(password => password.trim()),
+    passwordMatch: z.string().nonempty('*Obrigatório').min(8, 'A senha precisa ter no mínimo 8 caracteres').transform(password => password.trim()),
+  }).refine(data => data.password === data.passwordMatch, {
+    path: ['passwordMatch'],
+    message: 'As duas senhas não correspondem'
+  })
+
 
   type CadastroPessoaFisicaType = z.infer<typeof cadastroPessoaFisicaSchema>
 
