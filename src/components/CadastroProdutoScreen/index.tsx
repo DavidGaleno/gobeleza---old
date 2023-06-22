@@ -44,6 +44,7 @@ export const CadastroProdutoScreen = ({ visible, setVisible, item }: Props) => {
 
   const { handleSubmit, register, formState: { errors }, reset } = cadastroProdutoUseForm
   const cadastrar = (data: CadastroProdutoType) => {
+    setVisible(!visible)
     if (item) {
       setItens(prevItens => {
         return prevItens.map(itemCadastrado => {

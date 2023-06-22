@@ -54,6 +54,7 @@ export const UpgradeContaScreen = ({ label, value, visible, setVisible }: Props)
                 })
             }
         })
+        setVisible(!visible)
         reset()
     }
     const downgrade = () => {
@@ -65,6 +66,7 @@ export const UpgradeContaScreen = ({ label, value, visible, setVisible }: Props)
             updatedUsers[prevUsuarios.indexOf(loggedAccount)] = updatedUser
             return updatedUsers
         })
+        setVisible(!visible)
     }
 
     const { handleSubmit, formState: { errors }, reset } = changeDataUseForm
@@ -81,7 +83,7 @@ export const UpgradeContaScreen = ({ label, value, visible, setVisible }: Props)
                     </div>
                     <div className={styles.buttons}>
                         <ActionButton type="button" value="Voltar ←" onClick={() => setVisible(!visible)} />
-                        <ActionButton type="submit" value="Confirmar →" onClick={() => setVisible(!visible)} />
+                        <ActionButton type="submit" value="Confirmar →"/>
                     </div>
                     {loggedAccount.tipoConta !== 'Cliente' &&
                         <div className={styles.button}>
