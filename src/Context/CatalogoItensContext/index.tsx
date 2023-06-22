@@ -235,7 +235,7 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
         },
         {
             id: 15,
-            nome: 'Cortar Cabelo de Mulher',
+            nome: 'Corte de Cabelo Feminino',
             preco: 49.99,
             imagem: cortarCabeloMulher,
             listaDesejos: false,
@@ -263,7 +263,7 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
         },
         {
             id: 17,
-            nome: 'Pintar Cabelo Mulher',
+            nome: 'Tintura',
             preco: 69.99,
             imagem: pintarCabeloMulher,
             listaDesejos: false,
@@ -276,7 +276,7 @@ export const CatalogoItensProvider: React.FC<Props> = ({ children }: Props) => {
         },
         {
             id: 18,
-            nome: 'Cortar Cabelo de Homem',
+            nome: 'Corte de Cabelo Masculino',
             preco: 39.99,
             imagem: cortarCabeloHomem,
             carrinhoCompras: false,
