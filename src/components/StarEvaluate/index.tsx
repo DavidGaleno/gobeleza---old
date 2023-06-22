@@ -25,40 +25,14 @@ export const StarEvaluate = ({ item }: Props): JSX.Element => {
                 if (changeHover) setHover(i)
             }} className={styles.star} icon={faStarRegular} style={{ color: "goldenrod" }
             } onClick={() => {
-                setChangeHover(!changeHover)
-                setHover(i)
-
-                if (avaliacao.userId) {
-                    const avaliacaoCadastrada = avaliacoes.find(avaliacaoAtual => {
-                        return avaliacaoAtual.userId === avaliacao.userId && avaliacaoAtual.itemId === avaliacao.itemId
-                    })
-                    if (avaliacaoCadastrada) {
-                        const newAvaliacoes = [...avaliacoes]
-                        newAvaliacoes.splice(avaliacoes.indexOf(avaliacaoCadastrada), 1)
-                        setAvaliacoes(newAvaliacoes)
-                        setAvaliacao({} as IAvaliacao)
-
-                    }
+                if (changeHover === false) {
+                    setChangeHover(true)
+                    setHover(0)
                 }
                 else {
-                    const novaAvaliacao = {
-                        userId: loggedAccount.id,
-                        itemId: item!.id,
-                        avaliacao: hover
-                    }
-                    setAvaliacao(novaAvaliacao)
-                    setAvaliacoes(prevAvaliacoes => [...prevAvaliacoes, novaAvaliacao])
+                    setChangeHover(false)
+                    setHover(i)
                 }
-
-            }
-            } />
-            :
-            <FontAwesomeIcon onMouseOut={() => {
-                if (changeHover) setHover(0)
-            }} onMouseOver={() => {
-                if (changeHover) setHover(i)
-            }} onClick={() => {
-                setChangeHover(!changeHover)
                 const pastEvaluation = avaliacoes.find(avaliacao => avaliacao.userId === loggedAccount.id && item.id === avaliacao.itemId)
                 if (pastEvaluation) {
                     const newAvaliacoes = [...avaliacoes]
@@ -82,7 +56,52 @@ export const StarEvaluate = ({ item }: Props): JSX.Element => {
                     const novaAvaliacao = {
                         userId: loggedAccount.id,
                         itemId: item!.id,
-                        avaliacao: hover
+                        avaliacao: changeHover ? i : 0
+                    }
+                    setAvaliacao(novaAvaliacao)
+                    setAvaliacoes(prevAvaliacoes => [...prevAvaliacoes, novaAvaliacao])
+                }
+
+            }
+            } />
+            :
+            <FontAwesomeIcon onMouseOut={() => {
+                if (changeHover) setHover(0)
+            }} onMouseOver={() => {
+                if (changeHover) setHover(i)
+            }} onClick={() => {
+                if (changeHover === false) {
+                    setChangeHover(true)
+                    setHover(0)
+                }
+                else {
+                    setChangeHover(false)
+                    setHover(i)
+                }
+                const pastEvaluation = avaliacoes.find(avaliacao => avaliacao.userId === loggedAccount.id && item.id === avaliacao.itemId)
+                if (pastEvaluation) {
+                    const newAvaliacoes = [...avaliacoes]
+                    newAvaliacoes.splice(avaliacoes.indexOf(pastEvaluation), 1)
+                    setAvaliacoes(newAvaliacoes)
+                    setAvaliacao({} as IAvaliacao)
+                }
+                if (avaliacao.userId) {
+                    const avaliacaoCadastrada = avaliacoes.find(avaliacaoAtual => {
+                        return avaliacaoAtual.userId === avaliacao.userId && avaliacaoAtual.itemId === avaliacao.itemId
+                    })
+                    if (avaliacaoCadastrada) {
+                        const newAvaliacoes = [...avaliacoes]
+                        newAvaliacoes.splice(avaliacoes.indexOf(avaliacaoCadastrada), 1)
+                        setAvaliacoes(newAvaliacoes)
+                        setAvaliacao({} as IAvaliacao)
+
+                    }
+                }
+                else {
+                    const novaAvaliacao = {
+                        userId: loggedAccount.id,
+                        itemId: item!.id,
+                        avaliacao: changeHover ? i : 0 
                     }
                     setAvaliacao(novaAvaliacao)
                     setAvaliacoes(prevAvaliacoes => [...prevAvaliacoes, novaAvaliacao])
