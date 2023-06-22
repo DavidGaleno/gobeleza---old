@@ -25,6 +25,10 @@
     align-items: center;
 }
 
+.price{
+    display: flex;
+    gap: 1rem;
+}
 h2 {
     font-weight: 200;
     font-size: 3.5rem;

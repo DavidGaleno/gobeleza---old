@@ -31,7 +31,8 @@ export const Item = ({ item, image, alt, nome, preco }: Props) => {
             <img className={styles.image} src={image} alt={alt} />
             <div className={styles.text}>
                 <h2>{nome}</h2>
-                <h3>R${preco.toString().replace('.', ',')}</h3>
+                {item.id % 3 === 0 ? <div className={styles.price}><h3 style={{ textDecoration: 'line-through' }}>R${preco.toString().replace('.', ',')}</h3><h3>R${(preco * 0.8).toFixed(2).toString().replace('.', ',')}</h3></div> : <h3>R${preco.toString().replace('.', ',')}</h3>}
+
             </div>
             <div className={styles.buttons}>
                 <ActionButton type="button" onClick={() => {
