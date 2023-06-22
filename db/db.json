@@ -1,0 +1,224 @@
+{
+    "produtos": [
+        {
+            "id": 1,
+            "nome": "Batom",
+            "preco": 9.99,
+            "imagem": "../../../public/assets/batom.png",
+            "listaDesejos": false,
+            "carrinhoCompras": false,
+            "quantidadeEstoque": 5,
+            "avaliacaoMedia": 0
+        },
+        {
+            "id": 2,
+            "nome": "Barbeador",
+            "preco": 99.99,
+            "imagem": "../../../public/assets/maquiagem.png",
+            "listaDesejos": false,
+            "carrinhoCompras": false,
+            "quantidadeEstoque": 50,
+            "avaliacaoMedia": 0
+        },
+        {
+            "id": 3,
+            "nome": "Maquiagem",
+            "preco": 29.99,
+            "imagem": "../../../public/assets/barbeador.png",
+            "listaDesejos": false,
+            "carrinhoCompras": false,
+            "quantidadeEstoque": 146,
+            "avaliacaoMedia": 0
+        },
+        {
+            "id": 4,
+            "nome": "Cortador de Unha",
+            "preco": 19.99,
+            "imagem": "../../../public/assets/cortador_unha.png",
+            "listaDesejos": false,
+            "carrinhoCompras": false,
+            "quantidadeEstoque": 94,
+            "avaliacaoMedia": 0
+        },
+        {
+            "id": 5,
+            "nome": "Tesoura",
+            "preco": 19.99,
+            "imagem": "../../../public/assets/tesoura.png",
+            "carrinhoCompras": false,
+            "listaDesejos": false,
+            "quantidadeEstoque": 32,
+            "avaliacaoMedia": 0
+        },
+        {
+            "id": 6,
+            "nome": "Shampoo",
+            "preco": 29.99,
+            "imagem": "../../../public/assets/shampoo.png",
+            "carrinhoCompras": false,
+            "listaDesejos": false,
+            "quantidadeEstoque": 25,
+            "avaliacaoMedia": 0
+        },
+        {
+            "id": 7,
+            "nome": "Hidratante Facial",
+            "preco": 39.99,
+            "imagem": "../../../public/assets/hidratante_facial.png",
+            "carrinhoCompras": false,
+            "listaDesejos": false,
+            "quantidadeEstoque": 10,
+            "avaliacaoMedia": 0
+        },
+        {
+            "id": 8,
+            "nome": "Perfume Masculino",
+            "preco": 59.99,
+            "imagem": "../../../public/assets/perfume_masculino.png",
+            "carrinhoCompras": false,
+            "listaDesejos": false,
+            "quantidadeEstoque": 34,
+            "avaliacaoMedia": 0
+        },
+        {
+            "id": 9,
+            "nome": "Perfume Feminino",
+            "preco": 109.99,
+            "imagem": "../../../public/assets/perfume_feminino.png",
+            "carrinhoCompras": false,
+            "listaDesejos": false,
+            "quantidadeEstoque": 48,
+            "avaliacaoMedia": 0
+        },
+        {
+            "id": 10,
+            "nome": "../../../public/assets/creme_maos.png",
+            "preco": 29.99,
+            "imagem": "cremeMaos",
+            "carrinhoCompras": false,
+            "listaDesejos": false,
+            "quantidadeEstoque": 48,
+            "avaliacaoMedia": 0
+        },
+        {
+            "id": 11,
+            "nome": "Creme Corporal",
+            "preco": 89.99,
+            "imagem": "../../../public/assets/creme_corporal.png",
+            "carrinhoCompras": false,
+            "listaDesejos": false,
+            "quantidadeEstoque": 23,
+            "avaliacaoMedia": 0
+        },
+        {
+            "id": 12,
+            "nome": "Escova de Cabelo",
+            "preco": 209.99,
+            "imagem": "../../../public/assets/escova_cabelo.png",
+            "carrinhoCompras": false,
+            "listaDesejos": false,
+            "quantidadeEstoque": 102,
+            "avaliacaoMedia": 0
+        },
+        {
+            "id": 13,
+            "nome": "Gel de Barbear",
+            "preco": 49.99,
+            "imagem": "../../../public/assets/gel_barbear.png",
+            "carrinhoCompras": false,
+            "listaDesejos": false,
+            "quantidadeEstoque": 48,
+            "avaliacaoMedia": 0
+        }
+    ],
+    "servicos": [
+        {
+            "id": 1,
+            "nome": "Lavar Cabelo",
+            "preco": 79.99,
+            "imagem": "../../../public/assets/lavar_cabelo.png",
+            "listaDesejos": false,
+            "carrinhoCompras": false,
+            "dataHorarioAgendamento": [],
+            "dataHorarioEscolhidos": [],
+            "avaliacaoMedia": 0
+        },
+        {
+            "id": 2,
+            "nome": "Corte de Cabelo Feminino",
+            "preco": 49.99,
+            "imagem": "../../../public/assets/cortar_cabelo_mulher.png",
+            "listaDesejos": false,
+            "carrinhoCompras": false,
+            "dataHorarioAgendamento": [],
+            "dataHorarioEscolhidos": [],
+            "avaliacaoMedia": 0
+        },
+        {
+            "id": 3,
+            "nome": "Manicure",
+            "preco": 29.99,
+            "imagem": "../../../public/assets/manicure.png",
+            "listaDesejos": false,
+            "carrinhoCompras": false,
+            "dataHorarioAgendamento": [],
+            "dataHorarioEscolhidos": [],
+            "avaliacaoMedia": 0
+        },
+        {
+            "id": 4,
+            "nome": "Tintura",
+            "preco": 69.99,
+            "imagem": "../../../public/assets/pintar_cabelo_mulher.png",
+            "listaDesejos": false,
+            "carrinhoCompras": false,
+            "dataHorarioAgendamento": [],
+            "dataHorarioEscolhidos": [],
+            "avaliacaoMedia": 0
+        },
+        {
+            "id": 5,
+            "nome": "Corte de Cabelo Masculino",
+            "preco": 39.99,
+            "imagem": "../../../public/assets/cortar_cabelo_homem.png",
+            "carrinhoCompras": false,
+            "listaDesejos": false,
+            "dataHorarioAgendamento": [],
+            "dataHorarioEscolhidos": [],
+            "avaliacaoMedia": 0
+        },
+        {
+            "id": 6,
+            "nome": "Progressiva",
+            "preco": 199.99,
+            "imagem": "../../../public/assets/progressiva.png",
+            "carrinhoCompras": false,
+            "listaDesejos": false,
+            "dataHorarioAgendamento": [],
+            "dataHorarioEscolhidos": [],
+            "avaliacaoMedia": 0
+        },
+        {
+            "id": 7,
+            "nome": "Luzes",
+            "preco": 79.99,
+            "imagem": "../../../public/assets/luzes.png",
+            "carrinhoCompras": false,
+            "listaDesejos": false,
+            "dataHorarioAgendamento": [],
+            "dataHorarioEscolhidos": [],
+            "avaliacaoMedia": 0
+        },
+        {
+            "id": 8,
+            "nome": "Sobrancelha",
+            "preco": 89.99,
+            "imagem": "../../../public/assets/sobrancelha.png",
+            "carrinhoCompras": false,
+            "listaDesejos": false,
+            "dataHorarioAgendamento": [],
+            "dataHorarioEscolhidos": [],
+            "avaliacaoMedia": 0
+        }
+    ]
+}

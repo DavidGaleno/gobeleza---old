@@ -3,7 +3,7 @@
 import styles from './styles.module.css'
 
 //React Libraries
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 //Components
 import { Title } from '../../components/Title'
@@ -19,10 +19,18 @@ import { CadastroProdutoButton } from '../../components/CadastroProdutoButton'
 import { UsuariosContext } from '../../Context/UsuariosContext'
 import { CadastroProdutoScreen } from '../../components/CadastroProdutoScreen'
 import { ItemFuncionario } from '../../components/ItemFuncionario'
+import axios from 'axios'
 
 
 export const ItemsCatalogScreen = () => {
+    const api = axios.create({
+        baseURL: "https://localhost:3000"
+    })
+    useEffect(() => {
+        const produtos = api.get('/produtos').then(data => console.log(data))
+        const servicos = api.get('/servicos').then(data => console.log(data))
 
+    }, [])
 
     const { loggedAccount } = useContext(UsuariosContext)
     const [itensExibidos, setItensExibidos] = useState('Produtos')
